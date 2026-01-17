@@ -1,13 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/landing/Hero";
+import { Problem } from "@/components/landing/Problem";
+import { Truth } from "@/components/landing/Truth";
+import { Proposal } from "@/components/landing/Proposal";
+import { System } from "@/components/landing/System";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Benefits } from "@/components/landing/Benefits";
+import { NotForYou } from "@/components/landing/NotForYou";
+import { Privacy } from "@/components/landing/Privacy";
+import { FinalCTA } from "@/components/landing/FinalCTA";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <Hero />
+      <Problem />
+      <Truth />
+      <Proposal />
+      <System />
+      <HowItWorks />
+      <Benefits />
+      <NotForYou />
+      <Privacy />
+      <FinalCTA />
+      
+      {/* Footer */}
+      <footer className="py-12 px-6 border-t border-border">
+        <div className="container text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2025 · Beta privada
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 };
 
