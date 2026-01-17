@@ -1,14 +1,45 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { useRef, useState } from "react";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Loader2, CheckCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const FinalCTA = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes("@")) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, introduce un email válido.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    // Simulate API call - replace with actual email sending logic
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    setIsLoading(false);
+    setIsSubmitted(true);
+    toast({
+      title: "¡Gracias!",
+      description: "Te escribiremos pronto con los siguientes pasos.",
+    });
+  };
 
   return (
-    <section ref={ref} className="py-32 px-6 relative overflow-hidden">
+    <section ref={ref} id="signup" className="py-32 px-6 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[600px] h-[400px] bg-glow/10 rounded-full blur-[100px]" />
@@ -21,36 +52,61 @@ export const FinalCTA = () => {
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <p className="text-lg text-text-secondary mb-4">
-            ¿Quieres probarlo antes de que exista como producto?
+          <h2 className="text-headline md:text-display-sm mb-6">
+            El correo no debería vivir en tu cabeza.
+          </h2>
+          <p className="text-xl text-text-secondary mb-12">
+            Debería entrar, resolverse y desaparecer.
           </p>
 
-          <p className="text-muted-foreground mb-12">
-            Estamos validando el sistema con un grupo reducido
-            de personas que quieren menos ruido mental.
-          </p>
-
-          <Button size="lg" className="group glow-effect text-lg px-8 py-6 h-auto mb-16">
-            Quiero probar el sistema
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-
-          <div className="border-t border-border pt-16">
-            <h2 className="text-headline md:text-display-sm mb-6">
-              El correo no debería vivir en tu cabeza.
-            </h2>
-            <p className="text-xl text-text-secondary mb-10">
-              Debería entrar, resolverse y desaparecer.
+          {/* Email signup form */}
+          <div className="max-w-md mx-auto mb-8">
+            <p className="text-muted-foreground mb-2">
+              Estamos probando este sistema con un grupo reducido.
+            </p>
+            <p className="text-lg text-foreground font-medium mb-2">
+              Si te interesa, deja tu correo.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              Te escribiremos para explicarte el siguiente paso.
             </p>
 
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="group text-lg px-8 py-6 h-auto border-primary/50 hover:bg-primary/10 hover:border-primary"
-            >
-              Recupera espacio mental
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="tu@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 h-12 bg-secondary/50 border-border focus:border-primary"
+                  disabled={isLoading}
+                />
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="group glow-effect h-12 px-6"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <>
+                      Enviar
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            ) : (
+              <div className="flex items-center justify-center gap-3 py-4 px-6 rounded-lg bg-primary/10 border border-primary/30">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span className="text-foreground font-medium">¡Gracias! Te escribiremos pronto.</span>
+              </div>
+            )}
+
+            <p className="text-sm text-muted-foreground mt-4 italic">
+              No es una newsletter.
+            </p>
           </div>
         </motion.div>
 
