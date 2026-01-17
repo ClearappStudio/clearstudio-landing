@@ -53,7 +53,11 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Button size="lg" className="group glow-effect text-lg px-8 py-6 h-auto">
+            <Button 
+              size="lg" 
+              className="group glow-effect text-lg px-8 py-6 h-auto"
+              onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Quiero probar este sistema
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
