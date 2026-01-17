@@ -27,35 +27,35 @@ export const FinalCTA = () => {
 
     setIsLoading(true);
     
-    const response = await fetch("https://formsubmit.co/ajax/hello@clearstudio.app", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        _captcha: "false",
-        _autoresponse: `
-    Gracias por tu interés.
-    
-    Antes de enviarte nada, quiero asegurarme de una cosa:
-    
-    Este sistema funciona solo si te comprometes a usarlo durante 7 días.
-    No es flexible ni automático.
-    
-    Si te parece bien, respóndeme a este correo con:
-    
-    “Quiero probarlo”
-    
-    — Francisco
-        `,
-      }),
-    });
-    
-    if (!response.ok) {
-      throw new Error("Error enviando el email");
-    }
+    const formData = new URLSearchParams();
+      formData.append("email", email);
+      formData.append("_captcha", "false");
+      formData.append("_autoresponse", `
+      Gracias por tu interés.
+      
+      Antes de enviarte nada, quiero asegurarme de una cosa:
+      
+      Este sistema funciona solo si te comprometes a usarlo durante 7 días.
+      No es flexible ni automático.
+      
+      Si te parece bien, respóndeme a este correo con:
+      
+      “Quiero probarlo”
+      
+      — Francisco
+      `);
+      
+      const response = await fetch("https://formsubmit.co/hello@clearstudio.app", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Error enviando el email");
+      }
     
     setIsLoading(false);
     setIsSubmitted(true);
