@@ -15,7 +15,7 @@ export const FinalCTA = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+  
     if (!email || !email.includes("@")) {
       toast({
         title: "Email inválido",
@@ -24,45 +24,57 @@ export const FinalCTA = () => {
       });
       return;
     }
-
+  
     setIsLoading(true);
-    
-    const formData = new URLSearchParams();
+  
+    try {
+      const formData = new URLSearchParams();
       formData.append("email", email);
       formData.append("_captcha", "false");
-      formData.append("_autoresponse", `
-      Gracias por tu interés.
-      
-      Antes de enviarte nada, quiero asegurarme de una cosa:
-      
-      Este sistema funciona solo si te comprometes a usarlo durante 7 días.
-      No es flexible ni automático.
-      
-      Si te parece bien, respóndeme a este correo con:
-      
-      “Quiero probarlo”
-      
-      — Francisco
-      `);
-      
+      formData.append("_subject", "Clear — siguiente paso");
+      formData.append("_template", "table");
+      formData.append("_autoresponse", `Gracias por tu interés.
+  
+  Antes de enviarte nada, quiero asegurarme de una cosa:
+  
+  Este sistema funciona solo si te comprometes a usarlo durante 7 días.
+  No es flexible ni automático.
+  
+  Si te parece bien, respóndeme a este correo con:
+  
+  "Quiero probarlo"
+  
+  — Francisco`);
+  
       const response = await fetch("https://formsubmit.co/hello@clearstudio.app", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
       });
-      
+  
+      const text = await response.text(); // 👈 clave para ver qué está pasando
+      console.log("FormSubmit status:", response.status);
+      console.log("FormSubmit response:", text);
+  
       if (!response.ok) {
-        throw new Error("Error enviando el email");
+        throw new Error(`Error enviando el email (status ${response.status})`);
       }
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    toast({
-      title: "¡Gracias!",
-      description: "Te escribiremos pronto con los siguientes pasos.",
-    });
+  
+      setIsSubmitted(true);
+      toast({
+        title: "¡Gracias!",
+        description: "Te escribiremos pronto con los siguientes pasos.",
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Error",
+        description: "No hemos podido enviar el email. Revisa la consola.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
