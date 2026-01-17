@@ -27,8 +27,35 @@ export const FinalCTA = () => {
 
     setIsLoading(true);
     
-    // Simulate API call - replace with actual email sending logic
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = await fetch("https://formsubmit.co/ajax/hello@clearstudio.app", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        _captcha: "false",
+        _autoresponse: `
+    Gracias por tu interés.
+    
+    Antes de enviarte nada, quiero asegurarme de una cosa:
+    
+    Este sistema funciona solo si te comprometes a usarlo durante 7 días.
+    No es flexible ni automático.
+    
+    Si te parece bien, respóndeme a este correo con:
+    
+    “Quiero probarlo”
+    
+    — Francisco
+        `,
+      }),
+    });
+    
+    if (!response.ok) {
+      throw new Error("Error enviando el email");
+    }
     
     setIsLoading(false);
     setIsSubmitted(true);
