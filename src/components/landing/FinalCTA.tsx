@@ -118,10 +118,10 @@ export const FinalCTA = () => {
               <form
                 action="https://formsubmit.co/hello@clearstudio.app"
                 method="POST"
-                style={{ marginTop: 20 }}
+                className="flex flex-col sm:flex-row gap-3"
               >
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_subject" value="Clear test submit" />
+                <input type="hidden" name="_subject" value="Clear signup" />
                 <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
 
                 <input
@@ -129,25 +129,14 @@ export const FinalCTA = () => {
                   name="email"
                   required
                   placeholder="tu@email.com"
-                  style={{
-                    padding: "12px",
-                    width: "100%",
-                    marginBottom: "10px",
-                    color: "black"
-                  }}
+                  className="flex-1 h-12 px-4 rounded-lg bg-secondary/50 border border-border text-white"
                 />
 
                 <button
                   type="submit"
-                  style={{
-                    padding: "12px",
-                    width: "100%",
-                    background: "limegreen",
-                    color: "black",
-                    fontWeight: "bold"
-                  }}
+                  className="h-12 px-6 rounded-lg bg-green-500 text-black font-semibold"
                 >
-                  ENVIAR (TEST)
+                  Enviar →
                 </button>
               </form>
             ) : (
