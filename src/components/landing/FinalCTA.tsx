@@ -111,7 +111,7 @@ export const FinalCTA = () => {
             </p>
 
             {!isSubmitted ? (
-              <form action="https://formsubmit.co/your@email.com" method="POST" className="flex flex-col sm:flex-row gap-3">
+              <form action="https://formsubmit.co/hello@clearstudio.app" method="POST" className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
                   name="email"
