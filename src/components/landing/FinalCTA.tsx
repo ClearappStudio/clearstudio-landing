@@ -49,10 +49,12 @@ export const FinalCTA = () => {
   
       const response = await fetch("https://formsubmit.co/hello@clearstudio.app", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: { "Content-Type": "application/json" },
         body: formData.toString(),
       });
-  
+      const data = await response.json();
+      setDebug(JSON.stringify(data, null, 2));
+      
       const text = await response.text(); // 👈 clave para ver qué está pasando
       setDebug(`STATUS: ${response.status}\n\n${text.slice(0, 600)}`);
       console.log("FormSubmit status:", response.status);
