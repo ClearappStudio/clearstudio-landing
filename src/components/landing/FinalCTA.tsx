@@ -31,9 +31,6 @@ export const FinalCTA = () => {
 
     setIsLoading(true);
 
-    // Envío real del form (sin navegación) usando iframe target
-    formRef.current?.submit();
-
     // UX local: no dependemos del redirect ni de la respuesta
     setTimeout(() => {
       setIsLoading(false);
@@ -77,13 +74,6 @@ export const FinalCTA = () => {
               Te escribiré personalmente con el siguiente paso.
             </p>
 
-            {/* Iframe oculto para evitar navegación */}
-            <iframe
-              name="formsubmit_hidden_iframe"
-              style={{ display: "none" }}
-              title="hidden"
-            />
-
             {!isSubmitted ? (
               <form
                 ref={formRef}
@@ -95,9 +85,8 @@ export const FinalCTA = () => {
               >
                 {/* FormSubmit config (mínimo y estable) */}
                 <input type="hidden" name="_subject" value="Clear — nuevo interesado" />
-                {/* IMPORTANTE: quitamos _captcha y _autoresponse porque rompen el flujo con iframe */}
-                {/* IMPORTANTE: quitamos _replyto y _next porque no aportan nada en este modo */}
-
+                <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
+                <input type="hidden" name="_captcha" value="false" />
                 {/* Look & feel original */}
                 <Input
                   type="email"
