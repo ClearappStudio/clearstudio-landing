@@ -47,7 +47,7 @@ export const FinalCTA = () => {
   
   — Francisco`);
   
-      const response = await fetch("https://formsubmit.co/hello@clearstudio.app", {
+      const response = await fetch("https://formsubmit.co/fg.olmedo.ariza@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: formData.toString(),
