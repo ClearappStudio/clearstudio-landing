@@ -63,7 +63,7 @@ export const FinalCTA = () => {
                 Enviar →
               </button>
             </form>
-
+            <p className="text-xs opacity-50 mt-3">BUILD-MARK: cta-v1</p>
             <p className="text-sm text-muted-foreground mt-4 italic">
               No es una newsletter.
             </p>
