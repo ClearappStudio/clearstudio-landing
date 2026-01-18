@@ -134,7 +134,7 @@ export const FinalCTA = () => {
               <div className="flex items-center justify-center gap-3 py-4 px-6 rounded-lg bg-primary/10 border border-primary/30">
                 <CheckCircle className="h-5 w-5 text-primary" />
                 <span className="text-foreground font-medium">
-                  ¡Gracias! Revisa tu email.
+                  ¡Gracias! Hemos recibido tu correo. Te escribiré personalmente.
                 </span>
               </div>
             )}
