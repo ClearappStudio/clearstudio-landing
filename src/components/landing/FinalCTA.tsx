@@ -115,32 +115,40 @@ export const FinalCTA = () => {
             </p>
 
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                <Input
+              <form
+                action="https://formsubmit.co/hello@clearstudio.app"
+                method="POST"
+                style={{ marginTop: 20 }}
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="Clear test submit" />
+                <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
+
+                <input
                   type="email"
                   name="email"
                   required
                   placeholder="tu@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-12 bg-secondary/50 border-border focus:border-primary"
-                  disabled={isLoading}
+                  style={{
+                    padding: "12px",
+                    width: "100%",
+                    marginBottom: "10px",
+                    color: "black"
+                  }}
                 />
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="group glow-effect h-12 px-6"
-                  disabled={isLoading}
+
+                <button
+                  type="submit"
+                  style={{
+                    padding: "12px",
+                    width: "100%",
+                    background: "limegreen",
+                    color: "black",
+                    fontWeight: "bold"
+                  }}
                 >
-                  {isLoading ? (
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                  ) : (
-                    <>
-                      Enviar
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </>
-                  )}
-                </Button>
+                  ENVIAR (TEST)
+                </button>
               </form>
             ) : (
               <div className="flex items-center justify-center gap-3 py-4 px-6 rounded-lg bg-primary/10 border border-primary/30">
