@@ -20,7 +20,6 @@ export const FinalCTA = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validación simple (mantiene tu UX previa)
     if (!email || !email.includes("@")) {
       toast({
         title: "Email inválido",
@@ -30,14 +29,14 @@ export const FinalCTA = () => {
       return;
     }
 
-    // UX: loading + thanks
     setIsLoading(true);
 
-    // Dispara el submit REAL del formulario (a FormSubmit) sin fetch/cors
-    // Nota: requestSubmit() ejecuta el submit nativo de forma fiable
-    formRef.current?.requestSubmit();
+    // IMPORTANTE:
+    // form.submit() NO dispara el evento submit otra vez (a diferencia de requestSubmit),
+    // así que no entra en bucle y envía el POST de verdad.
+    formRef.current?.submit();
 
-    // Mostramos feedback en UI (el envío ocurre en paralelo)
+    // UX: confirmación local (no dependemos del redirect)
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
@@ -69,7 +68,6 @@ export const FinalCTA = () => {
             Debería entrar, resolverse y desaparecer.
           </p>
 
-          {/* Email signup form */}
           <div className="max-w-md mx-auto mb-8">
             <p className="text-muted-foreground mb-2">
               Estamos probando este sistema con un grupo reducido.
@@ -81,17 +79,26 @@ export const FinalCTA = () => {
               Te escribiremos para explicarte el siguiente paso.
             </p>
 
+            {/* Iframe oculto para evitar navegación */}
+            <iframe
+              name="formsubmit_hidden_iframe"
+              style={{ display: "none" }}
+              title="hidden"
+            />
+
             {!isSubmitted ? (
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
                 action="https://formsubmit.co/hello@clearstudio.app"
                 method="POST"
+                target="formsubmit_hidden_iframe"
                 className="flex flex-col sm:flex-row gap-3"
               >
                 {/* FormSubmit config */}
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_subject" value="Clear — siguiente paso" />
+                {/* _next no importa mucho con iframe, pero lo dejamos */}
                 <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
                 <input type="hidden" name="_replyto" value="%email%" />
                 <input
@@ -99,19 +106,19 @@ export const FinalCTA = () => {
                   name="_autoresponse"
                   value={`Gracias por tu interés.
 
-                  Antes de enviarte nada, quiero asegurarme de una cosa:
+Antes de enviarte nada, quiero asegurarme de una cosa:
 
-                  Este sistema funciona solo si te comprometes a usarlo durante 7 días.
-                  No es flexible ni automático.
+Este sistema funciona solo si te comprometes a usarlo durante 7 días.
+No es flexible ni automático.
 
-                  Si te parece bien, responde a este correo con:
+Si te parece bien, responde a este correo con:
 
-                  "Quiero probarlo"
+"Quiero probarlo"
 
-                  — Francisco`}
+— Francisco`}
                 />
 
-                {/* Visual (look & feel original) */}
+                {/* Look & feel original */}
                 <Input
                   type="email"
                   name="email"
@@ -154,7 +161,6 @@ export const FinalCTA = () => {
           </div>
         </motion.div>
 
-        {/* Final note */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -162,9 +168,7 @@ export const FinalCTA = () => {
           className="mt-24 text-center"
         >
           <div className="inline-block px-8 py-6 rounded-2xl border border-primary/20 bg-primary/5">
-            <p className="text-lg text-muted-foreground mb-2">
-              No es para todo el mundo.
-            </p>
+            <p className="text-lg text-muted-foreground mb-2">No es para todo el mundo.</p>
             <p className="text-xl text-foreground font-medium">
               Pero si el email te pesa,
               <br />
