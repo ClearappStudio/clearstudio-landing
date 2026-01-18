@@ -69,17 +69,16 @@ export const FinalCTA = () => {
                 name="email"
                 required
                 placeholder="tu@email.com"
-                className="flex-1 h-12 px-4 rounded-lg bg-secondary/50 border border-border text-white"
+                className="flex-1 h-12 bg-secondary/50 border-border focus:border-primary"
               />
 
               <button
                 type="submit"
-                className="h-12 px-6 rounded-lg bg-green-500 text-black font-semibold"
+                className="group glow-effect h-12 px-6"
               >
                 Enviar →
               </button>
             </form>
-            <p className="text-xs opacity-50 mt-3">BUILD-MARK: cta-v1</p>
             <p className="text-sm text-muted-foreground mt-4 italic">
               No es una newsletter.
             </p>
