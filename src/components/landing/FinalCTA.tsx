@@ -12,6 +12,7 @@ export const FinalCTA = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+  const [debug, setDebug] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +54,7 @@ export const FinalCTA = () => {
       });
   
       const text = await response.text(); // 👈 clave para ver qué está pasando
+      setDebug(`STATUS: ${response.status}\n\n${text.slice(0, 600)}`);
       console.log("FormSubmit status:", response.status);
       console.log("FormSubmit response:", text);
   
@@ -111,7 +113,7 @@ export const FinalCTA = () => {
             </p>
 
             {!isSubmitted ? (
-              <form action="https://formsubmit.co/hello@clearstudio.app" method="POST" className="flex flex-col sm:flex-row gap-3">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
                   name="email"
@@ -144,7 +146,11 @@ export const FinalCTA = () => {
                 <span className="text-foreground font-medium">¡Gracias! Te escribiremos pronto.</span>
               </div>
             )}
-
+            {debug && (
+              <pre className="mt-4 text-left text-xs whitespace-pre-wrap opacity-70">
+                {debug}
+              </pre>
+            )}
             <p className="text-sm text-muted-foreground mt-4 italic">
               No es una newsletter.
             </p>
