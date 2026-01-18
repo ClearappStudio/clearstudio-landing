@@ -111,9 +111,11 @@ export const FinalCTA = () => {
             </p>
 
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <form action="https://formsubmit.co/your@email.com" method="POST" className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
+                  name="email"
+                  required
                   placeholder="tu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
