@@ -31,13 +31,18 @@ export const FinalCTA = () => {
 
     setIsLoading(true);
 
-    // UX local: no dependemos del redirect ni de la respuesta
+    // IMPORTANTE:
+    // form.submit() NO dispara el evento submit otra vez (a diferencia de requestSubmit),
+    // así que no entra en bucle y envía el POST de verdad.
+    formRef.current?.submit();
+
+    // UX: confirmación local (no dependemos del redirect)
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
       toast({
         title: "¡Gracias!",
-        description: "Hemos recibido tu email. Te escribiré personalmente.",
+        description: "Revisa tu email: te hemos enviado el siguiente paso.",
       });
     }, 600);
   };
@@ -71,8 +76,15 @@ export const FinalCTA = () => {
               Si te interesa, deja tu correo.
             </p>
             <p className="text-muted-foreground mb-6">
-              Te escribiré personalmente con el siguiente paso.
+              Te escribiremos para explicarte el siguiente paso.
             </p>
+
+            {/* Iframe oculto para evitar navegación */}
+            <iframe
+              name="formsubmit_hidden_iframe"
+              style={{ display: "none" }}
+              title="hidden"
+            />
 
             {!isSubmitted ? (
               <form
@@ -83,10 +95,29 @@ export const FinalCTA = () => {
                 target="formsubmit_hidden_iframe"
                 className="flex flex-col sm:flex-row gap-3"
               >
-                {/* FormSubmit config (mínimo y estable) */}
-                <input type="hidden" name="_subject" value="Clear — nuevo interesado" />
-                <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
+                {/* FormSubmit config */}
                 <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="Clear — siguiente paso" />
+                {/* _next no importa mucho con iframe, pero lo dejamos */}
+                <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
+                <input type="hidden" name="_replyto" value="%email%" />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value={`Gracias por tu interés.
+
+Antes de enviarte nada, quiero asegurarme de una cosa:
+
+Este sistema funciona solo si te comprometes a usarlo durante 7 días.
+No es flexible ni automático.
+
+Si te parece bien, responde a este correo con:
+
+"Quiero probarlo"
+
+— Francisco`}
+                />
+
                 {/* Look & feel original */}
                 <Input
                   type="email"
@@ -119,7 +150,7 @@ export const FinalCTA = () => {
               <div className="flex items-center justify-center gap-3 py-4 px-6 rounded-lg bg-primary/10 border border-primary/30">
                 <CheckCircle className="h-5 w-5 text-primary" />
                 <span className="text-foreground font-medium">
-                  ¡Gracias! Te escribiré personalmente.
+                  ¡Gracias! Revisa tu email.
                 </span>
               </div>
             )}
