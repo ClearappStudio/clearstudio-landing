@@ -42,7 +42,7 @@ export const FinalCTA = () => {
       setIsSubmitted(true);
       toast({
         title: "¡Gracias!",
-        description: "Revisa tu email: te hemos enviado el siguiente paso.",
+        description: "Hemos recibido tu correo. Te escribiré personalmente.",
       });
     }, 600);
   };
@@ -101,23 +101,7 @@ export const FinalCTA = () => {
                 {/* _next no importa mucho con iframe, pero lo dejamos */}
                 <input type="hidden" name="_next" value="https://clearstudio.app/#signup" />
                 <input type="hidden" name="_replyto" value="%email%" />
-                <input
-                  type="hidden"
-                  name="_autoresponse"
-                  value={`Gracias por tu interés.
-
-Antes de enviarte nada, quiero asegurarme de una cosa:
-
-Este sistema funciona solo si te comprometes a usarlo durante 7 días.
-No es flexible ni automático.
-
-Si te parece bien, responde a este correo con:
-
-"Quiero probarlo"
-
-— Francisco`}
-                />
-
+                
                 {/* Look & feel original */}
                 <Input
                   type="email"
