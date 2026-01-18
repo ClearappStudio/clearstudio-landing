@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear — Guide (v0.1)</title>
+    <meta name="description" content="Guía v0.1 (documento vivo) del sistema Clear para reducir carga mental con el email." />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <!-- Notion-ish typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <style>
+      :root {
+        --bg: #0b0f14;               /* deep, calm */
+        --surface: rgba(255,255,255,.04);
+        --surface-2: rgba(255,255,255,.06);
+        --text: rgba(255,255,255,.92);
+        --muted: rgba(255,255,255,.68);
+        --muted-2: rgba(255,255,255,.55);
+        --border: rgba(255,255,255,.10);
+        --accent: rgba(120, 255, 190, .95); /* subtle "clear" green */
+        --shadow: 0 10px 30px rgba(0,0,0,.35);
+        --radius: 14px;
+        --max: 760px;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: radial-gradient(1200px 500px at 50% -10%, rgba(120,255,190,.10), transparent 60%),
+                    radial-gradient(900px 450px at 10% 10%, rgba(90,170,255,.08), transparent 55%),
+                    var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        letter-spacing: -0.01em;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        background: rgba(11,15,20,.70);
+        border-bottom: 1px solid var(--border);
+      }
+      .topbar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 18px rgba(120,255,190,.35);
+      }
+      .pill {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        padding: 6px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      main {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 38px 20px 80px;
+      }
+
+      header h1 {
+        margin: 0 0 10px;
+        font-size: 34px;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+      }
+      header .subtitle {
+        color: var(--muted);
+        margin: 0 0 24px;
+        font-size: 16px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 6px;
+      }
+      .meta {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      section {
+        margin: 26px 0;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin: 26px 0 10px;
+        letter-spacing: -0.02em;
+      }
+      h3 {
+        font-size: 18px;
+        margin: 18px 0 8px;
+        letter-spacing: -0.01em;
+      }
+
+      p { margin: 10px 0; color: var(--text); }
+      .muted { color: var(--muted); }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background: var(--border);
+        margin: 26px 0;
+      }
+
+      ul, ol {
+        margin: 10px 0 10px 22px;
+        color: var(--text);
+      }
+      li { margin: 6px 0; }
+
+      blockquote {
+        margin: 14px 0;
+        padding: 12px 14px;
+        border-left: 3px solid rgba(120,255,190,.55);
+        background: rgba(255,255,255,.03);
+        border-radius: 10px;
+        color: var(--text);
+      }
+
+      .callout {
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.04);
+        border-radius: var(--radius);
+        padding: 14px 16px;
+        box-shadow: var(--shadow);
+      }
+      .callout strong {
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        border-radius: var(--radius);
+        padding: 14px 16px;
+      }
+      .card-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        margin: 0 0 4px;
+      }
+      .badge {
+        font-size: 12px;
+        color: rgba(0,0,0,.85);
+        background: rgba(120,255,190,.9);
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .card p { margin: 6px 0; color: var(--muted); }
+
+      .quote {
+        font-size: 18px;
+        line-height: 1.5;
+        color: rgba(255,255,255,.88);
+        margin: 10px 0 0;
+      }
+
+      .cta {
+        margin-top: 26px;
+        border: 1px dashed rgba(120,255,190,.35);
+        background: rgba(120,255,190,.06);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+      .cta code {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(0,0,0,.35);
+        border: 1px solid var(--border);
+        color: rgba(255,255,255,.90);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 14px;
+        white-space: pre-wrap;
+      }
+
+      footer {
+        margin-top: 44px;
+        color: var(--muted-2);
+        font-size: 12px;
+      }
+
+      @media (prefers-color-scheme: light) {
+        /* If user is in light mode, still keep it readable */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Clear</span>
+        </div>
+        <div class="pill">/guide · v0.1 · documento vivo</div>
+      </div>
+    </div>
+
+    <main>
+      <header>
+        <h1>Guía (v0.1)</h1>
+        <p class="subtitle">Documento vivo · Beta privada</p>
+
+        <div class="meta-row">
+          <span class="meta">Actualizado: <strong>enero 2026</strong></span>
+          <span class="meta">Objetivo: <strong>menos carga mental</strong></span>
+          <span class="meta">Tiempo de lectura: <strong>4–6 min</strong></span>
+        </div>
+      </header>
+
+      <section class="callout">
+        <strong>Antes de empezar</strong>
+        <p class="muted">
+          Este documento no es una landing, ni un manual, ni una promesa. Es la explicación honesta
+          de un sistema que estoy probando con un grupo reducido de personas.
+        </p>
+        <p class="muted">
+          Si lo que lees aquí no te encaja, no pasa nada. De hecho, es mejor que no sigas.
+        </p>
+      </section>
+
+      <section>
+        <h2>El problema (probablemente lo conoces)</h2>
+        <p>
+          El correo electrónico no es difícil de usar. Es <strong>difícil de sostener mentalmente</strong>.
+        </p>
+        <p class="muted">No por falta de herramientas, sino porque:</p>
+        <ul>
+          <li>Todo entra en el mismo sitio</li>
+          <li>Todo parece importante</li>
+          <li>Todo queda “pendiente”</li>
+          <li>Nada se cierra del todo</li>
+        </ul>
+        <blockquote>
+          “Tengo cosas en la cabeza que no estoy atendiendo.”
+        </blockquote>
+        <p class="muted">
+          No es un problema de productividad. Es un problema de <strong>carga mental</strong>.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>Lo que NO intenta hacer este sistema</h2>
+        <p class="muted">Este sistema <strong>no</strong> pretende:</p>
+        <ul>
+          <li>llevar tu inbox a cero</li>
+          <li>clasificar correos con mil etiquetas</li>
+          <li>convertir el email en un gestor de tareas</li>
+          <li>automatizar decisiones por ti</li>
+        </ul>
+        <p class="muted">Si buscas eso, hay herramientas mejores.</p>
+      </section>
+
+      <section>
+        <h2>La idea central</h2>
+        <p>La idea es muy simple:</p>
+        <blockquote class="quote">
+          El correo no se organiza.<br />
+          El correo <strong>se termina</strong>.
+        </blockquote>
+        <p class="muted">
+          Y para poder terminarlo, necesitas <strong>sacarlo de tu cabeza</strong> lo antes posible.
+          No resolverlo. No clasificarlo. Solo <strong>decidir qué es</strong>.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>El sistema (las 4 únicas categorías)</h2>
+        <p class="muted">Todo correo que entra solo puede estar en uno de estos cuatro estados:</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">
+              <span class="badge">1</span> Action Items
+            </div>
+            <p>Correos que implican <strong>algo que tienes que hacer</strong>.</p>
+            <p class="muted">
+              Esta carpeta es tu lista de tareas derivadas del email. Cuando haces la acción, el correo se archiva.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="badge">2</span> Read Later
+            </div>
+            <p>Correos que <strong>merecen atención</strong>, pero no ahora.</p>
+            <p class="muted">
+              Leerlos desde aquí es una decisión consciente, no una interrupción.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="badge">3</span> Waiting On
+            </div>
+            <p>Correos en los que <strong>no tienes que hacer nada</strong>, pero estás esperando respuesta o evento.</p>
+            <p class="muted">
+              Libera carga mental: ya no tienes que “acordarte” de que alguien te conteste.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <span class="badge">4</span> Vault
+            </div>
+            <p>Correos importantes que <strong>querrás encontrar</strong> dentro de meses o años.</p>
+            <p class="muted">
+              Contratos, conversaciones clave, referencias. Pocos, pero relevantes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>La regla más importante</h2>
+        <p class="muted">
+          Todo correo que entra debe cumplir <strong>una de estas dos cosas</strong>:
+        </p>
+        <ul>
+          <li>va a una de las cuatro carpetas</li>
+          <li>se archiva directamente</li>
+        </ul>
+        <p class="muted">
+          Nada se queda “en medio”. Nada vive en la bandeja de entrada sin una decisión.
+        </p>
+        <blockquote>
+          La bandeja no es un lugar. Es un <strong>estado temporal</strong>.
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Por qué esto funciona (y por qué no es automático)</h2>
+        <p class="muted">
+          Este sistema funciona solo si tú decides. No hay IA que piense por ti, reglas complejas ni automatismos mágicos.
+          Y eso es intencionado.
+        </p>
+        <p class="muted">
+          La claridad mental no se delega. Se entrena.
+        </p>
+      </section>
+
+      <hr />
+
+      <section class="callout">
+        <h2 style="margin-top:0;">El compromiso</h2>
+        <p class="muted">
+          Este sistema solo tiene sentido si te comprometes a:
+        </p>
+        <ul>
+          <li>usarlo durante <strong>7 días seguidos</strong></li>
+          <li>aplicar la regla en <strong>todos</strong> los correos</li>
+          <li>no “adaptarlo” a mitad de semana</li>
+        </ul>
+        <p class="muted">
+          Si no puedes hacer eso ahora mismo, mejor no empieces.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cómo empezar (hoy mismo)</h2>
+        <ol>
+          <li>Crea las 4 carpetas en tu gestor de correo.</li>
+          <li>Durante los próximos 7 días:
+            <ul>
+              <li>cada correo que entra → decisión inmediata</li>
+              <li>sin excepciones</li>
+            </ul>
+          </li>
+          <li>No optimices. No ajustes. No añadas nada.</li>
+        </ol>
+        <p class="muted">Solo observa qué cambia.</p>
+      </section>
+
+      <section>
+        <h2>Lo que pasa después</h2>
+        <p class="muted">Si después de esos 7 días:</p>
+        <ul>
+          <li>notas menos ruido mental</li>
+          <li>entras al correo con menos resistencia</li>
+          <li>sientes que “no se te escapa nada”</li>
+        </ul>
+        <p class="muted">
+          Entonces este sistema puede tener recorrido para ti. Si no, habrás aprendido algo igualmente valioso.
+        </p>
+      </section>
+
+      <section class="cta">
+        <h2 style="margin-top:0;">Siguiente paso</h2>
+        <p class="muted">
+          Si has leído hasta aquí y te encaja, respóndeme al email con una sola frase:
+        </p>
+        <code>Quiero probarlo.</code>
+        <p class="muted" style="margin-top:12px;">— Francisco</p>
+      </section>
+
+      <footer>
+        <p>
+          Nota: este documento cambiará. El sistema también. Lo único que no va a cambiar es la intención:
+          reducir el peso mental que arrastra el email.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
