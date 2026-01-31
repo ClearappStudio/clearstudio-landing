@@ -7,7 +7,6 @@
     <meta name="description" content="Manual operativo del sistema Clear para reducir carga mental con el email. Beta privada." />
     <meta name="robots" content="noindex,nofollow" />
 
-    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,7 +25,7 @@
         --border: #1f1f1f;
         --accent: #6dffb3;
         --radius: 14px;
-        --max: 760px;
+        --max: 820px;
       }
 
       * { box-sizing: border-box; }
@@ -40,6 +39,9 @@
         line-height: 1.65;
         letter-spacing: -0.01em;
       }
+
+      a { color: var(--text); text-decoration: none; }
+      a:hover { text-decoration: underline; }
 
       .topbar {
         position: sticky;
@@ -56,6 +58,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 12px;
       }
 
       .brand {
@@ -78,12 +81,13 @@
         border: 1px solid var(--border);
         padding: 6px 10px;
         border-radius: 999px;
+        white-space: nowrap;
       }
 
       main {
         max-width: var(--max);
         margin: 0 auto;
-        padding: 38px 20px 80px;
+        padding: 34px 20px 80px;
       }
 
       header h1 {
@@ -95,42 +99,47 @@
 
       header .subtitle {
         color: var(--muted);
-        margin-bottom: 24px;
+        margin-bottom: 18px;
       }
 
-      section { margin: 30px 0; }
+      .meta-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .meta {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      section { margin: 28px 0; }
 
       h2 {
         font-size: 22px;
         margin: 26px 0 10px;
+        letter-spacing: -0.02em;
       }
 
       h3 {
         font-size: 18px;
-        margin: 18px 0 8px;
+        margin: 16px 0 8px;
       }
 
       p { margin: 10px 0; }
 
-      ul, ol {
-        margin: 10px 0 10px 22px;
-      }
-
+      ul, ol { margin: 10px 0 10px 22px; }
       li { margin: 6px 0; }
 
       hr {
         border: 0;
         height: 1px;
         background: var(--border);
-        margin: 32px 0;
-      }
-
-      blockquote {
-        margin: 14px 0;
-        padding: 12px 14px;
-        border-left: 3px solid var(--accent);
-        background: var(--surface);
-        border-radius: 10px;
+        margin: 34px 0;
       }
 
       .callout {
@@ -140,6 +149,96 @@
         padding: 16px;
       }
 
+      .callout strong { display: inline-block; margin-bottom: 6px; }
+
+      blockquote {
+        margin: 14px 0;
+        padding: 12px 14px;
+        border-left: 3px solid var(--accent);
+        background: var(--surface);
+        border-radius: 10px;
+      }
+
+      .toc {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+
+      .toc .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        background: #0a0a0a;
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+
+      .chip .i { color: var(--accent); }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      @media (min-width: 880px) {
+        .two-col { grid-template-columns: 1fr 1fr; }
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 14px 16px;
+      }
+
+      .card-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        margin: 0 0 4px;
+      }
+
+      .badge {
+        font-size: 12px;
+        background: var(--accent);
+        color: #000;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .muted { color: var(--muted); }
+
+      .rules {
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+
+      .steps {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+
+      .steps ol { margin-left: 18px; }
+
       .cta {
         border: 1px solid var(--border);
         background: var(--surface-2);
@@ -147,6 +246,8 @@
         padding: 18px;
         margin-top: 30px;
       }
+
+      .cta h2 { margin-top: 0; }
 
       .cta code {
         display: inline-block;
@@ -156,6 +257,8 @@
         border: 1px solid var(--border);
         border-radius: 12px;
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        color: var(--text);
+        white-space: pre-wrap;
       }
 
       footer {
@@ -181,208 +284,234 @@
       <header>
         <h1>Guía de uso — Sistema Clear</h1>
         <p class="subtitle">Manual operativo · Versión 1 · Beta privada</p>
+
+        <div class="meta-row">
+          <span class="meta">⏱️ 7 días</span>
+          <span class="meta">📥 4 carpetas</span>
+          <span class="meta">🧠 Objetivo: menos carga mental</span>
+        </div>
       </header>
 
       <section class="callout">
-        <strong>Antes de empezar</strong>
+        <strong>🧾 Antes de empezar</strong>
         <p>
-          Este documento no es una landing, ni un artículo, ni una promesa.
-          Es un manual práctico para que puedas empezar a usar el sistema por tu cuenta,
-          sin herramientas adicionales y sin automatismos.
+          Este documento es un manual práctico para que implementes el método por tu cuenta.
+          No necesitas ninguna app ni automatización.
         </p>
-        <p>
-          Léelo completo antes de aplicar nada.
+        <p class="muted">
+          Si ya estás aquí es porque has recibido mi email con el enlace. Perfecto: léelo completo una vez,
+          y luego empieza.
         </p>
       </section>
 
-      <section>
-        <h2>1. El problema que estamos atacando</h2>
+      <section class="toc">
+        <strong>🧭 Índice rápido</strong>
+        <div class="row">
+          <a class="chip" href="#objetivo"><span class="i">🎯</span><span>Objetivo</span></a>
+          <a class="chip" href="#carpetas"><span class="i">📁</span><span>4 carpetas</span></a>
+          <a class="chip" href="#regla"><span class="i">✅</span><span>Regla</span></a>
+          <a class="chip" href="#rutina"><span class="i">🔁</span><span>Rutina diaria</span></a>
+          <a class="chip" href="#compromiso"><span class="i">🗓️</span><span>7 días</span></a>
+          <a class="chip" href="#feedback"><span class="i">📝</span><span>Feedback</span></a>
+          <a class="chip" href="#siguientes"><span class="i">🚀</span><span>Qué hago yo</span></a>
+        </div>
+      </section>
+
+      <section id="objetivo">
+        <h2>🎯 1) Objetivo</h2>
         <p>
-          El correo electrónico no suele fallar por falta de organización,
-          sino por acumulación mental.
+          El correo no suele fallar por falta de organización. Falla por <strong>acumulación mental</strong>.
         </p>
-        <ul>
-          <li>Correos que requieren algo, pero no ahora</li>
-          <li>Correos importantes mezclados con ruido</li>
-          <li>Cosas que “no quiero olvidar”</li>
-          <li>Decisiones pospuestas indefinidamente</li>
-        </ul>
+        <p class="muted">Este sistema busca una sola cosa:</p>
         <blockquote>
-          El problema no es el inbox.  
-          El problema es lo que se queda viviendo en tu cabeza.
+          Que el email deje de vivir en tu cabeza.
         </blockquote>
+        <p class="muted">
+          No vas a “ordenar” tu correo. Vas a <strong>decidir</strong> y <strong>cerrar</strong>.
+        </p>
       </section>
 
       <section>
-        <h2>2. Qué NO intenta hacer este sistema</h2>
+        <h2>🚫 2) Qué NO es este sistema</h2>
         <ul>
-          <li>No intenta llevar el inbox a cero</li>
-          <li>No intenta clasificar el correo con etiquetas complejas</li>
-          <li>No convierte el email en un gestor de tareas</li>
-          <li>No automatiza decisiones</li>
+          <li>No es “inbox zero”.</li>
+          <li>No es un sistema de etiquetas, reglas o automatización.</li>
+          <li>No convierte el email en un gestor de tareas.</li>
+          <li>No pretende que optimices nada.</li>
         </ul>
-        <p>
-          Si buscas optimización extrema o automatización,
-          este sistema no es para ti.
+        <p class="muted">
+          Si buscas automatizar o clasificar en profundidad, este método no te va a aportar gran cosa.
         </p>
       </section>
 
       <hr />
 
       <section>
-        <h2>3. Principio central</h2>
+        <h2>🧠 3) Principio central</h2>
         <blockquote>
-          El correo no se organiza.  
-          El correo se termina.
+          El correo no se organiza.<br />
+          El correo <strong>se termina</strong>.
         </blockquote>
-        <p>
-          Para terminarlo, no tienes que resolverlo todo ahora.
-          Solo tienes que decidir qué es cada cosa
-          y sacarla de tu cabeza.
+        <p class="muted">
+          Terminarlo no significa resolverlo todo ahora. Significa que cada correo tenga un estado claro
+          fuera de tu bandeja de entrada.
         </p>
       </section>
 
-      <section>
-        <h2>4. Las 4 carpetas del sistema</h2>
+      <section id="carpetas">
+        <h2>📁 4) Las 4 carpetas (definición operativa)</h2>
 
-        <h3>4.1 Action Items</h3>
-        <p>
-          Correos que implican una acción que depende de ti.
-        </p>
-        <ul>
-          <li>No ahora</li>
-          <li>No necesariamente hoy</li>
-          <li>Pero sí tú</li>
-        </ul>
-        <p>
-          Esta carpeta es tu lista de tareas derivadas del email.
-          Cuando la acción está hecha, el correo se archiva.
-        </p>
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title"><span class="badge">1</span> Action Items</div>
+            <p class="muted">Correos que requieren una acción que depende de ti.</p>
+            <ul>
+              <li>Responder con algo concreto</li>
+              <li>Hacer una llamada / enviar un documento</li>
+              <li>Resolver un tema que “queda en tu tejado”</li>
+            </ul>
+            <p class="muted">
+              Cuando la acción está hecha, <strong>se archiva</strong>. No se queda “por si acaso”.
+            </p>
+          </div>
 
-        <h3>4.2 Read Later</h3>
-        <p>
-          Correos que merecen atención,
-          pero no en el momento en que entran.
-        </p>
-        <p>
-          Leer desde aquí es una decisión consciente,
-          no una interrupción.
-        </p>
+          <div class="card">
+            <div class="card-title"><span class="badge">2</span> Read Later</div>
+            <p class="muted">Correos que merecen atención, pero no ahora.</p>
+            <ul>
+              <li>Lecturas</li>
+              <li>Propuestas largas</li>
+              <li>Mensajes que quieres leer con calma</li>
+            </ul>
+            <p class="muted">
+              Están fuera del inbox para que no te interrumpan. Tú eliges cuándo leer.
+            </p>
+          </div>
 
-        <h3>4.3 Waiting On</h3>
-        <p>
-          Correos en los que no tienes que hacer nada,
-          pero estás esperando una respuesta o un evento.
-        </p>
-        <p>
-          Esto elimina la carga mental de “acordarte”.
-        </p>
+          <div class="card">
+            <div class="card-title"><span class="badge">3</span> Waiting On</div>
+            <p class="muted">No tienes que hacer nada. Estás esperando algo.</p>
+            <ul>
+              <li>Alguien debe responder</li>
+              <li>Estás pendiente de una confirmación</li>
+              <li>Hay una fecha o un evento futuro</li>
+            </ul>
+            <p class="muted">
+              Esto elimina la carga mental de “no se me puede olvidar que…”.
+            </p>
+          </div>
 
-        <h3>4.4 Vault</h3>
-        <p>
-          Correos importantes que necesitarás encontrar
-          dentro de meses o años.
-        </p>
-        <p>
-          Pocos. Relevantes. Nada más.
-        </p>
+          <div class="card">
+            <div class="card-title"><span class="badge">4</span> Vault</div>
+            <p class="muted">Correos importantes que querrás encontrar dentro de meses o años.</p>
+            <ul>
+              <li>Contratos / acuerdos</li>
+              <li>Conversaciones clave</li>
+              <li>Información crítica</li>
+            </ul>
+            <p class="muted">
+              Pocos, pero relevantes.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <hr />
-
-      <section>
-        <h2>5. La regla clave</h2>
-        <p>
-          Todo correo que entra debe cumplir una de estas dos cosas:
+      <section id="regla" class="rules">
+        <h2 style="margin-top:0;">✅ 5) La regla clave</h2>
+        <p class="muted">
+          Todo correo que entra debe cumplir <strong>una de estas dos cosas</strong>:
         </p>
         <ul>
           <li>Va a una de las cuatro carpetas</li>
           <li>Se archiva directamente</li>
         </ul>
         <blockquote>
-          La bandeja de entrada no es un lugar.  
-          Es un estado temporal.
+          La bandeja de entrada no es un lugar. Es un <strong>estado temporal</strong>.
         </blockquote>
       </section>
 
-      <section>
-        <h2>6. Cómo usar el sistema en el día a día</h2>
+      <section id="rutina" class="steps">
+        <h2 style="margin-top:0;">🔁 6) Rutina diaria (cómo se usa de verdad)</h2>
         <ol>
-          <li>Abre el correo</li>
-          <li>Lee un correo</li>
-          <li>Decide qué es</li>
-          <li>Mueve o archiva</li>
-          <li>Pasa al siguiente</li>
+          <li><strong>Abre el correo</strong> y procesa de uno en uno.</li>
+          <li><strong>Decide</strong> (Action / Read Later / Waiting On / Vault / Archive).</li>
+          <li><strong>Mueve o archiva</strong> inmediatamente.</li>
+          <li>Pasa al siguiente.</li>
         </ol>
-        <p>
-          No resuelvas nada que no toque.
-          No optimices.
-          No limpies “un poco más”.
+        <p class="muted">
+          Importante: este sistema funciona porque reduce decisiones. No lo conviertas en una herramienta compleja.
         </p>
       </section>
 
-      <section>
-        <h2>7. El compromiso de 7 días</h2>
-        <p>
-          Para que este sistema funcione,
-          necesitas usarlo sin modificaciones durante 7 días seguidos.
+      <section id="compromiso" class="callout">
+        <strong>🗓️ 7) Compromiso: 7 días sin tocar el sistema</strong>
+        <p class="muted">
+          Para evaluar esto de forma justa:
         </p>
         <ul>
-          <li>Sin excepciones</li>
-          <li>Sin añadir reglas</li>
-          <li>Sin adaptar el sistema</li>
+          <li>Usa el sistema 7 días seguidos.</li>
+          <li>No añadas carpetas nuevas.</li>
+          <li>No “adaptes” nada a mitad de semana.</li>
+          <li>No hagas “excepciones” que reintroduzcan ruido.</li>
         </ul>
-        <p>
-          Si no puedes comprometerte a esto,
-          es mejor no empezar.
+        <p class="muted">
+          El objetivo no es que sea perfecto. Es ver si baja la carga mental.
         </p>
       </section>
 
-      <section>
-        <h2>8. Qué observar durante la prueba</h2>
-        <ul>
-          <li>Cómo entras al correo</li>
-          <li>Qué pasa con el ruido mental</li>
-          <li>Si sientes que algo “se te escapa” menos</li>
-          <li>Si hay menos fricción al abrir el inbox</li>
-        </ul>
+      <section id="feedback">
+        <h2>📝 8) Feedback que te voy a pedir</h2>
+        <p class="muted">
+          El feedback útil no es “yo lo haría distinto”. Es “qué ha cambiado en ti al usarlo”.
+        </p>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title">✅ Útil</div>
+            <ul>
+              <li>¿Entras al correo con menos resistencia?</li>
+              <li>¿Sientes menos cosas “pendientes” en la cabeza?</li>
+              <li>¿Qué carpeta usas más y por qué?</li>
+              <li>¿Qué tipo de email te cuesta decidir?</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">❌ No útil (todavía)</div>
+            <ul>
+              <li>“Añadiría 3 carpetas más”</li>
+              <li>“Lo automatizaría con reglas”</li>
+              <li>“Yo ya tengo mi sistema y…”</li>
+            </ul>
+            <p class="muted">
+              Eso puede venir después. Ahora queremos medir el efecto del sistema simple.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2>9. Qué feedback es útil</h2>
-        <p>
-          Este sistema está en beta.
-          El feedback que buscamos no es:
+      <section id="siguientes" class="cta">
+        <h2>🚀 9) Qué hago yo (y qué tienes que hacer tú)</h2>
+        <p class="muted">
+          Yo te escribiré para pedirte feedback (normalmente al final de la semana).
         </p>
-        <ul>
-          <li>“Yo lo haría distinto”</li>
-          <li>“Añadiría otra carpeta”</li>
-        </ul>
-        <p>
-          El feedback útil es:
+        <p class="muted">
+          Tú solo tienes que hacer esto:
         </p>
-        <ul>
-          <li>Qué ha cambiado en tu forma de usar el correo</li>
-          <li>Qué se ha aligerado</li>
-          <li>Qué se ha hecho más pesado</li>
-        </ul>
-      </section>
+        <code>
+1) Crea las 4 carpetas hoy
+2) Úsalas durante 7 días (sin cambiar nada)
+3) Cuando te escriba, responde con lo que has observado
+        </code>
 
-      <section class="cta">
-        <h2>Siguiente paso</h2>
-        <p>
-          Si has leído la guía y vas a probar el sistema,
-          responde al email con una sola frase:
+        <p class="muted" style="margin-top:12px;">
+          Si te atascas o algo no encaja, responde al email por el que te llegó este enlace.
         </p>
-        <code>Quiero probarlo.</code>
-        <p>— Francisco</p>
       </section>
 
       <footer>
         <p>
-          Este documento cambiará.  
-          El sistema también.  
-          La intención no.
+          Este documento cambiará. El sistema, también. La intención no.
         </p>
       </footer>
     </main>
