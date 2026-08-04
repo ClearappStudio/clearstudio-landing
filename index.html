@@ -19,6 +19,13 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://clearstudio.app/" />
+    <script>
+      const redirectPath = sessionStorage.getItem("clear-studio-redirect");
+      if (redirectPath) {
+        sessionStorage.removeItem("clear-studio-redirect");
+        history.replaceState(null, "", redirectPath);
+      }
+    </script>
   </head>
 
   <body>
