@@ -44,12 +44,15 @@ export function ProjectIndex() {
       <div className="project-index-list" aria-live="polite">
         {visibleProjects.map((project) => (
           <Link
-            className="project-index-row"
+            className={`project-index-row project-index-row--${project.type.toLowerCase()}`}
             key={project.slug}
             to={`/projects/${project.slug}`}
           >
             <span className="project-index-title">{project.title}</span>
-            <span className="project-index-type">{project.type}</span>
+            <span className="project-index-type">
+              <i aria-hidden="true" />
+              {project.type}
+            </span>
             <span className="project-index-status">{project.status}</span>
             <span className="project-index-arrow" aria-hidden="true">↗</span>
           </Link>
