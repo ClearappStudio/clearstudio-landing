@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Project } from "@/data/content";
+import { MailMark } from "@/components/site/MailMark";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -11,6 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span>{project.type}</span>
         <span>{project.status}</span>
       </div>
+      {project.tone === "mail" && <MailMark className="project-mail-mark" />}
       <div className="project-copy">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
