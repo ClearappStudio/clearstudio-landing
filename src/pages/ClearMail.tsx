@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
+import { Archive, BookOpen, Check, Clock3 } from "lucide-react";
+import { MailMark } from "@/components/site/MailMark";
 
 const states = [
-  ["Action Items", "Correos con cosas que tienes que hacer tú."],
-  ["Read Later", "Correos que requieren tiempo y atención, no una respuesta inmediata."],
-  ["Waiting On", "Conversaciones en las que ahora le toca actuar a otra persona."],
-  ["Vault", "Información importante que querrás poder recuperar en el futuro."],
+  { title: "Action Items", description: "Messages that need something from you.", icon: Check },
+  { title: "Read Later", description: "Messages worth your time, but not your immediate attention.", icon: BookOpen },
+  { title: "Waiting On", description: "Conversations where the next move belongs to someone else.", icon: Clock3 },
+  { title: "Vault", description: "Important information you may want to find again.", icon: Archive },
 ];
 
 const steps = [
-  "Cada correo nuevo exige una decisión sencilla.",
-  "Si requiere algo de ti, pasa al lugar que le corresponde.",
-  "Si no requiere atención, se archiva.",
-  "Cuando se resuelve, desaparece de tu espacio de trabajo.",
+  "Make one simple decision about every new message.",
+  "If it needs your attention, move it to the right place.",
+  "If it does not, archive it.",
+  "When it is resolved, remove it from your working space.",
 ];
 
 export default function ClearMail() {
@@ -19,45 +21,45 @@ export default function ClearMail() {
     <article className="clear-mail-page">
       <header className="clear-mail-hero">
         <div className="clear-mail-topline"><span>Clear Studio / System 01</span><span>Private beta</span></div>
-        <div className="mail-mark" aria-hidden="true"><i /><i /><i /></div>
+        <MailMark className="clear-mail-symbol" />
         <div className="clear-mail-title">
-          <p>Clear Mail</p>
-          <h1>El email no se organiza.<br /><em>Se termina.</em></h1>
+          <div className="clear-mail-wordmark"><MailMark className="clear-mail-wordmark-symbol" /><h1>Clear Mail</h1></div>
+          <h2>Email is not something to organise.<br /><em>It is something to finish.</em></h2>
         </div>
-        <p className="clear-mail-lede">Un sistema sencillo para reducir tu bandeja a decisiones claras y devolverle espacio a tu cabeza.</p>
+        <p className="clear-mail-lede">A simple system that turns your inbox into clear decisions—and gives your attention somewhere better to go.</p>
       </header>
 
       <section className="mail-section mail-problem">
         <p className="mail-kicker">01 / The problem</p>
-        <div><h2>El correo no te roba tiempo.<br /><span>Te roba atención.</span></h2><p>Correos importantes mezclados con ruido. Cosas pendientes que viven en tu cabeza. Un “luego lo miro” que nunca termina de llegar.</p><strong>No tienes demasiados correos. Tienes demasiadas decisiones abiertas.</strong></div>
+        <div><h2>Email does not just take your time.<br /><span>It occupies your attention.</span></h2><p>Important messages sit beside noise. Unfinished tasks remain visible. Things you meant to return to quietly stay open in your head.</p><strong>The problem is not too much email. It is too many unresolved decisions.</strong></div>
       </section>
 
       <section className="mail-manifesto">
         <p>One simple idea</p>
-        <h2>Un correo solo debería existir mientras requiere tu atención.</h2>
-        <span>Nada más. Nada menos.</span>
+        <h2>An email should remain visible only while it needs your attention.</h2>
+        <span>No longer than necessary.</span>
       </section>
 
       <section className="mail-section mail-system">
         <p className="mail-kicker">02 / The system</p>
-        <div><h2>Cuatro estados.<br />Ningún limbo.</h2><p className="mail-system-intro">Todo correo nuevo termina en uno de estos lugares —o se archiva directamente.</p><div className="mail-state-grid">{states.map(([title, description], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div>
+        <div><h2>Four places.<br />No limbo.</h2><p className="mail-system-intro">Every new message belongs in one of these places—or goes straight to the archive.</p><div className="mail-state-grid">{states.map(({ title, description, icon: Icon }, index) => <article key={title}><div className="mail-state-top"><span>0{index + 1}</span><Icon size={22} strokeWidth={1.5} /></div><h3>{title}</h3><p>{description}</p></article>)}</div></div>
       </section>
 
       <section className="mail-flow">
         <p className="mail-kicker">03 / How it works</p>
-        <h2>La claridad aparece cuando cada cosa tiene un final.</h2>
+        <h2>Clarity appears when everything has an ending.</h2>
         <ol>{steps.map((step, index) => <li key={step}><span>0{index + 1}</span><p>{step}</p></li>)}</ol>
       </section>
 
       <section className="mail-section mail-privacy">
         <p className="mail-kicker">04 / Privacy</p>
-        <div><h2>Tu correo sigue siendo tuyo.</h2><p>No almacenamos el contenido completo. No leemos adjuntos. No vendemos datos. Clear Mail guarda decisiones, no tu vida.</p></div>
+        <div><h2>Your email remains yours.</h2><p>We do not store the full content of your messages. We do not read attachments. We do not sell data. Clear Mail remembers decisions—not your life.</p></div>
       </section>
 
       <section className="mail-cta" id="clear-mail-beta">
         <p>Private beta</p>
-        <h2>El correo no debería vivir en tu cabeza.</h2>
-        <p>Estamos probando el sistema con un grupo reducido. Si te interesa, cuéntanoslo.</p>
+        <h2>Your inbox should not live in your head.</h2>
+        <p>We are testing Clear Mail with a small group. If this way of working speaks to you, we would like to hear from you.</p>
         <a href="mailto:hello@clearstudio.app?subject=Clear%20Mail%20private%20beta">I want to try Clear Mail <span>↗</span></a>
       </section>
       <Link className="project-back" to="/projects">← All projects</Link>

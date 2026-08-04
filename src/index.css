@@ -223,6 +223,14 @@ h1 {
     radial-gradient(circle at 20% 20%, rgb(255 255 255 / 65%), transparent 25%),
     linear-gradient(145deg, #f7d89a, #eea84c);
 }
+.project-mail-mark {
+  position: absolute;
+  top: 4.4rem;
+  right: clamp(1.5rem, 3vw, 2.375rem);
+  width: clamp(7rem, 13vw, 10.5rem);
+  opacity: 0.55;
+  transform: rotate(-8deg);
+}
 .project-card--wallpapers {
   color: #3b1831;
   background:
@@ -473,11 +481,14 @@ h1 {
 }
 .clear-mail-topline { display: flex; justify-content: space-between; font-size: 0.7rem; letter-spacing: .08em; text-transform: uppercase; }
 .clear-mail-title { position: relative; z-index: 2; align-self: end; }
-.clear-mail-title > p { margin-bottom: 1rem; font-size: 1rem; font-weight: 650; }
-.clear-mail-title h1 { max-width: 63rem; font-size: clamp(3.75rem, 9vw, 7.5rem); }
-.clear-mail-title h1 em { color: rgb(55 36 13 / 43%); font-style: normal; }
+.clear-mail-wordmark { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.5rem); margin-bottom: clamp(1.5rem, 3vw, 2.75rem); }
+.clear-mail-title h1 { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: clamp(3.5rem, 9vw, 7.75rem); font-weight: 700; line-height: .86; letter-spacing: -.07em; }
+.clear-mail-title h2 { max-width: 60rem; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.15rem, 5.5vw, 5rem); font-weight: 400; line-height: .98; letter-spacing: -.055em; }
+.clear-mail-title h2 em { color: rgb(55 36 13 / 43%); font-style: normal; }
 .clear-mail-lede { position: relative; z-index: 2; max-width: 34rem; margin: 2rem 0 0 auto; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.45; }
-.mail-mark { position: absolute; top: 16%; right: 7%; width: clamp(13rem, 30vw, 25rem); aspect-ratio: 1; opacity: .62; transform: rotate(-8deg); }
+.mail-mark { position: relative; display: block; aspect-ratio: 1; }
+.clear-mail-symbol { position: absolute; top: 13%; right: 7%; width: clamp(13rem, 30vw, 25rem); opacity: .62; transform: rotate(-8deg); }
+.clear-mail-wordmark-symbol { width: clamp(3.5rem, 8vw, 7rem); flex: 0 0 auto; opacity: .75; }
 .mail-mark i { position: absolute; inset: 0; display: block; border: clamp(1rem, 2.2vw, 2rem) solid rgb(255 248 228 / 65%); border-radius: 50%; }
 .mail-mark i:nth-child(2) { inset: 18%; }
 .mail-mark i:nth-child(3) { inset: 36%; background: rgb(255 248 228 / 58%); }
@@ -506,6 +517,8 @@ h1 {
 .mail-state-grid { margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .mail-state-grid article { min-height: 17rem; padding: 1.75rem; display: flex; flex-direction: column; border-radius: 1.25rem; background: var(--mail-paper); }
 .mail-state-grid article > span { color: var(--mail-muted); font-size: .72rem; }
+.mail-state-top { display: flex; align-items: center; justify-content: space-between; color: var(--mail-muted); }
+.mail-state-top > span { font-size: .72rem; }
 .mail-state-grid h3 { margin: auto 0 .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3vw, 2.5rem); font-weight: 400; letter-spacing: -.035em; }
 .mail-state-grid p { margin: 0; color: var(--mail-muted); line-height: 1.45; }
 .mail-flow { margin-inline: calc(var(--page-padding) * -1); padding: clamp(6rem, 13vw, 11rem) var(--page-padding); background: #eaa55c; }
