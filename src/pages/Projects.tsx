@@ -12,9 +12,9 @@ export default function Projects() {
           <p>Each project starts in a different place, but they all ask the same question: can digital life feel clearer than this?</p>
         </div>
       </header>
-      <section className="section page-section" aria-labelledby="selected-projects-heading">
+      <section className="section page-section" aria-labelledby="featured-projects-heading">
         <div className="section-heading">
-          <h2 id="selected-projects-heading">Selected projects</h2>
+          <h2 id="featured-projects-heading">Featured</h2>
         </div>
         <ProjectGrid />
       </section>
