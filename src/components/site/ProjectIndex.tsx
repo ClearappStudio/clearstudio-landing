@@ -29,12 +29,13 @@ export function ProjectIndex() {
         <div className="project-filters" aria-label="Filter projects">
           {filters.map((filter) => (
             <button
-              className={activeFilter === filter ? "active" : undefined}
+              className={`project-filter project-filter--${filter.toLowerCase()}${activeFilter === filter ? " active" : ""}`}
               key={filter}
               type="button"
               aria-pressed={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
             >
+              {filter !== "All" && <i aria-hidden="true" />}
               {filter}
             </button>
           ))}
