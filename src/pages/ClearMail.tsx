@@ -21,7 +21,6 @@ export default function ClearMail() {
     <article className="clear-mail-page">
       <header className="clear-mail-hero">
         <div className="clear-mail-topline"><span>Clear Studio / System 01</span><span>Private beta</span></div>
-        <MailMark className="clear-mail-symbol" />
         <div className="clear-mail-title">
           <div className="clear-mail-wordmark"><MailMark className="clear-mail-wordmark-symbol" /><h1>Clear Mail</h1></div>
           <h2>Email is not something to organise.<br /><em>It is something to finish.</em></h2>

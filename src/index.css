@@ -224,6 +224,7 @@ h1 {
     linear-gradient(145deg, #f7d89a, #eea84c);
 }
 .project-mail-mark {
+  --mail-ring-width: 0.65rem;
   position: absolute;
   top: 4.4rem;
   right: clamp(1.5rem, 3vw, 2.375rem);
@@ -486,12 +487,27 @@ h1 {
 .clear-mail-title h2 { max-width: 60rem; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.15rem, 5.5vw, 5rem); font-weight: 400; line-height: .98; letter-spacing: -.055em; }
 .clear-mail-title h2 em { color: rgb(55 36 13 / 43%); font-style: normal; }
 .clear-mail-lede { position: relative; z-index: 2; max-width: 34rem; margin: 2rem 0 0 auto; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.45; }
-.mail-mark { position: relative; display: block; aspect-ratio: 1; }
-.clear-mail-symbol { position: absolute; top: 13%; right: 7%; width: clamp(13rem, 30vw, 25rem); opacity: .62; transform: rotate(-8deg); }
-.clear-mail-wordmark-symbol { width: clamp(3.5rem, 8vw, 7rem); flex: 0 0 auto; opacity: .75; }
-.mail-mark i { position: absolute; inset: 0; display: block; border: clamp(1rem, 2.2vw, 2rem) solid rgb(255 248 228 / 65%); border-radius: 50%; }
-.mail-mark i:nth-child(2) { inset: 18%; }
-.mail-mark i:nth-child(3) { inset: 36%; background: rgb(255 248 228 / 58%); }
+.mail-mark {
+  --mail-ring-width: 0.5rem;
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+}
+.clear-mail-wordmark-symbol {
+  --mail-ring-width: clamp(0.32rem, 0.7vw, 0.55rem);
+  width: clamp(3.5rem, 8vw, 7rem);
+  flex: 0 0 auto;
+  opacity: .75;
+}
+.mail-mark i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border: var(--mail-ring-width) solid rgb(255 248 228 / 65%);
+  border-radius: 50%;
+}
+.mail-mark i:nth-child(2) { inset: 24%; }
+.mail-mark i:nth-child(3) { inset: 43%; background: rgb(255 248 228 / 58%); }
 .mail-section {
   padding: clamp(5rem, 12vw, 10rem) 0;
   display: grid;
