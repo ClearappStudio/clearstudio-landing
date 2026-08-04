@@ -1,27 +1,27 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import About from "@/pages/About";
+import Home from "@/pages/Home";
+import Journal from "@/pages/Journal";
+import LegacyEmailLanding from "@/pages/LegacyEmailLanding";
+import ProjectDetail from "@/pages/ProjectDetail";
+import Projects from "@/pages/Projects";
+import NotFound from "@/pages/NotFound";
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <BrowserRouter>
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/about" element={<About />} />
+      </Route>
+      <Route path="/clear-mail-preview" element={<LegacyEmailLanding />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;
