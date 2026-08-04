@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <meta name="description" content="The practical guide to Clear Mail: a simple system for giving every email a clear state and reducing mental load." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="canonical" href="https://clearstudio.app/projects/clear-mail/guide" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Clear Mail Guide — Clear Studio</title>
+    <style>
+      :root {
+        --paper: #f5f2eb;
+        --surface: #fbfaf7;
+        --ink: #1d1d1b;
+        --muted: #6f6c65;
+        --faint: #9a968d;
+        --line: #dcd7cd;
+        --accent: #d96c45;
+        --accent-soft: #f1ded4;
+        --green: #54705d;
+        --radius: 12px;
+        --page: 820px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.68;
+        letter-spacing: -0.01em;
+      }
+      a { color: inherit; }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(29, 29, 27, 0.1);
+        background: rgba(245, 242, 235, 0.92);
+        backdrop-filter: blur(14px);
+      }
+      .topbar-inner {
+        width: min(var(--page), calc(100% - 40px));
+        min-height: 62px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .brand, .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .brand { font-weight: 650; letter-spacing: -0.025em; }
+      .back { color: var(--muted); font-size: 13px; }
+      .back:hover { color: var(--ink); }
+      .mail-mark { position: relative; width: 24px; height: 24px; flex: 0 0 24px; }
+      .mail-mark span { position: absolute; border: 1.5px solid var(--accent); border-radius: 50%; }
+      .mail-mark span:nth-child(1) { inset: 1px; }
+      .mail-mark span:nth-child(2) { inset: 5px; }
+      .mail-mark span:nth-child(3) { inset: 9px; background: var(--accent); }
+      main { width: min(var(--page), calc(100% - 40px)); margin: 0 auto; padding: 64px 0 96px; }
+      .eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+      h1 { max-width: 680px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(46px, 8vw, 74px); font-weight: 400; line-height: 0.98; letter-spacing: -0.055em; }
+      .subtitle { max-width: 610px; margin: 24px 0 0; color: var(--muted); font-size: 19px; line-height: 1.55; }
+      .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+      .meta, .chip { border: 1px solid var(--line); border-radius: 999px; background: rgba(251, 250, 247, 0.55); color: var(--muted); font-size: 12px; }
+      .meta { padding: 6px 10px; }
+      section { margin: 42px 0; scroll-margin-top: 90px; }
+      h2 { margin: 0 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: 400; line-height: 1.2; letter-spacing: -0.035em; }
+      h3 { margin: 0 0 5px; font-size: 16px; letter-spacing: -0.02em; }
+      p { margin: 10px 0; }
+      ul, ol { margin: 12px 0; padding-left: 24px; }
+      li { margin: 7px 0; }
+      strong { font-weight: 650; }
+      .muted { color: var(--muted); }
+      hr { height: 1px; margin: 48px 0; border: 0; background: var(--line); }
+      .callout, .toc, .rules, .steps, .closing { padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(251, 250, 247, 0.72); }
+      .callout-title { display: flex; align-items: center; gap: 9px; font-weight: 650; }
+      .icon { width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 14px; }
+      .toc .label { color: var(--faint); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .toc-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+      .chip { padding: 7px 11px; text-decoration: none; }
+      .chip:hover { border-color: var(--accent); color: var(--accent); }
+      blockquote { margin: 20px 0; padding: 5px 0 5px 22px; border-left: 2px solid var(--accent); font-family: Georgia, "Times New Roman", serif; font-size: 25px; line-height: 1.35; letter-spacing: -0.025em; }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+      .card { min-height: 240px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+      .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+      .folder-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-soft); color: var(--accent); }
+      .folder-icon svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+      .card p, .card li { color: var(--muted); font-size: 14px; }
+      .card ul { padding-left: 19px; }
+      .rules { border-left: 3px solid var(--green); }
+      .steps ol { counter-reset: steps; list-style: none; padding: 0; }
+      .steps li { counter-increment: steps; display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+      .steps li::before { content: counter(steps); width: 24px; height: 24px; display: grid; place-items: center; margin-top: 2px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); font-size: 12px; }
+      .feedback-card { min-height: 0; }
+      .feedback-card.good { border-top: 3px solid var(--green); }
+      .feedback-card.later { border-top: 3px solid var(--faint); }
+      .closing { background: var(--ink); color: var(--paper); }
+      .closing h2 { color: white; }
+      .closing p { color: #cbc7bd; }
+      .checklist { margin-top: 20px; padding: 0; list-style: none; }
+      .checklist li { display: flex; gap: 11px; }
+      .checklist li::before { content: "✓"; color: #e98a64; font-weight: 700; }
+      footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--faint); font-size: 12px; }
+      footer a { text-decoration: none; }
+      footer a:hover { color: var(--ink); }
+      @media (max-width: 650px) {
+        .topbar-inner, main { width: min(100% - 30px, var(--page)); }
+        .topbar-inner { min-height: 56px; }
+        .back span { display: none; }
+        main { padding-top: 48px; }
+        .grid { grid-template-columns: 1fr; }
+        .card { min-height: 0; }
+        .callout, .toc, .rules, .steps, .closing { padding: 19px; }
+        footer { flex-direction: column; gap: 5px; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar" aria-label="Clear Mail guide navigation">
+      <div class="topbar-inner">
+        <a class="brand" href="/projects/clear-mail" aria-label="Clear Mail project page">
+          <span class="mail-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Clear Mail</span>
+        </a>
+        <a class="back" href="/projects/clear-mail"><span>Back to project</span><b aria-hidden="true">↗</b></a>
+      </div>
+    </nav>
+
+    <main>
+      <header>
+        <p class="eyebrow">The practical guide</p>
+        <h1>A calmer way to work with email.</h1>
+        <p class="subtitle">A simple, seven-day method for giving every message a clear state—and getting unfinished email out of your head.</p>
+        <div class="meta-row">
+          <span class="meta">7-day trial</span><span class="meta">4 folders</span><span class="meta">No apps or automation</span>
+        </div>
+      </header>
+
+      <section class="callout">
+        <div class="callout-title"><span class="icon">i</span><span>Before you begin</span></div>
+        <p>This is a practical manual for setting up Clear Mail yourself. You do not need an app, rules or automation.</p>
+        <p class="muted">Read it through once. Then create the four folders and use the system unchanged for one week.</p>
+      </section>
+
+      <section class="toc" aria-label="Guide contents">
+        <div class="label">On this page</div>
+        <div class="toc-row">
+          <a class="chip" href="#purpose">Purpose</a><a class="chip" href="#folders">Four folders</a><a class="chip" href="#rule">The rule</a><a class="chip" href="#routine">Daily routine</a><a class="chip" href="#trial">Seven days</a><a class="chip" href="#feedback">Feedback</a>
+        </div>
+      </section>
+
+      <section id="purpose">
+        <h2>1. The purpose</h2>
+        <p>Email rarely fails because it is badly organised. It fails because it creates <strong>mental accumulation</strong>: messages stay visible, decisions remain open and your mind keeps trying to remember what still needs attention.</p>
+        <blockquote>Clear Mail has one purpose: to stop email from living in your head.</blockquote>
+        <p class="muted">You are not going to organise your inbox. You are going to decide what each message means and bring it to a clear state.</p>
+      </section>
+
+      <section>
+        <h2>2. What Clear Mail is not</h2>
+        <ul><li>It is not Inbox Zero.</li><li>It is not a system of labels, rules or automation.</li><li>It does not turn email into a task manager.</li><li>It does not ask you to optimise everything.</li></ul>
+        <p class="muted">If you are looking for deep classification or sophisticated automation, this method is probably not for you.</p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>3. The central principle</h2>
+        <blockquote>Email is not organised.<br /><strong>Email is finished.</strong></blockquote>
+        <p class="muted">Finished does not mean resolved immediately. It means every message has a clear state outside the inbox.</p>
+      </section>
+
+      <section id="folders">
+        <h2>4. The four folders</h2>
+        <p class="muted">Together, these four states cover the messages that should not simply be archived.</p>
+        <div class="grid">
+          <article class="card"><div class="card-head"><span class="folder-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg></span><h3>Action Items</h3></div><p>Messages that require an action from you.</p><ul><li>Send a concrete reply</li><li>Make a call or share a document</li><li>Resolve something that is in your hands</li></ul><p>Once the action is complete, archive the message.</p></article>
+          <article class="card"><div class="card-head"><span class="folder-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h6"/></svg></span><h3>Read Later</h3></div><p>Messages worth your attention, but not now.</p><ul><li>Articles and reading</li><li>Long proposals</li><li>Messages that deserve unhurried attention</li></ul><p>They leave the inbox so you can choose when to read them.</p></article>
+          <article class="card"><div class="card-head"><span class="folder-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg></span><h3>Waiting On</h3></div><p>You have done your part and are waiting for something.</p><ul><li>A reply from someone else</li><li>A confirmation</li><li>A future date or event</li></ul><p>This removes the thought: “I must not forget that…”</p></article>
+          <article class="card"><div class="card-head"><span class="folder-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14v11H5zM7 5h10v3M9 12h6"/></svg></span><h3>Vault</h3></div><p>Important messages you may need months or years from now.</p><ul><li>Contracts and agreements</li><li>Key conversations</li><li>Critical information</li></ul><p>There should be few of these, but each one matters.</p></article>
+        </div>
+      </section>
+
+      <section id="rule" class="rules">
+        <h2>5. The one rule</h2>
+        <p>Every incoming message must do one of two things:</p>
+        <ul><li>Move to one of the four folders.</li><li>Be archived immediately.</li></ul>
+        <blockquote>The inbox is not a place.<br />It is a temporary state.</blockquote>
+      </section>
+
+      <section id="routine" class="steps">
+        <h2>6. The daily routine</h2>
+        <ol><li><span><strong>Open your inbox</strong> and process messages one at a time.</span></li><li><span><strong>Decide:</strong> Action, Read Later, Waiting On, Vault or Archive.</span></li><li><span><strong>Move or archive</strong> the message immediately.</span></li><li><span>Continue to the next message.</span></li></ol>
+        <p class="muted">Clear Mail works because it reduces decisions. Resist the temptation to make it more complex.</p>
+      </section>
+
+      <section id="trial" class="callout">
+        <div class="callout-title"><span class="icon">7</span><span>Use it unchanged for seven days</span></div>
+        <ul><li>Use the system every day.</li><li>Do not add more folders.</li><li>Do not adapt it halfway through the week.</li><li>Do not create exceptions that bring the noise back.</li></ul>
+        <p class="muted">The aim is not to prove that the system is perfect. It is to notice whether your mental load changes.</p>
+      </section>
+
+      <section id="feedback">
+        <h2>7. What to notice</h2>
+        <p class="muted">Useful feedback is not “I would build it differently.” It is what changed—or did not change—while you used it.</p>
+        <div class="grid">
+          <article class="card feedback-card good"><h3>Useful observations</h3><ul><li>Do you open email with less resistance?</li><li>Are fewer pending things living in your head?</li><li>Which folder do you use most, and why?</li><li>Which messages are still difficult to decide?</li></ul></article>
+          <article class="card feedback-card later"><h3>Ideas to save for later</h3><ul><li>Adding three more folders</li><li>Automating the system with rules</li><li>Comparing it with your existing system</li></ul><p>Those ideas may matter later. First, we want to understand the effect of the simple system.</p></article>
+        </div>
+      </section>
+
+      <section class="closing">
+        <h2>Your next three steps</h2>
+        <ul class="checklist"><li>Create the four folders today.</li><li>Use them for seven days without changing the system.</li><li>Reply to the email that brought you here with what you observed.</li></ul>
+        <p>If something does not fit or you get stuck, reply to that same email.</p>
+      </section>
+
+      <footer><span>This guide will evolve. The intention will not.</span><a href="/">Clear Studio</a></footer>
+    </main>
+  </body>
+</html>
