@@ -345,6 +345,41 @@ h1 {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.4;
 }
+.page-intro h1 span,
+.page-intro h1 em {
+  color: var(--muted);
+  font-style: normal;
+}
+.intro-note {
+  width: min(100%, 44rem);
+  margin: clamp(2.5rem, 6vw, 5rem) 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto) 1fr;
+  gap: 0.75rem 1.25rem;
+  align-items: start;
+}
+.intro-note > span {
+  padding-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.intro-note > p {
+  grid-column: 1/-1;
+  max-width: 37rem;
+  margin: 1rem 0 0 auto;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+.projects-intro,
+.journal-intro,
+.about-intro {
+  min-height: min(48rem, calc(100svh - 6rem));
+}
+.journal-intro em { color: #9b594b; }
+.about-intro span { color: #708478; }
 .page-section {
   padding-top: clamp(4rem, 8vw, 7rem);
 }
@@ -384,6 +419,108 @@ h1 {
 .project-placeholder .inline-link {
   grid-column: 1/-1;
 }
+.principles-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: clamp(2.5rem, 9vw, 8.125rem);
+}
+.principles-layout > h2 {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.principles-layout ol { margin: 0; padding: 0; list-style: none; }
+.principles-layout li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.principles-layout li:last-child { border-bottom: 1px solid var(--line); }
+.principles-layout li span { color: var(--muted); font-size: 0.75rem; }
+.principles-layout li p {
+  max-width: 34rem;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+/* Clear Mail — its own project identity within the Clear Studio frame. */
+.clear-mail-page {
+  --mail-ink: #37240d;
+  --mail-muted: #846d51;
+  --mail-paper: #f4e7d2;
+  --mail-orange: #e7782f;
+  color: var(--mail-ink);
+}
+.clear-mail-hero {
+  position: relative;
+  min-height: min(52rem, calc(100svh - 7.5rem));
+  margin: clamp(1.25rem, 3vw, 2.5rem) 0 clamp(4rem, 9vw, 8rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 76% 22%, rgb(255 255 255 / 58%), transparent 23%),
+    linear-gradient(140deg, #f7dfb1 0%, #f4bf73 48%, #e99545 100%);
+}
+.clear-mail-topline { display: flex; justify-content: space-between; font-size: 0.7rem; letter-spacing: .08em; text-transform: uppercase; }
+.clear-mail-title { position: relative; z-index: 2; align-self: end; }
+.clear-mail-title > p { margin-bottom: 1rem; font-size: 1rem; font-weight: 650; }
+.clear-mail-title h1 { max-width: 63rem; font-size: clamp(3.75rem, 9vw, 7.5rem); }
+.clear-mail-title h1 em { color: rgb(55 36 13 / 43%); font-style: normal; }
+.clear-mail-lede { position: relative; z-index: 2; max-width: 34rem; margin: 2rem 0 0 auto; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.45; }
+.mail-mark { position: absolute; top: 16%; right: 7%; width: clamp(13rem, 30vw, 25rem); aspect-ratio: 1; opacity: .62; transform: rotate(-8deg); }
+.mail-mark i { position: absolute; inset: 0; display: block; border: clamp(1rem, 2.2vw, 2rem) solid rgb(255 248 228 / 65%); border-radius: 50%; }
+.mail-mark i:nth-child(2) { inset: 18%; }
+.mail-mark i:nth-child(3) { inset: 36%; background: rgb(255 248 228 / 58%); }
+.mail-section {
+  padding: clamp(5rem, 12vw, 10rem) 0;
+  display: grid;
+  grid-template-columns: .65fr 1.75fr;
+  gap: clamp(2rem, 8vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+.mail-kicker { color: var(--mail-muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.mail-section h2,
+.mail-manifesto h2,
+.mail-flow > h2,
+.mail-cta h2 { margin-bottom: 2.25rem; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2.75rem, 6vw, 5.75rem); line-height: .98; letter-spacing: -.055em; }
+.mail-problem h2 span { color: var(--mail-muted); }
+.mail-problem > div > p,
+.mail-privacy > div > p { max-width: 41rem; color: var(--mail-muted); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; }
+.mail-problem strong { display: block; max-width: 36rem; margin-top: 3rem; padding-left: 1.25rem; border-left: 3px solid var(--mail-orange); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.45; }
+.mail-manifesto { margin-inline: calc(var(--page-padding) * -1); padding: clamp(6rem, 14vw, 12rem) var(--page-padding); color: #fff7ea; text-align: center; background: var(--mail-ink); }
+.mail-manifesto > p { margin-bottom: 3rem; color: #c6ac8b; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.mail-manifesto h2 { max-width: 62rem; margin-inline: auto; }
+.mail-manifesto span { color: #c6ac8b; }
+.mail-system h2 { margin-bottom: 1.5rem; }
+.mail-system-intro { max-width: 34rem; color: var(--mail-muted); font-size: 1.2rem; line-height: 1.5; }
+.mail-state-grid { margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.mail-state-grid article { min-height: 17rem; padding: 1.75rem; display: flex; flex-direction: column; border-radius: 1.25rem; background: var(--mail-paper); }
+.mail-state-grid article > span { color: var(--mail-muted); font-size: .72rem; }
+.mail-state-grid h3 { margin: auto 0 .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3vw, 2.5rem); font-weight: 400; letter-spacing: -.035em; }
+.mail-state-grid p { margin: 0; color: var(--mail-muted); line-height: 1.45; }
+.mail-flow { margin-inline: calc(var(--page-padding) * -1); padding: clamp(6rem, 13vw, 11rem) var(--page-padding); background: #eaa55c; }
+.mail-flow > h2 { max-width: 57rem; margin: 2rem 0 4rem; }
+.mail-flow ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgb(55 36 13 / 25%); }
+.mail-flow li { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid rgb(55 36 13 / 25%); }
+.mail-flow li span { font-size: .72rem; }
+.mail-flow li p { max-width: 48rem; margin: 0; font-size: clamp(1.25rem, 2.6vw, 2rem); letter-spacing: -.025em; }
+.mail-privacy { border-top: 0; }
+.mail-cta { margin-bottom: clamp(4rem, 8vw, 8rem); padding: clamp(4rem, 9vw, 8rem); color: #fff8ec; text-align: center; border-radius: 2rem; background: var(--mail-ink); }
+.mail-cta > p:first-child { color: #c6ac8b; font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; }
+.mail-cta h2 { max-width: 58rem; margin: 2rem auto; }
+.mail-cta > p { max-width: 36rem; margin: 0 auto 2.5rem; color: #c6ac8b; line-height: 1.55; }
+.mail-cta a { display: inline-flex; gap: 2rem; padding: 1rem 1.25rem; color: var(--mail-ink); background: #f0a256; border-radius: 999px; font-size: .9rem; }
+.project-back { display: inline-block; margin-bottom: 5rem; color: var(--muted); font-size: .85rem; }
 .legacy-email {
   --background: 240 10% 4%;
   --foreground: 0 0% 98%;
@@ -469,9 +606,19 @@ h1 {
   }
   .statement-layout,
   .about-layout,
-  .project-placeholder {
+  .project-placeholder,
+  .principles-layout,
+  .mail-section {
     grid-template-columns: 1fr;
   }
+  .intro-note { grid-template-columns: repeat(2, auto); }
+  .mail-section { gap: 2rem; }
+  .mail-state-grid { grid-template-columns: 1fr; }
+  .mail-state-grid article { min-height: 13rem; }
+  .clear-mail-hero { min-height: 42rem; border-radius: 1.25rem; }
+  .clear-mail-topline span:first-child { display: none; }
+  .mail-manifesto,
+  .mail-flow { margin-inline: calc(var(--page-padding) * -1); }
   .journal-entry {
     grid-template-columns: 1fr auto;
     gap: 0.75rem 1.25rem;

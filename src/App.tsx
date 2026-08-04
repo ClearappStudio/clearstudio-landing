@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
+import ClearMail from "@/pages/ClearMail";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
 import LegacyEmailLanding from "@/pages/LegacyEmailLanding";
@@ -14,6 +15,7 @@ const App = () => (
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/about" element={<About />} />
