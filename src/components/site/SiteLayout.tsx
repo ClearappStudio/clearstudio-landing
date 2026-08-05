@@ -4,6 +4,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 const navigation = [
   { label: "Home", to: "/" },
   { label: "Projects", to: "/projects" },
+  { label: "Studies", to: "/studies" },
   { label: "Journal", to: "/journal" },
   { label: "About", to: "/about" },
 ];
@@ -56,8 +57,7 @@ export function SiteLayout() {
           <p className="footer-wordmark">Clear Studio</p>
           <div className="footer-address">
             <span>Madrid / Working everywhere</span>
-            <span>Independent since 2026</span>
-            <span>© Clear Studio</span>
+            <span>Independent since 2026 · © Clear Studio</span>
           </div>
         </footer>
       </div>
