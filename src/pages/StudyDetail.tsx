@@ -23,6 +23,13 @@ export default function StudyDetail() {
         <p className="eyebrow">Observation 01</p>
         <p className="study-statement">{study.name} is calm without disappearing. It can hold a large surface, support concentrated work and still give an interface a recognisable point of view.</p>
       </section>
+      <section className="study-composition" aria-label={`${study.name} visual composition`}>
+        <div className="study-composition__index"><span>Form / 01</span><span>{study.value}</span></div>
+        <div className="study-composition__field" aria-hidden="true">
+          <i /><i /><i /><i />
+        </div>
+        <p>Not a colour chip, but an atmosphere: tested at scale, beside type, and in tension with light and dark.</p>
+      </section>
       <section className="study-palette" aria-labelledby="palette-heading">
         <div className="study-section-heading"><p className="eyebrow">Palette / 01</p><h2 id="palette-heading">A small working family.</h2></div>
         <div className="palette-grid">{study.palette.map((colour) => <div className="palette-swatch" style={{ backgroundColor: colour.value }} key={colour.value}><span>{colour.name}</span><span>{colour.value}</span></div>)}</div>

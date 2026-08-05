@@ -43,6 +43,12 @@ export function ProjectIndex() {
       </div>
 
       <div className="project-index-list" aria-live="polite">
+        <div className="project-index-columns" aria-hidden="true">
+          <span>Project</span>
+          <span>Field</span>
+          <span>Status</span>
+          <span />
+        </div>
         {visibleProjects.map((project) => (
           <Link
             className={`project-index-row project-index-row--${project.type.toLowerCase()}`}
