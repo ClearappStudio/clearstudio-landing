@@ -90,3 +90,70 @@ export const journalEntries: JournalEntry[] = [
 
   return upcomingDifference || b.sortDate.localeCompare(a.sortDate);
 });
+
+export type ColourStudy = {
+  slug: string;
+  number: string;
+  name: string;
+  value: string;
+  className: string;
+  note: string;
+  status: string;
+  field: string;
+  started: string;
+  palette: { name: string; value: string }[];
+};
+
+export const colourStudies: ColourStudy[] = [
+  {
+    slug: "quiet-blue",
+    number: "No. 001",
+    name: "Quiet Blue",
+    value: "#6D8FB8",
+    className: "quiet-blue",
+    note: "A blue that leaves room for thought.",
+    status: "Ongoing study",
+    field: "Interfaces / digital spaces",
+    started: "August 2026",
+    palette: [
+      { name: "Quiet Blue", value: "#6D8FB8" },
+      { name: "Deep Thought", value: "#10253F" },
+      { name: "Pale Air", value: "#DCE7F1" },
+      { name: "Warm Paper", value: "#F2EFE7" },
+    ],
+  },
+  {
+    slug: "soft-signal",
+    number: "No. 002",
+    name: "Soft Signal",
+    value: "#E98552",
+    className: "soft-signal",
+    note: "Warm enough to guide, never to shout.",
+    status: "Early study",
+    field: "Signals / wayfinding",
+    started: "August 2026",
+    palette: [
+      { name: "Soft Signal", value: "#E98552" },
+      { name: "Burnt Note", value: "#472514" },
+      { name: "Apricot Air", value: "#F4C8AC" },
+      { name: "Warm Paper", value: "#F2EFE7" },
+    ],
+  },
+  {
+    slug: "new-leaf",
+    number: "No. 003",
+    name: "New Leaf",
+    value: "#91AE83",
+    className: "new-leaf",
+    note: "A useful green with a little optimism.",
+    status: "Early study",
+    field: "Software / calm states",
+    started: "August 2026",
+    palette: [
+      { name: "New Leaf", value: "#91AE83" },
+      { name: "Forest Type", value: "#19321D" },
+      { name: "Soft Growth", value: "#D8E4D2" },
+      { name: "Warm Paper", value: "#F2EFE7" },
+    ],
+  },
+];
