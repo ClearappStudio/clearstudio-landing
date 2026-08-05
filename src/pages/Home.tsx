@@ -1,32 +1,40 @@
 import { Link } from "react-router-dom";
 import { JournalList } from "@/components/site/JournalList";
 import { ProjectGrid } from "@/components/site/ProjectGrid";
+import { ColorStudies } from "@/components/site/ColorStudies";
 
 export default function Home() {
   return (
     <>
-      <section className="hero" aria-labelledby="hero-title">
+      <section className="hero editorial-hero" aria-labelledby="hero-title">
         <div>
-          <p className="eyebrow">Independent digital studio</p>
+          <p className="eyebrow">Clear Studio / Madrid / 2026</p>
           <h1 id="hero-title">
-            Reducing unnecessary complexity in digital life.
+            Ideas for a clearer<br />digital life.
           </h1>
         </div>
         <p className="hero-copy">
-          Sometimes through software. Sometimes through design.{" "}
+          We make software, systems, designs and ideas.{" "}
           <span>
-            Sometimes simply through an idea that changes how we think.
+            Different forms, held together by the same intention: less friction, more meaning.
           </span>
         </p>
       </section>
       <section className="section" aria-labelledby="projects-heading">
         <div className="section-heading">
-          <h2 id="projects-heading">Selected projects</h2>
+          <h2 id="projects-heading">Featured</h2>
           <Link className="section-link" to="/projects">
             View all projects <span aria-hidden="true">↗</span>
           </Link>
         </div>
         <ProjectGrid />
+      </section>
+      <section className="section colour-section" aria-labelledby="colour-heading">
+        <div className="section-heading colour-heading">
+          <div><p className="eyebrow">Studio studies / 001—003</p><h2 id="colour-heading">Studies in colour</h2></div>
+          <p>Small investigations into the colours that shape our objects, interfaces and everyday digital spaces.</p>
+        </div>
+        <ColorStudies />
       </section>
       <section className="section" aria-labelledby="why-heading">
         <div className="statement-layout">

@@ -53,20 +53,11 @@ export function SiteLayout() {
           <Outlet />
         </main>
         <footer className="site-footer">
-          <div className="footer-main">
-            <p>Software, design and ideas for a clearer digital life.</p>
-            <nav className="footer-nav" aria-label="Footer navigation">
-              {navigation.map((item) => (
-                <NavLink key={item.to} to={item.to}>
-                  {item.label}
-                </NavLink>
-              ))}
-              <a href="mailto:hello@clearstudio.app">Contact</a>
-            </nav>
-          </div>
-          <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Clear Studio</span>
-            <span>Made with intention.</span>
+          <p className="footer-wordmark">Clear Studio</p>
+          <div className="footer-address">
+            <span>Madrid / Working everywhere</span>
+            <span>Independent since 2026</span>
+            <span>© Clear Studio</span>
           </div>
         </footer>
       </div>
