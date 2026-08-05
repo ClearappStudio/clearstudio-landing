@@ -30,7 +30,7 @@ function QuietBlueStudy() {
     <article className="qb-study">
       <section className="qb-hero">
         <div className="qb-hero-nav"><Link to="/studies">← All studies</Link><span>Studio Study No. 001</span></div>
-        <div className="qb-hero-inner"><p className="qb-eyebrow">Quiet Blue · Version 2</p><h1>Quiet<br />Blue</h1><p>A visual study of colour, attention and the spaces an interface leaves behind.</p></div>
+        <div className="qb-hero-inner"><h1>Quiet<br />Blue</h1><p>A visual study of colour, attention and the spaces an interface leaves behind.</p></div>
         <span className="qb-scroll">Begin</span>
       </section>
 
