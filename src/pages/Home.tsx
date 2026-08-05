@@ -52,7 +52,7 @@ export default function Home() {
             Visit the Journal <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        <JournalList />
+        <JournalList limit={3} />
       </section>
     </>
   );

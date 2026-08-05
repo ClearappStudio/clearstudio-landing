@@ -4,6 +4,7 @@ import About from "@/pages/About";
 import ClearMail from "@/pages/ClearMail";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
+import JournalEntry from "@/pages/JournalEntry";
 import LegacyEmailLanding from "@/pages/LegacyEmailLanding";
 import ProjectDetail from "@/pages/ProjectDetail";
 import Projects from "@/pages/Projects";
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/journal" element={<Journal />} />
+        <Route path="/journal/:entrySlug" element={<JournalEntry />} />
         <Route path="/about" element={<About />} />
       </Route>
       <Route path="/clear-mail-preview" element={<LegacyEmailLanding />} />
