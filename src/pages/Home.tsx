@@ -32,7 +32,7 @@ export default function Home() {
       <section className="section colour-section" aria-labelledby="colour-heading">
         <div className="section-heading colour-heading">
           <div><p className="eyebrow">Studio studies / 001—003</p><h2 id="colour-heading">Studies in colour</h2></div>
-          <p>Small investigations into the colours that shape our objects, interfaces and everyday digital spaces.</p>
+          <div className="colour-heading-copy"><p>Small investigations into the colours that shape our objects, interfaces and everyday digital spaces.</p><Link className="section-link" to="/studies">View all studies ↗</Link></div>
         </div>
         <ColorStudies />
       </section>
