@@ -700,6 +700,10 @@ h1 {
 .about-section-heading > .eyebrow {
   margin-bottom: 0;
 }
+.about-opening > .eyebrow { color: #548b71; }
+.about-section-heading > .eyebrow { color: #c66e28; }
+.about-origin > .eyebrow { color: #a64f82; }
+.about-closing > .eyebrow { color: #426da2; }
 .about-lead,
 .about-character h2,
 .about-origin h2,
@@ -749,6 +753,8 @@ h1 {
 .about-closing h2 span {
   color: var(--muted);
 }
+.about-section-heading h2 span { color: #c66e28; }
+.about-closing h2 span { color: #426da2; }
 .practice-list {
   border-top: 1px solid var(--line);
 }
@@ -794,19 +800,14 @@ h1 {
   line-height: 1.5;
 }
 .about-character {
+  margin-inline: calc(var(--page-padding) * -1);
+  padding-inline: var(--page-padding);
   padding-block: clamp(7rem, 15vw, 13rem);
-  color: #f4f0e7;
+  color: #261a11;
+  background:
+    radial-gradient(circle at 82% 16%, rgb(255 240 205 / 58%), transparent 27rem),
+    #e5a15d;
   border-top: 0;
-}
-.about-character::before {
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  left: 0;
-  height: 100%;
-  margin-top: calc(clamp(7rem, 15vw, 13rem) * -1);
-  background: #19221e;
-  content: "";
 }
 .about-character {
   position: relative;
@@ -814,17 +815,17 @@ h1 {
 }
 .about-character > .eyebrow,
 .about-character .about-copy-columns p {
-  color: #aeb8b1;
+  color: #6f4425;
 }
 .about-character h2 span {
-  color: #829389;
+  color: #fff0d2;
 }
 .about-origin h2 {
   font-size: clamp(2.75rem, 5.6vw, 5.5rem);
 }
 .about-origin-copy {
   max-width: 43rem;
-  margin: clamp(3rem, 6vw, 5rem) 0 0 auto;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
   display: grid;
   gap: 1.5rem;
 }
