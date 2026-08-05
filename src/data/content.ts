@@ -57,6 +57,7 @@ export type JournalEntry = {
   title: string;
   date: string;
   sortDate: string;
+  upcomingOrder?: number;
   excerpt?: string;
 };
 
@@ -75,11 +76,17 @@ export const journalEntries: JournalEntry[] = [
     title: "Introducing Context-first Computing",
     date: "Coming soon",
     sortDate: "0000-00-00",
+    upcomingOrder: 2,
   },
   {
     type: "Process",
     title: "Designing the first wallpaper collection",
     date: "Coming soon",
     sortDate: "0000-00-00",
+    upcomingOrder: 1,
   },
-].sort((a, b) => b.sortDate.localeCompare(a.sortDate));
+].sort((a, b) => {
+  const upcomingDifference = (b.upcomingOrder ?? 0) - (a.upcomingOrder ?? 0);
+
+  return upcomingDifference || b.sortDate.localeCompare(a.sortDate);
+});
