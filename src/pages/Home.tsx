@@ -31,8 +31,8 @@ export default function Home() {
       </section>
       <section className="section colour-section" aria-labelledby="colour-heading">
         <div className="section-heading colour-heading">
-          <div><p className="eyebrow">Studio studies / 001—003</p><h2 id="colour-heading">Studies in colour</h2></div>
-          <div className="colour-heading-copy"><p>Small investigations into the colours that shape our objects, interfaces and everyday digital spaces.</p><Link className="section-link" to="/studies">View all studies ↗</Link></div>
+          <div><p className="eyebrow">Studio study / 001</p><h2 id="colour-heading">A colour,<br />under study.</h2></div>
+          <div className="colour-heading-copy"><p>Occasional investigations into the colours that shape our objects, interfaces and everyday digital spaces.</p><Link className="section-link" to="/studies">Explore the archive ↗</Link></div>
         </div>
         <ColorStudies />
       </section>
