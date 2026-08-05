@@ -683,6 +683,172 @@ h1 {
   letter-spacing: -0.035em;
 }
 
+/* About — the studio stays central; its people provide context, not identity. */
+.about-opening,
+.about-character,
+.about-origin,
+.about-closing {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  align-items: start;
+  gap: clamp(2.5rem, 9vw, 8.125rem);
+}
+.about-opening > .eyebrow,
+.about-character > .eyebrow,
+.about-origin > .eyebrow,
+.about-closing > .eyebrow,
+.about-section-heading > .eyebrow {
+  margin-bottom: 0;
+}
+.about-opening > .eyebrow { color: #548b71; }
+.about-section-heading > .eyebrow { color: #c66e28; }
+.about-origin > .eyebrow { color: #a64f82; }
+.about-closing > .eyebrow { color: #426da2; }
+.about-lead,
+.about-character h2,
+.about-origin h2,
+.about-closing h2,
+.about-section-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -0.048em;
+}
+.about-lead {
+  max-width: 50rem;
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+}
+.about-copy-columns {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+.about-copy-columns p,
+.about-origin-copy p,
+.about-closing > div > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.58;
+}
+.about-practices {
+  padding-bottom: clamp(6.5rem, 14vw, 12rem);
+}
+.about-section-heading {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  align-items: start;
+  gap: clamp(2.5rem, 9vw, 8.125rem);
+  margin-bottom: clamp(4.5rem, 9vw, 8rem);
+}
+.about-section-heading h2,
+.about-character h2,
+.about-closing h2 {
+  font-size: clamp(3rem, 6.4vw, 6.5rem);
+}
+.about-section-heading h2 span,
+.about-character h2 span,
+.about-closing h2 span {
+  color: var(--muted);
+}
+.about-section-heading h2 span { color: #c66e28; }
+.about-closing h2 span { color: #426da2; }
+.practice-list {
+  border-top: 1px solid var(--line);
+}
+.practice-row {
+  --practice-accent: #7b817d;
+  display: grid;
+  grid-template-columns: 4rem minmax(10rem, 0.75fr) 1.25fr;
+  align-items: baseline;
+  gap: clamp(1rem, 4vw, 4rem);
+  padding-block: clamp(1.75rem, 4vw, 3.25rem);
+  border-bottom: 1px solid var(--line);
+}
+.practice-row--software { --practice-accent: #548b71; }
+.practice-row--systems { --practice-accent: #d78435; }
+.practice-row--designs { --practice-accent: #b06491; }
+.practice-row--ideas { --practice-accent: #426da2; }
+.practice-number {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.practice-row h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.practice-row h3 i {
+  width: 0.58rem;
+  height: 0.58rem;
+  flex: 0 0 auto;
+  background: var(--practice-accent);
+  border-radius: 50%;
+}
+.practice-row p {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.5;
+}
+.about-character {
+  margin-inline: calc(var(--page-padding) * -1);
+  padding-inline: var(--page-padding);
+  padding-block: clamp(7rem, 15vw, 13rem);
+  color: #261a11;
+  background:
+    radial-gradient(circle at 82% 16%, rgb(255 240 205 / 58%), transparent 27rem),
+    #e5a15d;
+  border-top: 0;
+}
+.about-character {
+  position: relative;
+  z-index: 0;
+}
+.about-character > .eyebrow,
+.about-character .about-copy-columns p {
+  color: #6f4425;
+}
+.about-character h2 span {
+  color: #fff0d2;
+}
+.about-origin h2 {
+  font-size: clamp(2.75rem, 5.6vw, 5.5rem);
+}
+.about-origin-copy {
+  max-width: 43rem;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  display: grid;
+  gap: 1.5rem;
+}
+.about-closing > div > p {
+  max-width: 38rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.about-closing nav {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+}
+.about-closing nav a {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.875rem;
+  transition: opacity 0.2s ease;
+}
+.about-closing nav a:hover {
+  opacity: 0.55;
+}
+
 /* Clear Mail — its own project identity within the Clear Studio frame. */
 .clear-mail-page {
   --mail-ink: #37240d;
@@ -859,10 +1025,22 @@ h1 {
   }
   .statement-layout,
   .about-layout,
+  .about-opening,
+  .about-character,
+  .about-origin,
+  .about-closing,
+  .about-section-heading,
   .project-placeholder,
   .principles-layout,
   .mail-section {
     grid-template-columns: 1fr;
+  }
+  .about-copy-columns {
+    grid-template-columns: 1fr;
+  }
+  .practice-row {
+    grid-template-columns: 2rem minmax(8rem, 0.7fr) 1.3fr;
+    gap: 1rem;
   }
   .intro-note { grid-template-columns: repeat(2, auto); }
   .projects-index-heading {
@@ -941,6 +1119,12 @@ h1 {
   }
   .footer-bottom {
     flex-direction: column;
+  }
+  .practice-row {
+    grid-template-columns: 1.5rem 1fr;
+  }
+  .practice-row p {
+    grid-column: 2;
   }
 }
 @media (prefers-reduced-motion: reduce) {
