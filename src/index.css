@@ -82,7 +82,7 @@ button {
   margin-inline: calc(var(--page-padding) * -1);
   padding-inline: var(--page-padding);
   color: #102133;
-  background: #edf3f7;
+  background: #dce7f1;
   border-bottom: 0;
 }
 .brand {
@@ -1381,7 +1381,7 @@ body { background: var(--background); }
 .qb-study { --qb-ink: #102133; --qb-muted: #5f7182; margin-inline: calc(var(--page-padding) * -1); color: var(--qb-ink); background: #f7fafc; overflow: hidden; }
 .qb-study h1, .qb-study h2, .qb-study h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .qb-eyebrow { margin: 0; font-size: .68rem; letter-spacing: .17em; text-transform: uppercase; }
-.qb-hero { position: relative; min-height: calc(100svh - 5.25rem); padding: clamp(1.5rem, 4vw, 3.5rem); display: grid; place-items: center; background: radial-gradient(circle at 55% 42%, rgb(255 255 255 / 85%), transparent 24%), linear-gradient(145deg, #edf3f7, #b9cfdf); }
+.qb-hero { position: relative; min-height: calc(100svh - 5.25rem); padding: clamp(1.5rem, 4vw, 3.5rem); display: grid; place-items: center; background: #dce7f1; }
 .qb-hero::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgb(255 255 255 / 12%) 1px, transparent 1px); background-size: 100% 8px; opacity: .18; pointer-events: none; }
 .qb-hero-nav { position: absolute; z-index: 2; inset: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) auto; display: flex; justify-content: space-between; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
 .qb-hero-nav a { padding-bottom: .3rem; border-bottom: 1px solid currentColor; }
