@@ -23,10 +23,23 @@ export default function ClearMail() {
         <div className="clear-mail-topline"><span>Clear Studio / System 01</span><span>Private beta</span></div>
         <div className="clear-mail-title">
           <div className="clear-mail-wordmark"><MailMark className="clear-mail-wordmark-symbol" /><h1>Clear Mail</h1></div>
-          <h2>Email is not something to organise.<br /><em>It is something to finish.</em></h2>
+          <h2>Email should end<br />in a <em>decision.</em></h2>
+        </div>
+        <div className="mail-console" aria-label="An illustration of the Clear Mail system">
+          <div className="mail-console-bar"><span>Clear Mail</span><i /><i /><i /></div>
+          <div className="mail-console-body">
+            <nav><b>Inbox</b><span>Action items</span><span>Read later</span><span>Waiting on</span><span>Vault</span></nav>
+            <div className="mail-console-list"><p><span>Today</span><span>Decision</span></p><i /><i /><i /><i /></div>
+          </div>
         </div>
         <p className="clear-mail-lede">A simple system that turns your inbox into clear decisions—and gives your attention somewhere better to go.</p>
       </header>
+
+      <dl className="mail-facts">
+        <div><dt>System status</dt><dd>Private beta</dd></div>
+        <div><dt>Method</dt><dd>Decide / Defer / Archive</dd></div>
+        <div><dt>Format</dt><dd>Guide and practice</dd></div>
+      </dl>
 
       <section className="mail-section mail-problem">
         <p className="mail-kicker">01 / The problem</p>
