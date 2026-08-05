@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <ProjectGrid />
       </section>
-      <section className="colour-section" aria-labelledby="colour-heading">
+      <section className="colour-section" aria-label="Quiet Blue colour study">
         <ColorStudies />
       </section>
       <section className="section" aria-labelledby="why-heading">
