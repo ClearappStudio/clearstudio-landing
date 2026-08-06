@@ -414,6 +414,11 @@ h1 {
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
+.projects-intro .intro-note > p {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
 .projects-intro,
 .journal-intro,
 .about-intro {
