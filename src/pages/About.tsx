@@ -79,7 +79,7 @@ export default function About() {
       <section className="section about-origin" aria-labelledby="origin-heading">
         <p className="eyebrow">The beginning</p>
         <div>
-          <h2 id="origin-heading">Founded by<br />Francisco Olmedo.</h2>
+          <h2 id="origin-heading">Built from a need<br />for clarity.</h2>
           <div className="about-origin-copy">
             <p>Clear Studio was founded in Madrid by Francisco Olmedo, a software and technology consultant with more than fifteen years of experience designing digital systems for organisations.</p>
             <p>The studio grew from a desire to explore a different kind of work: smaller in scale, broader in form and guided by clarity rather than convention. Its identity, however, belongs to the work—and to the collaborations that make that work possible.</p>
