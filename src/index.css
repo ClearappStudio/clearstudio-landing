@@ -414,7 +414,8 @@ h1 {
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
-.projects-intro .intro-note > p {
+.projects-intro .intro-note > p,
+.journal-intro .intro-note > p {
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
   line-height: 1.35;
   letter-spacing: -0.025em;
@@ -1237,7 +1238,8 @@ body { background: var(--background); }
 .page-intro { min-height: min(49rem, calc(100svh - 5.25rem)); }
 .page-intro h1 { font-size: clamp(4.4rem, 10vw, 9.2rem); line-height: .84; }
 .projects-intro h1 span { color: #6d8fb8; }
-.projects-intro { min-height: calc(100svh + 1rem); }
+.projects-intro,
+.journal-intro { min-height: calc(100svh + 1rem); }
 .journal-intro em { color: #d46f45; }
 .about-intro span { color: #718e68; }
 .project-filters button { border-radius: 0; }
