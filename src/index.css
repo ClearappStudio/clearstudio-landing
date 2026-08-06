@@ -1370,7 +1370,11 @@ body { background: var(--background); }
 @media (max-width: 48.75rem) {
   .editorial-hero h1, .page-intro h1 { font-size: clamp(4rem, 18vw, 7rem); }
   .project-grid { grid-template-columns: 1fr; gap: .75rem; }
-  .project-card:nth-child(3), .project-card:nth-child(4) { grid-column: auto; grid-row: auto; }
+  .project-card,
+  .project-card--wide,
+  .project-card--narrow,
+  .project-card:nth-child(3),
+  .project-card:nth-child(4) { grid-column: 1; grid-row: auto; }
   .project-card { min-height: 18rem; }
   .project-mail-visual { width: 45%; }
   .project-card--mail .project-copy { max-width: 48%; }
