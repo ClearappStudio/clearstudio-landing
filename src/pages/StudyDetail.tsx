@@ -124,12 +124,45 @@ function SoftSignalStudy() {
   );
 }
 
+function NewLeafStudy() {
+  const pairings = [
+    ["Warm Paper", "#F3EFE7"],
+    ["Forest Tone", "#173820"],
+    ["Clay", "#D77A5D"],
+    ["Mist Blue", "#BFD7E4"],
+    ["Soft Lavender", "#C7C3D6"],
+  ];
+
+  return (
+    <article className="nl-study">
+      <section className="nl-hero">
+        <div className="nl-container">
+          <div className="nl-hero-top"><Link to="/studies">← All studies</Link><span>No. 003</span></div>
+          <div className="nl-hero-main"><div><p className="nl-label">Colour study</p><h1>New Leaf</h1></div><p>A useful green with a little optimism.</p></div>
+        </div>
+        <dl className="nl-meta"><div><dt>Status</dt><dd>Early study</dd></div><div><dt>Field</dt><dd>Software / calm states</dd></div><div><dt>Started</dt><dd>August 2026</dd></div><div><dt>Primary value</dt><dd>#91AE83</dd></div></dl>
+      </section>
+
+      <section className="nl-section"><div className="nl-container nl-essence"><div><p className="nl-index">01 · Essence</p><h2>Not loud.<br />Not passive.<br /><em>Alive.</em></h2><p className="nl-lede">New Leaf sits between nature and interface. It brings freshness without brightness, growth without urgency. It is the colour of quiet progress and clear intentions.</p></div><div className="nl-art" aria-hidden="true"><i /><i /><i /><i /></div></div></section>
+
+      <section className="nl-atmosphere"><div className="nl-photo" aria-hidden="true" /><div className="nl-panel"><p className="nl-index">02 · Atmosphere</p><h3>Feels like:</h3>{["Morning light", "Fresh air", "New starts", "Steady growth", "Clear mind"].map((feeling) => <p key={feeling}>{feeling}</p>)}</div><div className="nl-panel nl-depth"><p className="nl-index">03 · Depth</p><div className="nl-scale">{["#CAD9C2", "#A6BD98", "#7D9A6F", "#4D6E4D", "#173820"].map((colour) => <i style={{ backgroundColor: colour }} key={colour} />)}</div><p className="nl-lede">It changes character with depth. Lighter tints feel airy and open. Darker tones bring stability and focus.</p></div></section>
+
+      <section className="nl-section"><div className="nl-container nl-interface"><div><p className="nl-index">04 · In interface</p><h2>Supports,<br />never competes.</h2><p className="nl-lede">New Leaf works beautifully for states of success, confirmation, calm progress and gentle encouragement.</p></div><div className="nl-cards">{[["Subtle background", "#ECE9E2"], ["Reassuring highlight", "#D7E4D1"], ["Positive action", "#91AE83"]].map(([title, colour]) => <article key={title}><h3>{title}</h3><p>Everything good.</p><span style={{ backgroundColor: colour }}>Continue</span></article>)}</div></div></section>
+
+      <section className="nl-section"><div className="nl-container"><p className="nl-index nl-index--spaced">05 · Colour pairings</p><div className="nl-pairings">{pairings.map(([name, colour]) => <div key={name}><div><i /><i style={{ backgroundColor: colour }} /></div><strong>{name}</strong></div>)}</div></div></section>
+
+      <section className="nl-section"><div className="nl-container nl-proportion"><div><p className="nl-index">06 · Proportion</p><h2>Let green lead,<br />with room to breathe.</h2></div><div className="nl-bar"><span>60%</span><span>25%</span><span>10%</span><span>5%</span></div></div></section>
+    </article>
+  );
+}
+
 export default function StudyDetail() {
   const { studySlug } = useParams();
   const study = colourStudies.find((item) => item.slug === studySlug);
   if (!study) return <Navigate to="/studies" replace />;
   if (study.slug === "quiet-blue") return <QuietBlueStudy />;
   if (study.slug === "soft-signal") return <SoftSignalStudy />;
+  if (study.slug === "new-leaf") return <NewLeafStudy />;
 
   return (
     <article className={`study-page study-page--${study.className}`}>

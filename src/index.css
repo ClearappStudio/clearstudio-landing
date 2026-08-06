@@ -1522,6 +1522,41 @@ body { background: var(--background); }
 @media (max-width: 35rem) {
   .ss-container { width:calc(100% - 2rem); }.ss-hero-top { padding:2rem 0 5rem; }.ss-hero h1 { font-size:4.75rem; }.ss-meta,.ss-impact-grid,.ss-uses,.ss-palette,.ss-pairings { grid-template-columns:1fr; }.ss-tints { grid-template-columns:1fr; }.ss-tints div { min-height:6.8rem; }.ss-meta > div,.ss-uses > div { border-right:0; border-bottom:1px solid var(--ss-line); }.ss-balance,.ss-balance-notes { grid-template-columns:1fr; }
 }
+
+/* New Leaf — Studio Study No. 003. */
+.nl-study { --nl-paper:#f4f1ea; --nl-ink:#15321d; --nl-muted:#5f6d5c; --nl-line:rgb(21 50 29 / 15%); --nl-green:#91ae83; --nl-deep:#173820; margin-inline:calc(var(--page-padding) * -1); color:var(--nl-ink); background:var(--nl-paper); overflow:hidden; }
+.nl-study h1,.nl-study h2,.nl-study h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
+.nl-container { width:min(87.5rem,calc(100% - 3rem)); margin-inline:auto; }
+.nl-hero { background:linear-gradient(rgb(145 174 131 / 78%),rgb(145 174 131 / 78%)),radial-gradient(circle at 80% 20%,rgb(23 56 32 / 25%),transparent 20%); }
+.nl-hero-top { padding:2.9rem 0 6.9rem; display:flex; justify-content:space-between; font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; }
+.nl-hero-top a { padding-bottom:.3rem; border-bottom:1px solid currentColor; }
+.nl-hero-main { padding-bottom:3rem; display:grid; grid-template-columns:1.2fr .8fr; gap:3.75rem; align-items:end; }
+.nl-label,.nl-index { margin:0; font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; }
+.nl-hero-main .nl-label { margin-bottom:1.25rem; }
+.nl-hero h1 { margin:0; font-size:clamp(4.75rem,12vw,10.6rem); line-height:.82; letter-spacing:-.06em; }
+.nl-hero-main > p { max-width:26rem; margin:0; font-size:1.125rem; line-height:1.5; }
+.nl-meta { margin:0; display:grid; grid-template-columns:repeat(4,1fr); background:rgb(255 255 255 / 30%); border-top:1px solid rgb(21 50 29 / 20%); }
+.nl-meta > div { padding:1.45rem; border-right:1px solid var(--nl-line); }.nl-meta > div:last-child { border-right:0; }
+.nl-meta dt { margin-bottom:.65rem; color:#53654f; font-size:.57rem; letter-spacing:.15em; text-transform:uppercase; }.nl-meta dd { margin:0; font-weight:600; }
+.nl-section { padding:clamp(5.5rem,8.5vw,8rem) 0; border-bottom:1px solid var(--nl-line); }
+.nl-essence,.nl-interface { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(3rem,6vw,5rem); }
+.nl-study h2 { margin:1.35rem 0 1.75rem; font-size:clamp(3rem,6vw,5.5rem); line-height:.95; letter-spacing:-.045em; }
+.nl-study h2 em { font-weight:400; }.nl-lede { max-width:42rem; color:var(--nl-muted); font-size:1.25rem; line-height:1.6; }
+.nl-art { position:relative; min-height:27rem; background:linear-gradient(145deg,#cfdcc7,#9eb68f); overflow:hidden; }.nl-art i { position:absolute; display:block; }
+.nl-art i:nth-child(1) { left:8%; top:14%; width:34%; height:42%; background:#a9c88e; border-radius:80% 0 80% 0; transform:rotate(-26deg); }.nl-art i:nth-child(2) { right:19%; top:28%; width:20%; aspect-ratio:1; background:#2e5b34; border-radius:50%; }.nl-art i:nth-child(3) { left:22%; bottom:12%; width:58%; height:14%; background:var(--nl-deep); }.nl-art i:nth-child(4) { right:7%; top:18%; width:18%; height:62%; background:#efede5; }
+.nl-atmosphere { display:grid; grid-template-columns:.8fr .6fr 1.4fr; border-bottom:1px solid var(--nl-line); }.nl-photo { min-height:25rem; background:linear-gradient(rgb(216 228 210 / 40%),rgb(216 228 210 / 40%)),radial-gradient(ellipse at 55% 50%,rgb(23 56 32 / 24%) 0 10%,transparent 11%),linear-gradient(145deg,#d9e4d4,#b8cba8); }
+.nl-panel { padding:2.25rem; border-left:1px solid var(--nl-line); }.nl-panel h3 { margin:2rem 0 1.5rem; font-size:2rem; }.nl-panel > p:not(.nl-index):not(.nl-lede) { margin:.75rem 0; }
+.nl-depth { display:flex; flex-direction:column; }.nl-scale { min-height:5.6rem; margin:2rem 0 1.5rem; display:grid; grid-template-columns:repeat(5,1fr); }.nl-scale i { display:block; }.nl-depth .nl-lede { margin-top:auto; }
+.nl-interface { grid-template-columns:.8fr 1.2fr; }.nl-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }.nl-cards article { min-height:14rem; padding:1.15rem; display:flex; flex-direction:column; border:1px solid var(--nl-line); background:#faf8f2; }.nl-cards h3 { margin:0; font-size:1.3rem; }.nl-cards p { color:var(--nl-muted); }.nl-cards span { margin-top:auto; padding:.7rem; border-radius:.4rem; text-align:center; }
+.nl-index--spaced { margin-bottom:1.5rem; }.nl-pairings { display:grid; grid-template-columns:repeat(5,1fr); gap:1.1rem; }.nl-pairings > div > div { height:5.6rem; margin-bottom:.75rem; display:grid; grid-template-columns:1fr 1fr; }.nl-pairings i { display:block; background:var(--nl-green); }.nl-pairings strong { font-weight:500; }
+.nl-proportion { display:grid; grid-template-columns:.8fr 1.2fr; gap:4rem; align-items:center; }.nl-bar { min-height:6.9rem; display:grid; grid-template-columns:60fr 25fr 10fr 5fr; }.nl-bar span { padding:.9rem; }.nl-bar span:nth-child(1) { background:var(--nl-green); }.nl-bar span:nth-child(2) { background:#e7e4dc; }.nl-bar span:nth-child(3) { color:white; background:var(--nl-deep); }.nl-bar span:nth-child(4) { background:#d7b8ac; }
+
+@media (max-width: 56.25rem) {
+  .nl-hero-main,.nl-essence,.nl-interface,.nl-proportion { grid-template-columns:1fr; }.nl-hero-main { gap:2.5rem; }.nl-meta { grid-template-columns:1fr 1fr; }.nl-atmosphere { grid-template-columns:1fr; }.nl-panel { border-left:0; border-top:1px solid var(--nl-line); }.nl-cards { grid-template-columns:1fr; }.nl-pairings { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 35rem) {
+  .nl-container { width:calc(100% - 2rem); }.nl-hero-top { padding:2rem 0 5rem; }.nl-hero h1 { font-size:4.75rem; }.nl-meta,.nl-pairings { grid-template-columns:1fr; }.nl-meta > div { border-right:0; border-bottom:1px solid var(--nl-line); }.nl-meta > div:last-child { border-bottom:0; }.nl-bar { grid-template-columns:1fr; }.nl-art { min-height:22rem; }
+}
 .footer-wordmark { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: .9; letter-spacing: -.055em; }
 .footer-address { margin-top: 0; display: grid; gap: .25rem; color: var(--muted); font-size: .78rem; line-height: 1.3; text-align: left; }
 
