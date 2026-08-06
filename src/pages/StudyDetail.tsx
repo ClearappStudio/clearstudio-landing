@@ -76,11 +76,60 @@ function QuietBlueStudy() {
   );
 }
 
+function SoftSignalStudy() {
+  const impacts = [
+    ["✦", "Guiding", "Draws attention with ease."],
+    ["◉", "Warm", "Creates comfort and trust."],
+    ["◌", "Human", "Feels natural, not mechanical."],
+    ["≈", "Balanced", "Works well with neutrals and darks."],
+  ];
+  const uses = [
+    ["◎", "Wayfinding", "Indicates where to go without overwhelming the content."],
+    ["→", "Actions", "Supports primary actions in calm interfaces."],
+    ["●", "Notifications", "Signals something new without creating stress."],
+    ["▬", "Progress", "Shows advancement in a stable and optimistic way."],
+    ["◇", "Labels", "Organises categories with warmth."],
+  ];
+  const pairings = [
+    ["Warm Paper", "#F2EFE7"], ["Burnt Umber", "#4F2814"], ["Deep Navy", "#173044"],
+    ["Quiet Blue", "#6D8FB8"], ["Sage", "#92AD80"],
+  ];
+
+  return (
+    <article className="ss-study">
+      <section className="ss-hero">
+        <div className="ss-container">
+          <div className="ss-hero-top"><Link to="/studies">← All studies</Link><span>No. 002</span></div>
+          <div className="ss-hero-main"><div><p className="ss-label">Colour study</p><h1>Soft Signal</h1></div><p>A study of a colour that attracts attention with softness and creates clarity without pressure.</p></div>
+        </div>
+        <dl className="ss-meta"><div><dt>Status</dt><dd>Early study</dd></div><div><dt>Field</dt><dd>Signals / wayfinding</dd></div><div><dt>Started</dt><dd>August 2026</dd></div><div><dt>Primary value</dt><dd>#E98552</dd></div></dl>
+      </section>
+
+      <section className="ss-section"><div className="ss-container ss-grid"><p className="ss-index">01 · The impact</p><div><h2>Soft Signal is calm<br />without disappearing.</h2><p className="ss-lede">It has enough energy to be noticed, but not so much that it competes. It brings warmth to digital spaces and makes actions feel human and approachable.</p><div className="ss-impact-grid">{impacts.map(([icon, title, copy]) => <div className="ss-impact" key={title}><span>{icon}</span><div><strong>{title}</strong><p>{copy}</p></div></div>)}</div></div></div></section>
+
+      <section className="ss-section"><div className="ss-container ss-grid"><p className="ss-index">02 · The colour</p><div className="ss-colour-data"><div className="ss-data-card"><span className="ss-label">Primary</span><strong>#E98552</strong><p>R 233 · G 133 · B 82</p><p>H 18° · S 80% · L 62%</p></div><div><span className="ss-label">Tints</span><div className="ss-tints">{[["#F7D7C5","#F7D7C5"],["#F3B89C","#F3B89C"],["#E98552","#E98552"],["#D45F3D","#D45F3D"],["#B7572A","#B7572A"]].map(([name, colour], index) => <div style={{backgroundColor: colour, color: index > 2 ? "white" : undefined}} key={name}>{name}</div>)}</div></div></div></div></section>
+
+      <section className="ss-section"><div className="ss-container ss-grid"><p className="ss-index">03 · In context</p><div className="ss-context"><div><h3>The same interface,<br />only the signal changes.</h3><p className="ss-lede">The feeling shifts. The hierarchy stays.</p></div><div className="ss-ui-grid">{[["neutral","Neutral grey","Feels distant"],["soft","Soft Signal","Feels warm and clear"],["urgent","Strong red","Feels urgent"]].map(([tone, name, note]) => <div key={tone}><div className="ss-ui-card"><h4>Inbox</h4><p>Today</p><p className={`ss-ui-row ss-ui-row--${tone}`}>Updates</p><p>Messages</p><p>Settings</p></div><small>{name}<br />{note}</small></div>)}</div></div></div></section>
+
+      <section className="ss-section"><div className="ss-container"><p className="ss-index ss-index--spaced">04 · Where it works</p><div className="ss-uses">{uses.map(([symbol, title, copy]) => <div key={title}><span>{symbol}</span><strong>{title}</strong><p>{copy}</p></div>)}</div></div></section>
+
+      <section className="ss-form"><div className="ss-container ss-form-grid"><div><p className="ss-index">Form / 01</p><p>Not a colour chip, but an atmosphere: tested at scale, beside type, and in tension with light and dark.</p></div><div className="ss-composition"><i /><i /><i /><i /></div></div></section>
+
+      <section className="ss-section"><div className="ss-container ss-grid"><p className="ss-index">05 · Palette</p><div><h2>A small working family.</h2><div className="ss-palette">{[["Soft Signal","#E98552"],["Burnt Umber","#4F2814"],["Apricot Air","#F4C8AC"],["Warm Paper","#F2EFE7"]].map(([name, colour], index) => <div style={{backgroundColor: colour, color: index === 1 ? "white" : undefined}} key={name}><span>{name}</span><strong>{colour}</strong></div>)}</div></div></div></section>
+
+      <section className="ss-section"><div className="ss-container ss-grid"><p className="ss-index">06 · Pairings</p><div><p className="ss-lede ss-lede--small">Soft Signal works best with colours that give it space to breathe.</p><div className="ss-pairings">{pairings.map(([name, colour]) => <div key={name}><div><i /><i style={{backgroundColor: colour}} /></div><strong>{name}</strong><small>{colour}</small></div>)}</div></div></div></section>
+
+      <section className="ss-section"><div className="ss-container ss-balance-grid"><div><p className="ss-index">07 · The balance</p><p className="ss-lede ss-lede--small">One possible balance: warmth for energy, neutrals for space, dark for anchor.</p></div><div><div className="ss-balance"><span>40%</span><span>45%</span><span>15%</span></div><div className="ss-balance-notes"><p><strong>Soft Signal</strong><br />For energy and guidance</p><p><strong>Neutrals</strong><br />For space and clarity</p><p><strong>Dark</strong><br />For contrast</p></div></div></div></section>
+    </article>
+  );
+}
+
 export default function StudyDetail() {
   const { studySlug } = useParams();
   const study = colourStudies.find((item) => item.slug === studySlug);
   if (!study) return <Navigate to="/studies" replace />;
   if (study.slug === "quiet-blue") return <QuietBlueStudy />;
+  if (study.slug === "soft-signal") return <SoftSignalStudy />;
 
   return (
     <article className={`study-page study-page--${study.className}`}>
