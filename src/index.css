@@ -1240,6 +1240,8 @@ body { background: var(--background); }
 .projects-intro h1 span { color: #6d8fb8; }
 .projects-intro,
 .journal-intro { min-height: calc(100svh + 1rem); }
+.projects-intro > *,
+.journal-intro > * { transform: translateY(clamp(-3.5rem, -4vw, -2rem)); }
 .journal-intro em { color: #d46f45; }
 .about-intro span { color: #718e68; }
 .project-filters button { border-radius: 0; }
