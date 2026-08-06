@@ -4,7 +4,7 @@ export type Project = {
   type: string;
   status: string;
   description: string;
-  tone: "context" | "notebook" | "mail" | "wallpapers";
+  tone: "context" | "notebook" | "mail" | "gallery";
   size: "wide" | "narrow";
 };
 
@@ -40,13 +40,13 @@ export const projects: Project[] = [
     size: "narrow",
   },
   {
-    slug: "wallpapers",
-    title: "Wallpapers",
+    slug: "digital-art-gallery",
+    title: "Digital Art Gallery",
     type: "Design",
     status: "Coming soon",
     description:
-      "Colourful digital spaces created to make everyday screens feel more personal and considered.",
-    tone: "wallpapers",
+      "Original digital artworks created for the places where ideas happen.",
+    tone: "gallery",
     size: "wide",
   },
 ];
@@ -80,7 +80,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     type: "Process",
-    title: "Designing the first wallpaper collection",
+    title: "Designing the first digital exhibition",
     date: "Coming soon",
     sortDate: "0000-00-00",
     upcomingOrder: 1,

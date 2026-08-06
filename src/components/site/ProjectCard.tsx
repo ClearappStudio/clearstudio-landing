@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Project } from "@/data/content";
 import { MailMark } from "@/components/site/MailMark";
+import { GalleryArtwork } from "@/components/site/GalleryArtwork";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -33,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <strong>Context<br />comes first.</strong>
         </div>
       )}
-      {project.tone === "wallpapers" && <div className="project-wallpaper-art" aria-hidden="true" />}
+      {project.tone === "gallery" && <GalleryArtwork className="project-gallery-art" />}
       <div className="project-copy">
         <h3>{project.title}</h3>
         <p>{project.description}</p>

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
 import ClearMail from "@/pages/ClearMail";
+import DigitalArtGallery from "@/pages/DigitalArtGallery";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
 import JournalEntry from "@/pages/JournalEntry";
@@ -19,6 +20,8 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/clear-mail" element={<ClearMail />} />
+        <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
+        <Route path="/projects/wallpapers" element={<DigitalArtGallery />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/studies" element={<Studies />} />
         <Route path="/studies/:studySlug" element={<StudyDetail />} />
