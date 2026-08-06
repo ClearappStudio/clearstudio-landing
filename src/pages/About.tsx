@@ -31,10 +31,9 @@ export default function About() {
   return (
     <>
       <header className="page-intro about-intro">
-        <p className="eyebrow">Clear Studio · Madrid</p>
+        <p className="eyebrow">Independent by design</p>
         <h1>Small studio.<br /><span>Wide curiosity.</span></h1>
         <div className="intro-note">
-          <span>Independent by design</span>
           <p>Clear Studio is a place for building thoughtful things without forcing every idea into the same shape.</p>
         </div>
       </header>
