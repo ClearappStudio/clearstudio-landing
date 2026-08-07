@@ -63,6 +63,15 @@ export type JournalEntry = {
 
 export const journalEntries: JournalEntry[] = [
   {
+    slug: "finding-bloom",
+    type: "Process",
+    title: "Finding Bloom",
+    date: "7 Aug 2026",
+    sortDate: "2026-08-07",
+    excerpt:
+      "Five images, four increasingly convincing directions, and one final decision to leave them behind.",
+  },
+  {
     slug: "why-clear-studio-exists",
     type: "Foundations",
     title: "Why Clear Studio exists",
