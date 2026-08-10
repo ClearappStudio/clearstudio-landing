@@ -17,7 +17,7 @@ function FindingBloom() {
             <div className="fb-meta"><span>Digital Art Gallery</span><span>Exhibition 01 — Rooms of Light</span></div>
           </div>
           <figure className="fb-master-hero">
-            <span>05 / master</span>
+            <span>ROOM OF LIGHT - BLOOM</span>
             <div className="fb-master-frame">{image("5", "Bloom final master artwork")}</div>
           </figure>
         </div>
@@ -30,7 +30,7 @@ function FindingBloom() {
             <p className="fb-lead">Bloom was always meant to be the emotional centre of <em>Rooms of Light</em>.</p>
             <p>The brief described a moment where the palette became more confident, more generous, and where light itself seemed to expand. It was supposed to celebrate optimism without becoming loud: a warm point in the exhibition before the sequence gradually returned to quieter tones.</p>
             <p>The first four images found one answer to that brief. They moved from a recognisable architectural room towards something progressively softer, brighter and more atmospheric. Taken on their own, the progression made sense. Each image removed a little structure and gave colour a little more space.</p>
-            <p>That is precisely why the fifth image matters. The final master did not continue the sequence. It questioned it.</p>
+            <p>That is precisely why the fifth image matters. The final piece did not continue the sequence. It questioned it.</p>
           </div>
         </div>
       </section>
@@ -40,7 +40,7 @@ function FindingBloom() {
           <div className="fb-line" />
           <div className="fb-process-grid">
             <h2>A direction can improve and still be the wrong direction.</h2>
-            <p>The development images were not failed attempts. Quite the opposite: by the fourth, the idea had become coherent, controlled and visually resolved. What they revealed was something harder to notice — that Bloom was becoming beautiful in a way that did not quite belong to the work we wanted.</p>
+            <p>The development concepts were not failed attempts. Quite the opposite: by the fourth, the idea had become coherent, controlled and visually resolved. What they revealed was something harder to notice — that Bloom was becoming beautiful in a way that did not quite belong to the work we wanted.</p>
           </div>
         </div>
       </section>
@@ -86,7 +86,7 @@ function FindingBloom() {
       <section className="fb-pivot">
         <div className="fb-shell fb-pivot-grid">
           <div className="fb-label">The change</div>
-          <div><blockquote>The final step was not refinement. It was permission to start again.</blockquote><p>Instead of asking how the fourth image could become more abstract, the question changed: what would remain of Bloom if the sunset, the horizon and almost all of the expected warmth disappeared?</p></div>
+          <div><blockquote>The final step was not refinement but permission to start again.</blockquote><p>Instead of asking how the fourth image could become more abstract, the question changed: what would remain of Bloom if the sunset, the horizon and almost all of the expected warmth disappeared?</p></div>
         </div>
       </section>
 
@@ -94,11 +94,11 @@ function FindingBloom() {
         <div className="fb-shell fb-master-grid">
           <figure className="fb-master-large">{image("5", "Bloom final master artwork, a luminous abstract space", "fb-master-complete")}</figure>
           <div className="fb-master-copy">
-            <div className="fb-number">05 · The master</div>
+            <div className="fb-number">05 · Bloom</div>
             <h2>Bloom becomes quieter — and more itself.</h2>
             <p>The final image changes almost everything that had seemed essential. The warm horizontal landscape becomes a more expansive composition. The architecture opens into flowing coral, yellow, pink and blue, while translucent forms pass across one another like fabric, light or a room that has become too luminous to name.</p>
             <p>Yet the original brief is still there. The palette is confident, but confidence no longer depends on structure. The forms are generous because they occupy the image without filling it with detail. Light expands through translucency and overlap rather than through a single glowing opening in a room.</p>
-            <p>Most importantly, the work leaves more space for the viewer. The development images describe a luminous place. The master creates a condition that is harder to name and easier to inhabit.</p>
+            <p>Most importantly, the work leaves more space for the viewer. The development images describe a luminous place. This piece creates a condition that is harder to name and easier to inhabit.</p>
             <p className="fb-pull">The fifth image did not perfect the previous four. It showed what they had been trying to discover.</p>
           </div>
         </div>
@@ -119,7 +119,7 @@ function FindingBloom() {
       <section className="fb-related">
         <div className="fb-shell fb-related-grid">
           <div className="fb-label">Related project</div>
-          <div><h3>Rooms of Light</h3><p>Bloom is part of Exhibition 01 from the Clear Studio Digital Art Gallery, a sequence of eight works exploring colour, light and attention as imagined digital spaces.</p><Link to="/projects/digital-art-gallery">Visit Digital Art Gallery ↗</Link></div>
+          <div><h3>Rooms of Light</h3><p>Bloom is part of our exhibition Rooms of Light from the Clear Studio Digital Art Gallery, a sequence of eight works exploring colour, light and attention as imagined digital spaces.</p><Link to="/projects/digital-art-gallery">Visit Digital Art Gallery ↗</Link></div>
         </div>
       </section>
     </article>
