@@ -3,7 +3,7 @@ import "./FindingBloom.css";
 
 function FindingBloom() {
   const image = (name: string, alt: string, className?: string) => (
-    <img className={className} src={`/assets/journal/finding-bloom/${name}.png`} alt={alt} />
+    <img className={className} src={`/assets/journal/finding-bloom/${name}.webp`} alt={alt} />
   );
 
   return (
