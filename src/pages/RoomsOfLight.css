@@ -83,7 +83,7 @@ a.rol-work:hover img{opacity:.94}
 .arrival-page{margin-inline:calc(var(--page-padding)*-1);overflow:hidden;background:#11191d}
 .arrival-nav{height:4rem;padding-inline:var(--page-padding);display:flex;justify-content:space-between;align-items:center;background:#f5f2eb;color:#171714;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
 .arrival-scroll{position:relative;height:500vh;background:#11191d}
-.arrival-stage{position:sticky;top:0;height:100svh;padding:clamp(.75rem,2vw,1.75rem);display:grid;place-items:center;background:#11191d}
+.arrival-stage{position:sticky;top:0;height:100svh;padding:clamp(.75rem,2vw,1.75rem);display:grid;place-items:center;background:#11191d;touch-action:pan-y}
 .arrival-canvas{position:relative;width:min(calc(100vw - clamp(1.5rem,4vw,3.5rem)),calc((100svh - clamp(1.5rem,4vw,3.5rem))*1.5));aspect-ratio:3/2}
 .arrival-canvas>img{display:block;width:100%;height:100%;object-fit:contain}
 .arrival-overlays{position:absolute;inset:0;pointer-events:none}
