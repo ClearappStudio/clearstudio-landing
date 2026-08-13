@@ -3,6 +3,8 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
 import ClearMail from "@/pages/ClearMail";
 import DigitalArtGallery from "@/pages/DigitalArtGallery";
+import RoomsOfLight from "@/pages/RoomsOfLight";
+import ArrivalRoom from "@/pages/ArrivalRoom";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
 import JournalEntry from "@/pages/JournalEntry";
@@ -21,6 +23,8 @@ const App = () => (
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light" element={<RoomsOfLight />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light/arrival" element={<ArrivalRoom />} />
         <Route path="/projects/wallpapers" element={<DigitalArtGallery />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/studies" element={<Studies />} />

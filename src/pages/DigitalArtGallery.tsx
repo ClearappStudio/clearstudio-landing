@@ -26,19 +26,19 @@ export default function DigitalArtGallery() {
           <h2 id="current-exhibition">Current exhibition</h2>
           <span>Exhibition 01</span>
         </div>
-        <article className="dag-featured">
+        <Link className="dag-featured" to="/projects/digital-art-gallery/rooms-of-light">
           <GalleryArtwork className="dag-cover" />
           <div className="dag-feature-copy">
             <div>
-              <span className="dag-status">Work in progress</span>
+              <span className="dag-status">Now showing</span>
               <h3>Rooms<br />of Light</h3>
               <p>An exhibition about colour, light and attention. Eight imagined spaces moving from energy to stillness.</p>
             </div>
             <div className="dag-feature-meta">
-              <span>8 artworks</span><span>3 rooms</span><span>Digital edition</span><span>Coming soon</span>
+              <span>8 artworks</span><span>3 movements</span><span>Exhibition 01</span><span>Enter exhibition →</span>
             </div>
           </div>
-        </article>
+        </Link>
 
         <div className="dag-section-head dag-section-head--archive">
           <h2>Exhibition archive</h2>
