@@ -13,6 +13,7 @@ export function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const isQuietBlueStudy = pathname === "/studies/quiet-blue";
+  const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -25,7 +26,8 @@ export function SiteLayout() {
         Skip to content
       </a>
       <div className={`page-shell${isQuietBlueStudy ? " page-shell--quiet-blue" : ""}`}>
-        <header className="site-header">
+        {!isRoomsOfLightExhibition && (
+          <header className="site-header">
           <NavLink className="brand" to="/" aria-label="Clear Studio home">
             Clear Studio
           </NavLink>
@@ -50,7 +52,8 @@ export function SiteLayout() {
               </NavLink>
             ))}
           </nav>
-        </header>
+          </header>
+        )}
         <main id="main">
           <Outlet />
         </main>
