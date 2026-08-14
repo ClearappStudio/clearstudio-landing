@@ -14,6 +14,8 @@ export function SiteLayout() {
   const { pathname } = useLocation();
   const isQuietBlueStudy = pathname === "/studies/quiet-blue";
   const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
+  const isArrivalRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/arrival";
+  const usesMuseumLayout = isRoomsOfLightExhibition || isArrivalRoom;
 
   useEffect(() => {
     setMenuOpen(false);
@@ -26,7 +28,7 @@ export function SiteLayout() {
         Skip to content
       </a>
       <div className={`page-shell${isQuietBlueStudy ? " page-shell--quiet-blue" : ""}`}>
-        {!isRoomsOfLightExhibition && (
+        {!usesMuseumLayout && (
           <header className="site-header">
           <NavLink className="brand" to="/" aria-label="Clear Studio home">
             Clear Studio
@@ -57,14 +59,14 @@ export function SiteLayout() {
         <main id="main">
           <Outlet />
         </main>
-        <footer className="site-footer">
+        {!isArrivalRoom && <footer className="site-footer">
           <p className="footer-wordmark">Clear Studio</p>
           <div className="footer-address">
             <span>Madrid / Working everywhere</span>
             <span>Independent since 2026</span>
             <span>© Clear Studio</span>
           </div>
-        </footer>
+        </footer>}
       </div>
     </>
   );
