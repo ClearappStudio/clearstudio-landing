@@ -19,12 +19,12 @@ function mix(a: ReturnType<typeof hex>, b: ReturnType<typeof hex>, t: number) {
 }
 
 const rgb = (color: ReturnType<typeof hex>) => `rgb(${color.r} ${color.g} ${color.b})`;
-type SequenceInfo = { active: boolean; work: string; portal: boolean; release: number };
+type SequenceInfo = { active: boolean; work: string; portal: boolean; release: number; color: string };
 
 function renderSequence(sequence: HTMLElement, viewportHeight: number): SequenceInfo {
   const stage = sequence.querySelector<HTMLElement>(".sequence-stage");
   const scenes = [...sequence.querySelectorAll<HTMLElement>(".scene")];
-  if (!stage || scenes.length === 0) return { active: false, work: "", portal: false, release: 0 };
+  if (!stage || scenes.length === 0) return { active: false, work: "", portal: false, release: 0, color: "#f0ece3" };
 
   const rect = sequence.getBoundingClientRect();
   const progress = clamp(-rect.top / Math.max(1, rect.height - viewportHeight));
@@ -77,11 +77,12 @@ function renderSequence(sequence: HTMLElement, viewportHeight: number): Sequence
   const to = hex((scenes[index + 1] ?? scenes[index]).dataset.bg ?? "#f0ece3");
   let stageColor = mix(from, to, transition);
   if (releaseScene && release > 0) stageColor = mix(stageColor, hex(sequence.dataset.releaseBg ?? "#e3e8e5"), release);
-  stage.style.backgroundColor = rgb(stageColor);
+  const color = rgb(stageColor);
+  stage.style.backgroundColor = color;
 
   const visibleIndex = transition > 0.5 && index < scenes.length - 1 ? index + 1 : index;
   const visibleScene = scenes[visibleIndex];
-  return { active: rect.top <= viewportHeight * 0.5 && rect.bottom >= viewportHeight * 0.5, work: visibleScene.dataset.work ?? "", portal: visibleScene.dataset.kind === "portal", release };
+  return { active: rect.top <= viewportHeight * 0.5 && rect.bottom >= viewportHeight * 0.5, work: visibleScene.dataset.work ?? "", portal: visibleScene.dataset.kind === "portal", release, color };
 }
 
 export default function RoomsOfLight() {
@@ -94,6 +95,11 @@ export default function RoomsOfLight() {
     if (!root || !threshold) return;
     const sequences = [...root.querySelectorAll<HTMLElement>(".sequence")];
     const current = root.querySelector<HTMLElement>(".ui-counter .current");
+    const documentRoot = document.documentElement;
+    const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const originalRootBackground = documentRoot.style.backgroundColor;
+    const originalBodyBackground = document.body.style.backgroundColor;
+    const originalThemeColor = themeColor?.content;
     let ticking = false;
     const update = () => {
       const y = window.scrollY;
@@ -108,6 +114,15 @@ export default function RoomsOfLight() {
       root.classList.toggle("in-portal", Boolean(activeInfo?.portal));
       root.classList.toggle("in-release", Boolean(activeInfo && activeInfo.release > 0.15));
       if (activeInfo?.work && current) current.textContent = activeInfo.work;
+      if (activeInfo) {
+        documentRoot.style.backgroundColor = activeInfo.color;
+        document.body.style.backgroundColor = activeInfo.color;
+        if (themeColor) themeColor.content = activeInfo.color;
+      } else {
+        documentRoot.style.backgroundColor = originalRootBackground;
+        document.body.style.backgroundColor = originalBodyBackground;
+        if (themeColor && originalThemeColor) themeColor.content = originalThemeColor;
+      }
       root.style.setProperty("--global", clamp(y / Math.max(1, document.documentElement.scrollHeight - viewportHeight)).toFixed(4));
       ticking = false;
     };
@@ -115,7 +130,13 @@ export default function RoomsOfLight() {
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     update();
-    return () => { window.removeEventListener("scroll", requestUpdate); window.removeEventListener("resize", requestUpdate); };
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      documentRoot.style.backgroundColor = originalRootBackground;
+      document.body.style.backgroundColor = originalBodyBackground;
+      if (themeColor && originalThemeColor) themeColor.content = originalThemeColor;
+    };
   }, []);
 
   return <article ref={rootRef} className="rol-v11">

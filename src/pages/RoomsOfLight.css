@@ -27,7 +27,7 @@
 .rol-v11 .sequence{position:relative}
 .rol-v11 .sequence.four{height:315svh}
 .rol-v11 .sequence.three{height:245svh}
-.rol-v11 .sequence-stage{position:sticky;top:0;height:calc(100svh + env(safe-area-inset-bottom) + 2px);overflow:hidden;background:var(--seq-bg,#f0ece3)}
+.rol-v11 .sequence-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--seq-bg,#f0ece3)}
 .rol-v11 .scene{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(14px) scale(.994);transition:opacity .08s linear}
 .rol-v11 .scene.is-visible{pointer-events:auto}
 .rol-v11 .scene-inner{position:absolute;inset:0;padding:clamp(66px,7vh,90px) var(--pad) clamp(60px,7vh,84px);display:grid;align-items:center}
