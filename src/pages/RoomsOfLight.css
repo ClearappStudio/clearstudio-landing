@@ -1,4 +1,4 @@
-.rol-v11{--ink:#171713;--muted:rgba(23,23,19,.56);--hair:rgba(23,23,19,.14);--pad:clamp(22px,4.2vw,64px);--serif:"Iowan Old Style",Baskerville,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin-inline:calc(var(--page-padding)*-1);color:var(--ink);background:#f0ece3;font-family:var(--sans);overflow-x:clip}
+.rol-v11{--ink:#171713;--muted:rgba(23,23,19,.56);--hair:rgba(23,23,19,.14);--pad:clamp(22px,4.2vw,64px);--stage-overscan:20px;--serif:"Iowan Old Style",Baskerville,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin-inline:calc(var(--page-padding)*-1);color:var(--ink);background:#f0ece3;font-family:var(--sans);overflow-x:clip}
 .rol-v11 *{box-sizing:border-box}
 .rol-v11 a{color:inherit}
 .rol-v11 .eyebrow{margin:0;font-size:10px;line-height:1.2;letter-spacing:.17em;text-transform:uppercase}
@@ -27,8 +27,8 @@
 .rol-v11 .sequence{position:relative}
 .rol-v11 .sequence.four{height:315svh}
 .rol-v11 .sequence.three{height:245svh}
-.rol-v11 .sequence-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--seq-bg,#f0ece3)}
-.rol-v11 .scene{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(14px) scale(.994);transition:opacity .08s linear}
+.rol-v11 .sequence-stage{position:sticky;top:0;height:calc(100svh + var(--stage-overscan));height:calc(100dvh + var(--stage-overscan));overflow:hidden;background:var(--seq-bg,#f0ece3)}
+.rol-v11 .scene{position:absolute;inset:0 0 var(--stage-overscan);opacity:0;pointer-events:none;transform:translateY(14px) scale(.994);transition:opacity .08s linear}
 .rol-v11 .scene.is-visible{pointer-events:auto}
 .rol-v11 .scene-inner{position:absolute;inset:0;padding:clamp(66px,7vh,90px) var(--pad) clamp(60px,7vh,84px);display:grid;align-items:center}
 .rol-v11 .scene-layout{width:100%;display:grid;align-items:center;gap:clamp(32px,5vw,76px)}
@@ -82,7 +82,7 @@
 .rol-v11 .portal-three .portal-title span:last-child{margin-left:14vw}
 .rol-v11 .portal-three .portal-copy{grid-column:9/13;margin:11vh 0 0}
 .rol-v11 .release-sequence{height:265svh}
-.rol-v11 .release-scene{position:absolute;inset:0;z-index:8;opacity:0;pointer-events:none;display:grid;grid-template-columns:repeat(12,1fr);align-content:center;padding:var(--pad);transform:translateY(18px)}
+.rol-v11 .release-scene{position:absolute;inset:0 0 var(--stage-overscan);z-index:8;opacity:0;pointer-events:none;display:grid;grid-template-columns:repeat(12,1fr);align-content:center;padding:var(--pad);transform:translateY(18px)}
 .rol-v11 .release-scene .eyebrow{grid-column:8/12;justify-self:end;color:var(--muted)}
 .rol-v11 .release-title{grid-column:2/11;margin:11vh 0 0;font:400 clamp(88px,14vw,218px)/.78 var(--serif);letter-spacing:-.078em}
 .rol-v11 .coda{min-height:72svh;padding:14vh var(--pad);display:grid;grid-template-columns:repeat(12,1fr);align-content:center;background:#e3e8e5}
