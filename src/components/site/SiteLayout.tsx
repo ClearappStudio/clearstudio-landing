@@ -15,7 +15,9 @@ export function SiteLayout() {
   const isQuietBlueStudy = pathname === "/studies/quiet-blue";
   const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
   const isArrivalRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/arrival";
-  const usesMuseumLayout = isRoomsOfLightExhibition || isArrivalRoom;
+  const isOpenSkyRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/open-sky";
+  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom;
+  const usesMuseumLayout = isRoomsOfLightExhibition || isArtworkRoom;
 
   useEffect(() => {
     setMenuOpen(false);
@@ -59,7 +61,7 @@ export function SiteLayout() {
         <main id="main">
           <Outlet />
         </main>
-        {!isArrivalRoom && <footer className="site-footer">
+        {!isArtworkRoom && <footer className="site-footer">
           <p className="footer-wordmark">Clear Studio</p>
           <div className="footer-address">
             <span>Madrid / Working everywhere</span>
