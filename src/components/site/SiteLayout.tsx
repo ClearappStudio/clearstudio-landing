@@ -16,7 +16,8 @@ export function SiteLayout() {
   const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
   const isArrivalRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/arrival";
   const isOpenSkyRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/open-sky";
-  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom;
+  const isSignalsRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/signals";
+  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom;
   const usesMuseumLayout = isRoomsOfLightExhibition || isArtworkRoom;
 
   useEffect(() => {
