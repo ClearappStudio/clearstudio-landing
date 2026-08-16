@@ -8,6 +8,7 @@ import ArrivalRoom from "@/pages/ArrivalRoom";
 import OpenSkyRoom from "@/pages/OpenSkyRoom";
 import SignalsRoom from "@/pages/SignalsRoom";
 import BetweenShapesRoom from "@/pages/BetweenShapesRoom";
+import BloomRoom from "@/pages/BloomRoom";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
 import JournalEntry from "@/pages/JournalEntry";
@@ -31,6 +32,7 @@ const App = () => (
         <Route path="/projects/digital-art-gallery/rooms-of-light/open-sky" element={<OpenSkyRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/signals" element={<SignalsRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/between-shapes" element={<BetweenShapesRoom />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light/bloom" element={<BloomRoom />} />
         <Route path="/projects/wallpapers" element={<DigitalArtGallery />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/studies" element={<Studies />} />
