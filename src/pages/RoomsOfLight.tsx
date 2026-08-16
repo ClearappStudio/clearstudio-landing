@@ -145,6 +145,6 @@ export default function RoomsOfLight() {
     </div></section>
 
     <section className="coda"><p className="eyebrow">Rooms of Light · Exhibition 01</p><p>The first work enters a space. The last one looks beyond it. Everything between them is an attempt to understand what light can change.</p></section>
-    <section id="digital-edition" className="edition"><h2>The exhibition does not have to end here.</h2><div><p>Each work has also been carefully adapted for the screens where ideas happen.</p><a href="#digital-edition">View the Digital Edition <span aria-hidden="true">→</span></a></div></section>
+    <section id="digital-edition" className="edition"><h2>The exhibition does not have to end here.</h2><div><p>Each work has also been carefully adapted for the screens where ideas happen.</p><Link to={`${roomPath}/digital-edition`}>View the Digital Edition <span aria-hidden="true">→</span></Link></div></section>
   </article>;
 }

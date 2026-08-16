@@ -4,6 +4,7 @@ import About from "@/pages/About";
 import ClearMail from "@/pages/ClearMail";
 import DigitalArtGallery from "@/pages/DigitalArtGallery";
 import RoomsOfLight from "@/pages/RoomsOfLight";
+import RoomsOfLightDigitalEdition from "@/pages/RoomsOfLightDigitalEdition";
 import ArrivalRoom from "@/pages/ArrivalRoom";
 import OpenSkyRoom from "@/pages/OpenSkyRoom";
 import SignalsRoom from "@/pages/SignalsRoom";
@@ -31,6 +32,7 @@ const App = () => (
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light" element={<RoomsOfLight />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light/digital-edition" element={<RoomsOfLightDigitalEdition />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/arrival" element={<ArrivalRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/open-sky" element={<OpenSkyRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/signals" element={<SignalsRoom />} />

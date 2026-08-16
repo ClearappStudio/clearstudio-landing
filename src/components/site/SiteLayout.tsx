@@ -14,6 +14,7 @@ export function SiteLayout() {
   const { pathname } = useLocation();
   const isQuietBlueStudy = pathname === "/studies/quiet-blue";
   const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
+  const isRoomsOfLightDigitalEdition = pathname === "/projects/digital-art-gallery/rooms-of-light/digital-edition";
   const isArrivalRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/arrival";
   const isOpenSkyRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/open-sky";
   const isSignalsRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/signals";
@@ -23,7 +24,7 @@ export function SiteLayout() {
   const isStillWaterRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/still-water";
   const isNorthRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/north";
   const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom || isStillWaterRoom || isNorthRoom;
-  const usesMuseumLayout = isRoomsOfLightExhibition || isArtworkRoom;
+  const usesMuseumLayout = isRoomsOfLightExhibition || isRoomsOfLightDigitalEdition || isArtworkRoom;
 
   useEffect(() => {
     setMenuOpen(false);
