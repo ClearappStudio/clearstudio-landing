@@ -39,7 +39,7 @@
 .still-water-about h2{grid-column:2/10;margin-top:5vh;font:400 clamp(50px,6.2vw,98px)/.92 var(--still-water-serif);letter-spacing:-.058em}
 .still-water-about h2 span{display:block}
 .still-water-about h2 span:last-child{margin-left:11vw}
-.still-water-about-copy{grid-column:7/12;margin-top:16vh;max-width:590px;font-size:clamp(16px,1.18vw,19px);line-height:1.8}
+.still-water-about-copy{grid-column:7/12;margin-top:26vh;max-width:590px;font-size:clamp(16px,1.18vw,19px);line-height:1.8}
 .still-water-about-copy p{margin-bottom:1.45em;color:rgba(24,24,21,.82)}
 .still-water-about-number{grid-column:11/13;justify-self:end;margin-top:8vh;font:400 clamp(76px,9vw,146px)/.8 var(--still-water-serif);letter-spacing:-.065em;color:rgba(24,24,21,.06)}
 .still-water-reflect{position:relative;min-height:108svh;padding:14vh var(--still-water-pad);overflow:hidden;display:grid;grid-template-columns:repeat(12,1fr);align-content:center;background:radial-gradient(circle at 66% 38%,rgba(255,247,231,.54),transparent 18%),linear-gradient(180deg,#ede8dd 0%,#e6e0d5 100%)}

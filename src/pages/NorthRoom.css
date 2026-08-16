@@ -78,7 +78,7 @@
 .north-ipad .north-screen { inset: 8px; border-radius: 14px; }
 .north-phone { aspect-ratio: 9/19.5; border-radius: 28px; }
 .north-phone .north-shell { border-radius: 28px; padding: 6px; }
-.north-phone .north-screen { inset: 6px; border-radius: 22px; }
+.north-phone .north-screen { inset: 6px; border-radius: 22px; background: #e7edf0 url("/assets/rooms-of-light/north-iphone.png") center/cover no-repeat; }
 .north-device figcaption { position: absolute; left: 0; bottom: -32px; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--north-muted); }
 .north-ed-action { margin-top: clamp(82px, 10vh, 130px); display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--north-line); padding-top: 28px; }
 .north-ed-action a, .north-end-card a { padding-bottom: 6px; border-bottom: 1px solid; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
