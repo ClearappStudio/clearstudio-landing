@@ -1,0 +1,13 @@
+.rol-de .de-device-study{grid-template-columns:1.2fr .72fr .38fr;gap:clamp(28px,5vw,80px)}
+.rol-de .de-device{position:relative;margin:0;filter:drop-shadow(0 28px 40px rgba(18,18,14,.12))}
+.rol-de .de-device>div{position:relative;width:100%;height:auto;aspect-ratio:auto;background:#171713;overflow:hidden;box-shadow:none}
+.rol-de .de-device>div img{display:block;width:100%;height:auto;object-fit:contain}
+.rol-de .de-device-mac>div{aspect-ratio:auto;border-radius:10px;padding:8px 8px 18px}
+.rol-de .de-device-mac>div img{border-radius:4px}
+.rol-de .de-device-mac::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-8px;height:8px;border-radius:0 0 50% 50%;background:#c8c5bf}
+.rol-de .de-device-ipad>div{aspect-ratio:auto;border-radius:22px;padding:8px}
+.rol-de .de-device-ipad>div img{border-radius:15px}
+.rol-de .de-device-phone>div{aspect-ratio:auto;border-radius:28px;padding:6px}
+.rol-de .de-device-phone>div img{border-radius:22px}
+@media(max-width:900px){.rol-de .de-device-study{grid-template-columns:1.2fr .72fr .38fr;gap:clamp(18px,3vw,34px)}.rol-de .de-device-mac>div{padding:6px 6px 14px}.rol-de .de-device-ipad>div{padding:6px;border-radius:18px}.rol-de .de-device-phone>div{padding:4px;border-radius:22px}}
+@media(max-width:560px){.rol-de .de-device-study{grid-template-columns:1.15fr .68fr .34fr;gap:10px}.rol-de .de-device-phone{display:block}}
