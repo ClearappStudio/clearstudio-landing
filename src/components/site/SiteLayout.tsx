@@ -20,7 +20,8 @@ export function SiteLayout() {
   const isBetweenShapesRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/between-shapes";
   const isBloomRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/bloom";
   const isBlueHourRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/blue-hour";
-  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom;
+  const isStillWaterRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/still-water";
+  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom || isStillWaterRoom;
   const usesMuseumLayout = isRoomsOfLightExhibition || isArtworkRoom;
 
   useEffect(() => {
