@@ -112,7 +112,16 @@ const NorthRoom = () => {
             <figcaption>iPad</figcaption>
           </figure>
           <figure className="north-device north-phone">
-            <div className="north-shell"><div className="north-screen" role="img" aria-label="North for iPhone" /></div>
+            <div className="north-shell">
+              <div className="north-screen">
+                <img
+                  src="/assets/rooms-of-light/north-iphone-display.jpg"
+                  alt="North for iPhone"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </div>
+            </div>
             <figcaption>iPhone</figcaption>
           </figure>
         </div>
