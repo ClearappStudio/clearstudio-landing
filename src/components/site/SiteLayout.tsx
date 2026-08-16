@@ -25,6 +25,7 @@ export function SiteLayout() {
   const isNorthRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/north";
   const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom || isStillWaterRoom || isNorthRoom;
   const usesMuseumLayout = isRoomsOfLightExhibition || isRoomsOfLightDigitalEdition || isArtworkRoom;
+  const hidesSiteFooter = isRoomsOfLightDigitalEdition || isArtworkRoom;
 
   useEffect(() => {
     setMenuOpen(false);
@@ -68,7 +69,7 @@ export function SiteLayout() {
         <main id="main">
           <Outlet />
         </main>
-        {!isArtworkRoom && <footer className="site-footer">
+        {!hidesSiteFooter && <footer className="site-footer">
           <p className="footer-wordmark">Clear Studio</p>
           <div className="footer-address">
             <span>Madrid / Working everywhere</span>

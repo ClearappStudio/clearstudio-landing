@@ -1,139 +1,166 @@
 import { Link } from "react-router-dom";
 import "./RoomsOfLightDigitalEdition.css";
-import "./RoomsOfLightDigitalEditionDevices.css";
 
 const ROOM_PATH = "/projects/digital-art-gallery/rooms-of-light";
 const ASSET_PATH = "/assets/rooms-of-light/";
 
-const editions = [
-  { number: "01", slug: "arrival", title: "Arrival", note: "A room appears.", image: "arrival.png", tone: "#f0ece3" },
-  { number: "02", slug: "open-sky", title: "Open Sky", note: "The distance opens.", image: "open-sky.png", tone: "#efe5d6" },
-  { number: "03", slug: "signals", title: "Signals", note: "Structure becomes rhythm.", image: "signals.png", tone: "#e5e4de" },
-  { number: "04", slug: "between-shapes", title: "Between Shapes", note: "Balance becomes uncertain.", image: "between-shapes.png", tone: "#d8d5cf" },
-  { number: "05", slug: "bloom", title: "Bloom", note: "Colour enters the room.", image: "bloom.png", tone: "#e1d8cf" },
-  { number: "06", slug: "blue-hour", title: "Blue Hour", note: "The volume lowers.", image: "blue-hour.png", tone: "#d6dbd8" },
-  { number: "07", slug: "still-water", title: "Still Water", note: "Almost nothing needs to remain.", image: "still-water.png", tone: "#dbe2df" },
-  { number: "08", slug: "north", title: "North", note: "The final room does not close.", image: "north.png", tone: "#dde6e2" },
+const works = [
+  { number: "01", slug: "arrival", title: "Arrival", image: "arrival.png" },
+  { number: "02", slug: "open-sky", title: "Open Sky", image: "open-sky.png" },
+  { number: "03", slug: "signals", title: "Signals", image: "signals.png" },
+  { number: "04", slug: "between-shapes", title: "Between Shapes", image: "between-shapes.png" },
+  { number: "05", slug: "bloom", title: "Bloom", image: "bloom.png" },
+  { number: "06", slug: "blue-hour", title: "Blue Hour", image: "blue-hour.png" },
+  { number: "07", slug: "still-water", title: "Still Water", image: "still-water.png" },
+  { number: "08", slug: "north", title: "North", image: "north.png" },
 ];
+
+function DeviceSet({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={compact ? "de8-single-devices" : "de8-devices"} aria-label="Arrival adapted for Mac, iPad and iPhone">
+      <figure className="de8-device de8-mac">
+        <div className="de8-frame">
+          <img src={`${ASSET_PATH}arrival-mac.webp`} alt="Arrival for Mac" />
+        </div>
+        <figcaption>Mac</figcaption>
+      </figure>
+      <figure className="de8-device de8-ipad">
+        <div className="de8-frame">
+          <img src={`${ASSET_PATH}arrival-ipad.webp`} alt="Arrival for iPad" />
+        </div>
+        <figcaption>iPad</figcaption>
+      </figure>
+      <figure className="de8-device de8-phone">
+        <div className="de8-frame">
+          <img src={`${ASSET_PATH}arrival-iphone.webp`} alt="Arrival for iPhone" />
+        </div>
+        <figcaption>iPhone</figcaption>
+      </figure>
+    </div>
+  );
+}
 
 export default function RoomsOfLightDigitalEdition() {
   return (
-    <article className="rol-de">
-      <section className="de-hero">
-        <div className="de-ui">
+    <article className="rol-de-v8">
+      <section className="de8-hero">
+        <div className="de8-top">
           <Link to={ROOM_PATH}>Rooms of Light</Link>
           <span>Digital Edition · 2026</span>
         </div>
-
-        <p className="de-eyebrow de-hero-kicker">Exhibition 01 · Digital Edition</p>
+        <p className="de8-eyebrow">Exhibition 01 · Digital Edition</p>
         <h1><span>Digital</span><span>Edition</span></h1>
-
-        <div className="de-hero-bottom">
-          <p className="de-hero-lead">The exhibition does not have to end at the edge of the browser.</p>
-          <p className="de-copy">Each work in <em>Rooms of Light</em> has been adapted for the screens where ideas happen — preserving its balance, light and sense of space across different proportions.</p>
-          <a className="de-down" href="#adapted">Continue</a>
+        <div className="de8-hero-bottom">
+          <p className="de8-hero-lead">The exhibition does not have to end at the edge of the browser.</p>
+          <p className="de8-hero-copy">Each work in <em>Rooms of Light</em> has been adapted for the screens where ideas happen — preserving its balance, light and sense of space across different proportions.</p>
+          <a className="de8-down" href="#adapted">Continue</a>
         </div>
       </section>
 
-      <section id="adapted" className="de-adapted">
-        <div className="de-adapted-copy">
-          <p className="de-eyebrow">One work · Different proportions</p>
+      <section id="adapted" className="de8-adapted">
+        <div className="de8-adapted-head">
+          <p className="de8-eyebrow">One work · Different proportions</p>
           <h2>Adapted,<br />not simply cropped.</h2>
           <p>Every edition is composed again for desktop, tablet and phone. The work remains the same. Its relationship with the screen changes.</p>
         </div>
-
-        <div className="de-device-study" aria-label="Arrival adapted for Mac, iPad and iPhone">
-          <figure className="de-device de-device-mac">
-            <div><img src={`${ASSET_PATH}arrival-mac.webp`} alt="Arrival for Mac" /></div>
-            <figcaption>Mac</figcaption>
-          </figure>
-          <figure className="de-device de-device-ipad">
-            <div><img src={`${ASSET_PATH}arrival-ipad.webp`} alt="Arrival for iPad" /></div>
-            <figcaption>iPad</figcaption>
-          </figure>
-          <figure className="de-device de-device-phone">
-            <div><img src={`${ASSET_PATH}arrival-iphone.webp`} alt="Arrival for iPhone" /></div>
-            <figcaption>iPhone</figcaption>
-          </figure>
-        </div>
+        <DeviceSet />
       </section>
 
-      <section className="de-complete">
-        <div className="de-complete-head">
-          <div>
-            <p className="de-eyebrow">Complete Digital Edition · 01–08</p>
-            <h2>Keep the<br />whole sequence.</h2>
-          </div>
-          <div className="de-complete-meta">
-            <p>Eight works, from <em>Arrival</em> to <em>North</em>, with every screen adaptation included.</p>
-            <span className="de-price">€50</span>
-          </div>
+      <section className="de8-choose">
+        <div className="de8-choose-head">
+          <p className="de8-eyebrow">Two ways to keep the exhibition</p>
+          <h2>The whole sequence.<br />Or one room.</h2>
+          <p>Every work arrives in three screen-ready versions. Choose the complete exhibition, or the work you want to live with.</p>
         </div>
 
-        <div className="de-complete-mosaic">
-          {editions.map((edition) => (
-            <figure key={edition.slug}>
-              <img src={`${ASSET_PATH}${edition.image}`} alt={edition.title} loading="lazy" decoding="async" />
-              <figcaption><span>{edition.number}</span><span>{edition.title}</span></figcaption>
-            </figure>
-          ))}
-        </div>
-
-        <div className="de-complete-action">
-          <p className="de-eyebrow">Master · Mac · iPad · iPhone</p>
-          <button type="button" disabled>Choose complete edition <span>€50</span></button>
-        </div>
-      </section>
-
-      <section id="individual-editions" className="de-individual-intro">
-        <p className="de-eyebrow">Individual Digital Editions</p>
-        <h2>Or stay with<br />one room.</h2>
-        <p>Each work is also available on its own, with the same care across every screen format.</p>
-      </section>
-
-      <section className="de-editions" aria-label="Individual editions">
-        {editions.map((edition, index) => (
-          <article key={edition.slug} id={edition.slug} className={`de-edition${index % 2 ? " is-reversed" : ""}`} style={{ backgroundColor: edition.tone }}>
-            <Link className="de-edition-art" to={`${ROOM_PATH}/${edition.slug}`} aria-label={`View ${edition.title}`}>
-              <img src={`${ASSET_PATH}${edition.image}`} alt={edition.title} loading="lazy" decoding="async" />
-            </Link>
-            <div className="de-edition-info">
-              <p className="de-eyebrow">{edition.number} · Digital Edition</p>
-              <h3>{edition.title}</h3>
-              <p className="de-edition-note">{edition.note}</p>
-              <div className="de-edition-price"><span>Individual edition</span><strong>€10</strong></div>
-              <div className="de-edition-actions">
-                <Link to={`${ROOM_PATH}/${edition.slug}`}>View the work ↗</Link>
-                <button type="button" disabled>Choose {edition.title} edition →</button>
+        <div className="de8-options">
+          <article className="de8-option de8-complete">
+            <div className="de8-option-top">
+              <p className="de8-option-kicker">Complete Digital Edition · 01–08</p>
+              <span className="de8-price">€50</span>
+            </div>
+            <h3>Keep the whole sequence.</h3>
+            <p className="de8-option-copy">All eight works in <em>Rooms of Light</em>, each individually adapted for Mac, iPad and iPhone.</p>
+            <div className="de8-value">
+              <span>8 works</span><span>24 screen-ready images</span><span>Mac · iPad · iPhone</span>
+            </div>
+            <div className="de8-complete-strip" aria-label="All eight works in Rooms of Light">
+              {works.map((work) => <img key={work.slug} src={`${ASSET_PATH}${work.image}`} alt={work.title} loading="lazy" decoding="async" />)}
+            </div>
+            <div className="de8-option-bottom">
+              <div>
+                <p>Eight individual editions would be €80.</p>
+                <p className="de8-saving">Complete edition · €50</p>
               </div>
+              <button className="de8-action" type="button" disabled>Choose complete edition →</button>
             </div>
           </article>
-        ))}
+
+          <article className="de8-option de8-single">
+            <div className="de8-option-top">
+              <p className="de8-option-kicker">Individual Digital Edition</p>
+              <span className="de8-price">€10</span>
+            </div>
+            <h3>Stay with one room.</h3>
+            <p className="de8-option-copy">Choose any one of the eight works. You receive three separate images, each composed for its screen.</p>
+            <div className="de8-value">
+              <span>1 work</span><span>3 screen-ready images</span><span>Mac · iPad · iPhone</span>
+            </div>
+            <DeviceSet compact />
+            <div className="de8-option-bottom">
+              <p>Same artwork. Three compositions made for the screens you use.</p>
+              <a className="de8-action" href="#works">Choose a work ↓</a>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="license" className="de-license">
-        <div className="de-license-title">
-          <p className="de-eyebrow">Personal Digital License</p>
+      <section id="works" className="de8-works">
+        <div className="de8-works-head">
+          <p className="de8-eyebrow">Individual Digital Editions · €10 each</p>
+          <h2>Choose a room.</h2>
+          <p>Each selection includes three screen-ready images: one for Mac, one for iPad and one for iPhone.</p>
+        </div>
+        <div className="de8-grid">
+          {works.map((work) => (
+            <article className="de8-work" key={work.slug}>
+              <Link className="de8-work-art" to={`${ROOM_PATH}/${work.slug}`} aria-label={`View ${work.title}`}>
+                <img src={`${ASSET_PATH}${work.image}`} alt={work.title} loading="lazy" decoding="async" />
+              </Link>
+              <div className="de8-work-head">
+                <h3>{work.title}</h3>
+                <span className="de8-num">{work.number}</span>
+              </div>
+              <div className="de8-work-meta">
+                <span>Mac · iPad · iPhone</span>
+                <strong>€10</strong>
+              </div>
+              <button className="de8-action" type="button" disabled>Choose {work.title} →</button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="de8-license">
+        <div className="de8-license-title">
+          <p className="de8-eyebrow">Personal Digital License</p>
           <h2>One person.<br />All your screens.</h2>
         </div>
-        <div className="de-license-copy">
-          <p>Your edition is licensed to you personally, worldwide, for the duration of the applicable copyright protection. Use it across every screen you personally use, now and in the future.</p>
-          <dl>
-            <div><dt>Use</dt><dd>Personal screens, including a work-provided device used by you.</dd></div>
-            <div><dt>Adapt</dt><dd>Crop, scale and reposition as needed to fit your screen.</dd></div>
-            <div><dt>Share</dt><dd>Photos or screenshots of your setup are welcome.</dd></div>
-            <div><dt>Not included</dt><dd>Redistribution, resale, commercial use, derivative works or AI training.</dd></div>
-          </dl>
-          <p className="de-license-owner">Copyright remains with Francisco Gregorio Olmedo Ariza.</p>
-          <p className="de-license-line">Yours to live with, not to redistribute.</p>
-          <a href="mailto:hello@clearstudio.app">Licensing questions ↗</a>
+        <div className="de8-license-copy">
+          <p>Made to stay with you across the devices you use.</p>
+          <div className="de8-license-row"><span>Use</span><span>Personal screens, including a work-provided device used by you.</span></div>
+          <div className="de8-license-row"><span>Adapt</span><span>Crop, scale and reposition as needed to fit your screen.</span></div>
+          <div className="de8-license-row"><span>Share</span><span>Photos and screenshots of your setup are welcome.</span></div>
+          <div className="de8-license-row"><span>Not included</span><span>Redistribution, resale, commercial use, derivative works or AI training.</span></div>
         </div>
       </section>
 
-      <section className="de-ending">
-        <p className="de-eyebrow">Rooms of Light · Exhibition 01</p>
-        <h2>The room changes scale.<br />It does not disappear.</h2>
-        <Link to={ROOM_PATH}>Return to the exhibition →</Link>
+      <section className="de8-end">
+        <div>
+          <p className="de8-eyebrow">Rooms of Light · Exhibition 01</p>
+          <h2>The room changes scale.<br />It does not disappear.</h2>
+          <Link className="de8-action" to={ROOM_PATH}>Return to the exhibition →</Link>
+        </div>
       </section>
     </article>
   );
