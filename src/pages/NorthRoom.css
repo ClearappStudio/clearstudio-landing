@@ -10,7 +10,6 @@
   background: var(--north-paper);
   color: var(--north-ink);
   font-family: var(--north-sans);
-  overflow-x: hidden;
 }
 
 .north-v4, .north-v4 * { box-sizing: border-box; }
@@ -27,8 +26,8 @@
 .north-counter { right: var(--north-pad); display: flex; gap: 11px; align-items: center; font-size: 10px; letter-spacing: .15em; }
 .north-counter b { display: block; width: 72px; height: 1px; background: currentColor; opacity: .24; }
 
-.north-hero-wrap { --north-progress: 0; height: 220svh; position: relative; background: #e9eef0; }
-.north-hero { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; }
+.north-hero-wrap { --north-progress: 0; height: 220dvh; position: relative; background: #e9eef0; }
+.north-hero { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; }
 .north-art { position: absolute; inset: 0; transform: scale(calc(1.012 - var(--north-progress) * .018)); transform-origin: center; }
 .north-art picture, .north-art img { width: 100%; height: 100%; }
 .north-art img { object-fit: cover; }
@@ -69,7 +68,7 @@
 .north-device { position: relative; filter: drop-shadow(0 28px 45px rgba(18,18,24,.1)); }
 .north-shell { position: relative; width: 100%; height: 100%; background: #111316; overflow: hidden; }
 .north-screen { position: absolute; overflow: hidden; background: #e7edf0; }
-.north-screen img { width: 100%; height: 100%; object-fit: contain; }
+.north-screen img { width: 100%; height: 100%; object-fit: cover; }
 .north-mac { aspect-ratio: 16/10; border-radius: 10px; }
 .north-mac .north-shell { border-radius: 10px; padding: 8px 8px 18px; }
 .north-mac .north-screen { inset: 8px 8px 18px; border-radius: 4px; }
@@ -93,7 +92,7 @@
 .north-end-card > p:nth-of-type(2) { margin-bottom: 25px; max-width: 38ch; line-height: 1.7; color: rgba(24,26,25,.72); }
 
 @media (max-width: 900px) {
-  .north-hero-wrap { height: 215svh; }
+  .north-hero-wrap { height: 215dvh; }
   .north-m1 { width: min(600px, 58vw); }
   .north-m2 { width: min(520px, 52vw); }
   .north-about, .north-open { display: block; min-height: auto; }
