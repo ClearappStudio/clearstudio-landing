@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
 import ClearMail from "@/pages/ClearMail";
@@ -23,6 +23,8 @@ import Studies from "@/pages/Studies";
 import StudyDetail from "@/pages/StudyDetail";
 import NotFound from "@/pages/NotFound";
 
+const digitalEditionPath = "/projects/digital-art-gallery/rooms-of-light/digital-edition";
+
 const App = () => (
   <BrowserRouter>
     <Routes>
@@ -32,7 +34,8 @@ const App = () => (
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light" element={<RoomsOfLight />} />
-        <Route path="/projects/digital-art-gallery/rooms-of-light/digital-edition" element={<RoomsOfLightDigitalEdition />} />
+        <Route path={digitalEditionPath} element={<RoomsOfLightDigitalEdition />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light/:workSlug/digital-edition" element={<Navigate to={digitalEditionPath} replace />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/arrival" element={<ArrivalRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/open-sky" element={<OpenSkyRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/signals" element={<SignalsRoom />} />

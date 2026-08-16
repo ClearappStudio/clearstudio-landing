@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./RoomsOfLightDigitalEdition.css";
+import "./RoomsOfLightDigitalEditionDevices.css";
 
 const ROOM_PATH = "/projects/digital-art-gallery/rooms-of-light";
 const ASSET_PATH = "/assets/rooms-of-light/";
