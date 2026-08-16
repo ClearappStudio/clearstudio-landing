@@ -35,7 +35,7 @@
 .bloom-about h2{grid-column:2/10;margin-top:5vh;font:400 clamp(50px,6.1vw,96px)/.92 var(--bloom-serif);letter-spacing:-.058em}
 .bloom-about h2 span{display:block}
 .bloom-about h2 span:last-child{margin-left:11vw}
-.bloom-about-copy{grid-column:7/12;margin-top:26vh;max-width:590px;font-size:clamp(16px,1.22vw,19px);line-height:1.78}
+.bloom-about-copy{grid-column:7/12;margin-top:10vh;max-width:590px;font-size:clamp(16px,1.22vw,19px);line-height:1.78}
 .bloom-about-copy p{margin-bottom:1.45em}
 .bloom-about-number{grid-column:11/13;justify-self:end;margin-top:7vh;font:400 clamp(74px,9vw,144px)/.8 var(--bloom-serif);letter-spacing:-.065em;color:rgba(25,23,19,.075)}
 .bloom-colour-field{min-height:104svh;position:relative;overflow:hidden;padding:14vh var(--bloom-pad);display:grid;grid-template-columns:repeat(12,1fr);align-content:center;background:radial-gradient(ellipse at 17% 32%,rgba(244,95,60,.17),transparent 30%),radial-gradient(ellipse at 49% 48%,rgba(255,214,72,.18),transparent 32%),radial-gradient(ellipse at 74% 56%,rgba(236,112,157,.14),transparent 30%),radial-gradient(ellipse at 92% 38%,rgba(73,157,220,.16),transparent 27%),#f4eee6;border-top:1px solid var(--bloom-line)}
@@ -44,7 +44,7 @@
 .bloom-colour-field h2{grid-column:2/11;position:relative;z-index:2;margin-top:5vh;font:400 clamp(55px,7.2vw,116px)/.89 var(--bloom-serif);letter-spacing:-.064em}
 .bloom-colour-field h2 span{display:block}
 .bloom-colour-field h2 span:nth-child(2){margin-left:9vw}
-.bloom-colour-note{grid-column:8/12;position:relative;z-index:2;margin-top:9vh;max-width:420px;font-size:clamp(15px,1.15vw,18px);line-height:1.72;color:var(--bloom-muted)}
+.bloom-colour-note{grid-column:8/12;position:relative;z-index:2;margin-top:21vh;max-width:420px;font-size:clamp(15px,1.15vw,18px);line-height:1.72;color:var(--bloom-muted)}
 .bloom-edition{padding:14vh var(--bloom-pad) 17vh;background:var(--bloom-paper);border-top:1px solid var(--bloom-line)}
 .bloom-edition-head{display:grid;grid-template-columns:repeat(12,1fr);align-items:end}
 .bloom-edition-head .bloom-eyebrow{grid-column:1/3}
