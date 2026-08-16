@@ -21,7 +21,8 @@ export function SiteLayout() {
   const isBloomRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/bloom";
   const isBlueHourRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/blue-hour";
   const isStillWaterRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/still-water";
-  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom || isStillWaterRoom;
+  const isNorthRoom = pathname === "/projects/digital-art-gallery/rooms-of-light/north";
+  const isArtworkRoom = isArrivalRoom || isOpenSkyRoom || isSignalsRoom || isBetweenShapesRoom || isBloomRoom || isBlueHourRoom || isStillWaterRoom || isNorthRoom;
   const usesMuseumLayout = isRoomsOfLightExhibition || isArtworkRoom;
 
   useEffect(() => {

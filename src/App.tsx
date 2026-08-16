@@ -11,6 +11,7 @@ import BetweenShapesRoom from "@/pages/BetweenShapesRoom";
 import BloomRoom from "@/pages/BloomRoom";
 import BlueHourRoom from "@/pages/BlueHourRoom";
 import StillWaterRoom from "@/pages/StillWaterRoom";
+import NorthRoom from "@/pages/NorthRoom";
 import Home from "@/pages/Home";
 import Journal from "@/pages/Journal";
 import JournalEntry from "@/pages/JournalEntry";
@@ -37,6 +38,7 @@ const App = () => (
         <Route path="/projects/digital-art-gallery/rooms-of-light/bloom" element={<BloomRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/blue-hour" element={<BlueHourRoom />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light/still-water" element={<StillWaterRoom />} />
+        <Route path="/projects/digital-art-gallery/rooms-of-light/north" element={<NorthRoom />} />
         <Route path="/projects/wallpapers" element={<DigitalArtGallery />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/studies" element={<Studies />} />
