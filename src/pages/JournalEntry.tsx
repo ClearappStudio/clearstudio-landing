@@ -1,3 +1,4 @@
+import DesigningExhibition from "./DesigningExhibition";
 import { Link, Navigate, useParams } from "react-router-dom";
 import "./FindingBloom.css";
 
@@ -128,6 +129,10 @@ function FindingBloom() {
 
 export default function JournalEntry() {
   const { entrySlug } = useParams();
+
+  if (entrySlug === "designing-the-first-digital-exhibition") {
+    return <DesigningExhibition />;
+  }
 
   if (entrySlug === "finding-bloom") {
     return <FindingBloom />;

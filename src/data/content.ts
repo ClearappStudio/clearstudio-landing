@@ -88,11 +88,12 @@ export const journalEntries: JournalEntry[] = [
     upcomingOrder: 2,
   },
   {
+    slug: "designing-the-first-digital-exhibition",
     type: "Process",
     title: "Designing the first digital exhibition",
-    date: "Coming soon",
-    sortDate: "0000-00-00",
-    upcomingOrder: 1,
+    date: "12 Oct 2026",
+    sortDate: "2026-10-12",
+    excerpt: "Rooms of Light began with eight images. The harder question was how to make them feel like an exhibition rather than a gallery page.",
   },
 ].sort((a, b) => {
   const upcomingDifference = (b.upcomingOrder ?? 0) - (a.upcomingOrder ?? 0);
