@@ -5,14 +5,14 @@ const ROOM_PATH = "/projects/digital-art-gallery/rooms-of-light";
 const ASSET_PATH = "/assets/rooms-of-light/";
 
 const works = [
-  { number: "01", slug: "arrival", title: "Arrival", image: "arrival.png" },
-  { number: "02", slug: "open-sky", title: "Open Sky", image: "open-sky.png" },
-  { number: "03", slug: "signals", title: "Signals", image: "signals.png" },
-  { number: "04", slug: "between-shapes", title: "Between Shapes", image: "between-shapes.png" },
-  { number: "05", slug: "bloom", title: "Bloom", image: "bloom.png" },
-  { number: "06", slug: "blue-hour", title: "Blue Hour", image: "blue-hour.png" },
-  { number: "07", slug: "still-water", title: "Still Water", image: "still-water.png" },
-  { number: "08", slug: "north", title: "North", image: "north.png" },
+  { number: "01", slug: "arrival", productUrl: "https://clearstudioapp.gumroad.com/l/arrival-digitalEdition", title: "Arrival", image: "arrival.png" },
+  { number: "02", slug: "open-sky", productUrl: "https://clearstudioapp.gumroad.com/l/OpenSky-DigitalEdition", title: "Open Sky", image: "open-sky.png" },
+  { number: "03", slug: "signals", productUrl: "https://clearstudioapp.gumroad.com/l/Signals-DigitalEdition", title: "Signals", image: "signals.png" },
+  { number: "04", slug: "between-shapes", productUrl: "https://clearstudioapp.gumroad.com/l/BetweenShapes-DigitalEdition", title: "Between Shapes", image: "between-shapes.png" },
+  { number: "05", slug: "bloom", productUrl: "https://clearstudioapp.gumroad.com/l/Bloom-DigitalEdition", title: "Bloom", image: "bloom.png" },
+  { number: "06", slug: "blue-hour", productUrl: "https://clearstudioapp.gumroad.com/l/BlueHour-DigitalEdition", title: "Blue Hour", image: "blue-hour.png" },
+  { number: "07", slug: "still-water", productUrl: "https://clearstudioapp.gumroad.com/l/StillWater-DigitalEdition", title: "Still Water", image: "still-water.png" },
+  { number: "08", slug: "north", productUrl: "https://clearstudioapp.gumroad.com/l/North-DigitalEdition", title: "North", image: "north.png" },
 ];
 
 function DeviceSet({ compact = false }: { compact?: boolean }) {
@@ -92,7 +92,7 @@ export default function RoomsOfLightDigitalEdition() {
                 <p>Eight individual editions would be €80.</p>
                 <p className="de8-saving">Complete edition · €50</p>
               </div>
-              <button className="de8-action" type="button" disabled>Choose complete edition →</button>
+              <a className="de8-action" href="https://clearstudioapp.gumroad.com/l/RoomsOfLight-DigitalEdition">Choose complete edition →</a>
             </div>
           </article>
 
@@ -135,7 +135,7 @@ export default function RoomsOfLightDigitalEdition() {
                 <span>Mac · iPad · iPhone</span>
                 <strong>€10</strong>
               </div>
-              <button className="de8-action" type="button" disabled>Choose {work.title} →</button>
+              <a className="de8-action" href={work.productUrl}>Choose {work.title} →</a>
             </article>
           ))}
         </div>
