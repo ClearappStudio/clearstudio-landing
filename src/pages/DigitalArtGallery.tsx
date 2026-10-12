@@ -27,7 +27,12 @@ export default function DigitalArtGallery() {
           <span>Exhibition 01</span>
         </div>
         <Link className="dag-featured" to="/projects/digital-art-gallery/rooms-of-light">
-          <GalleryArtwork className="dag-cover" />
+          <div
+            className="gallery-artwork dag-cover"
+            role="img"
+            aria-label="Arrival — Rooms of Light"
+            style={{ backgroundImage: "url('/assets/rooms-of-light/arrival-mac.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+          />
           <div className="dag-feature-copy">
             <div>
               <span className="dag-status">Now showing</span>
