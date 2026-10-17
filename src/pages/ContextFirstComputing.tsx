@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { bookParts, introductionExcerpt } from "@/data/contextBook";
-import ContextDiscussion from "@/components/ContextDiscussion";
 import "./ContextFirstComputing.css";
 
 const cover = "/assets/context-first-computing/book-cover.jpg";
@@ -61,8 +60,7 @@ export default function ContextFirstComputing() {
 
       <section className="cfc-editions" aria-labelledby="editions-heading"><div className="cfc-editions-heading"><p className="cfc-kicker">05 / Choose how you read</p><h2 id="editions-heading">A small book.<br /><em>An open possibility.</em></h2><p>Planned for 16 November 2026. Purchase links will be added when the editions are available.</p></div><div className="cfc-formats"><article><div className="cfc-format-title"><h3>Digital edition</h3><span>€4.99</span></div><p>EPUB for compatible reading apps and devices. A reflowable edition with adjustable text.</p><span className="cfc-availability">Coming to this website</span></article><article><div className="cfc-format-title"><h3>Paperback</h3><span>€10.39</span></div><p>90 pages. A compact 5 × 8-inch edition, printed in black on cream paper.</p><span className="cfc-availability">Coming to Amazon</span></article><article><div className="cfc-format-title"><h3>Kindle</h3><span>€4.99</span></div><p>For Kindle readers and the Kindle app. The same book, ready for your reading library.</p><span className="cfc-availability">Coming to Amazon</span></article></div><p className="cfc-price-note">Planned prices for Spain, including VAT. Amazon prices may vary by marketplace.</p></section>
 
-      <section className="cfc-closing"><p className="cfc-kicker">The idea continues beyond the book.</p><h2>A starting point<br /><em>for what comes next.</em></h2><p>The notebook is an exploratory proposal, not a validated product. Its purpose is to make the questions concrete—and invite others to develop their own answers.</p><div className="cfc-actions"><Link className="cfc-text-link" to="/projects/notebook">Explore the notebook concept <span aria-hidden="true">↗</span></Link><a className="cfc-text-link" href="#discussion">Discuss the idea <span aria-hidden="true">↓</span></a></div></section>
-      <ContextDiscussion />
+      <section className="cfc-closing"><p className="cfc-kicker">The idea continues beyond the book.</p><h2>A starting point<br /><em>for what comes next.</em></h2><p>The notebook is an exploratory proposal, not a validated product. Its purpose is to make the questions concrete—and invite others to develop their own answers.</p><div className="cfc-actions"><Link className="cfc-text-link" to="/projects/notebook">Explore the notebook concept <span aria-hidden="true">↗</span></Link></div></section>
     </article>
   );
 }

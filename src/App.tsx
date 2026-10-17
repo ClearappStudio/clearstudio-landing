@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
 import ContextFirstComputing from "@/pages/ContextFirstComputing";
-import ContextDiscussionModeration from "@/pages/ContextDiscussionModeration";
 import ClearMail from "@/pages/ClearMail";
 import DigitalArtGallery from "@/pages/DigitalArtGallery";
 import RoomsOfLight from "@/pages/RoomsOfLight";
@@ -34,7 +33,6 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/context-first-computing" element={<ContextFirstComputing />} />
-        <Route path="/projects/context-first-computing/discussion/moderate" element={<ContextDiscussionModeration />} />
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light" element={<RoomsOfLight />} />
