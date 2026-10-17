@@ -29,9 +29,8 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
       {project.tone === "context" && (
-        <div className="project-visual project-context-cover" aria-hidden="true">
-          <small>Clear Studio Editions</small>
-          <strong>Context<br />comes first.</strong>
+        <div className="project-visual project-context-cover" style={{ padding: 0, background: "transparent", height: "auto", aspectRatio: "5 / 8" }} aria-hidden="true">
+          <img src="/assets/context-first-computing/book-cover.jpg" alt="" width="1600" height="2560" loading="lazy" style={{display:"block",width:"100%",height:"100%",objectFit:"contain"}} />
         </div>
       )}
       {project.tone === "gallery" && <GalleryArtwork className="project-gallery-art" />}

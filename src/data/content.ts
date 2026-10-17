@@ -12,8 +12,8 @@ export const projects: Project[] = [
   {
     slug: "context-first-computing",
     title: "Context-first Computing",
-    type: "Idea",
-    status: "In development",
+    type: "Idea / Book",
+    status: "Forthcoming",
     description:
       "A new way of thinking about software: built around situations and understanding, not isolated fragments.",
     tone: "context",
