@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { bookParts, introductionExcerpt } from "@/data/contextBook";
+import ContextDiscussion from "@/components/ContextDiscussion";
 import "./ContextFirstComputing.css";
 
 const cover = "/assets/context-first-computing/book-cover.jpg";
@@ -40,13 +41,13 @@ export default function ContextFirstComputing() {
       <section className="cfc-question" aria-labelledby="question-heading"><p className="cfc-kicker">The first question changes the design.</p><h2 id="question-heading">“What situation is this person trying to understand?”</h2><p>From that question follow different choices about what software preserves, what an interface reveals and how a person finds their way back into the work.</p></section>
 
       <section className="cfc-section cfc-example" aria-labelledby="continuity-heading">
-        <div className="cfc-example-copy"><p className="cfc-kicker">02 / Continuity, made visible</p><h2 id="continuity-heading">A changed decision.<br /><em>Not just another document.</em></h2><p>A customer announcement becomes a smaller pilot. A useful system would help you recover why the plan changed, what has been confirmed and what still needs a decision.</p><p>The sources stay available. The interpretation can be inspected and corrected. You decide what happens next.</p><span className="cfc-example-caption">An illustrative situation explored in the book.</span></div>
-        <div className="cfc-thread" aria-label="Example: the history behind a changed release plan">
-          <div className="cfc-thread-heading"><span>The release plan</span><span>In context</span></div>
-          <div className="cfc-thread-item"><span className="cfc-thread-index">01</span><div><small>The original agreement</small><h3>A broad customer release</h3><p>The meeting note records the initial plan.</p></div></div>
-          <div className="cfc-thread-item"><span className="cfc-thread-index">02</span><div><small>What changed</small><h3>A technical constraint</h3><p>The review explains why the scope needs to change.</p></div></div>
-          <div className="cfc-thread-item cfc-thread-item--current"><span className="cfc-thread-index">03</span><div><small>The current direction</small><h3>A smaller pilot</h3><p>The revised decision remains connected to its reasoning.</p></div></div>
-          <p className="cfc-thread-note">A task can tell you what to do. Context helps you understand why.</p>
+        <div className="cfc-example-copy"><p className="cfc-kicker">02 / Finding your way back</p><h2 id="continuity-heading">Two weeks later.<br /><em>Where were we?</em></h2><p>You return to a project and find a task: “Prepare the customer pilot.” You remember planning a wider launch. Why did it change? What has already been agreed?</p><p>A context-first system would help you recover the situation, bringing the current decision together with the evidence behind it and the question still open. You can inspect the sources, correct the interpretation and decide how to continue.</p><span className="cfc-example-caption">An illustrative scenario, not a working product interface.</span></div>
+        <div className="cfc-thread" aria-label="Illustration: recovering a project after two weeks away">
+          <div className="cfc-thread-heading"><span>Returning to the release plan</span><span>In context</span></div>
+          <div className="cfc-thread-item cfc-thread-item--current"><span className="cfc-thread-index">01</span><div><small>Where things stand</small><h3>A pilot with five customers</h3><p>The team agreed to test with a smaller group before a wider launch. Source: the revised project decision.</p></div></div>
+          <div className="cfc-thread-item"><span className="cfc-thread-index">02</span><div><small>Why the plan changed</small><h3>A constraint on capacity</h3><p>The technical review found that the service is not ready for the audience in the original launch plan. Sources: the review and the initial meeting note.</p></div></div>
+          <div className="cfc-thread-item"><span className="cfc-thread-index">03</span><div><small>What still needs you</small><h3>Agree what success looks like</h3><p>The pilot is agreed. Its success criteria are still open; these need a decision before invitations go out.</p></div></div>
+          <p className="cfc-thread-note">Enough context to pick up the work without rebuilding the story yourself.</p>
         </div>
       </section>
 
@@ -60,7 +61,8 @@ export default function ContextFirstComputing() {
 
       <section className="cfc-editions" aria-labelledby="editions-heading"><div className="cfc-editions-heading"><p className="cfc-kicker">05 / Choose how you read</p><h2 id="editions-heading">A small book.<br /><em>An open possibility.</em></h2><p>Planned for 16 November 2026. Purchase links will be added when the editions are available.</p></div><div className="cfc-formats"><article><div className="cfc-format-title"><h3>Digital edition</h3><span>€4.99</span></div><p>EPUB for compatible reading apps and devices. A reflowable edition with adjustable text.</p><span className="cfc-availability">Coming to this website</span></article><article><div className="cfc-format-title"><h3>Paperback</h3><span>€10.39</span></div><p>90 pages. A compact 5 × 8-inch edition, printed in black on cream paper.</p><span className="cfc-availability">Coming to Amazon</span></article><article><div className="cfc-format-title"><h3>Kindle</h3><span>€4.99</span></div><p>For Kindle readers and the Kindle app. The same book, ready for your reading library.</p><span className="cfc-availability">Coming to Amazon</span></article></div><p className="cfc-price-note">Planned prices for Spain, including VAT. Amazon prices may vary by marketplace.</p></section>
 
-      <section className="cfc-closing"><p className="cfc-kicker">The idea continues beyond the book.</p><h2>A starting point<br /><em>for what comes next.</em></h2><p>The notebook is an exploratory proposal, not a validated product. Its purpose is to make the questions concrete—and invite others to develop their own answers.</p><div className="cfc-actions"><Link className="cfc-text-link" to="/projects/notebook">Explore the notebook concept <span aria-hidden="true">↗</span></Link><a className="cfc-text-link" href="mailto:hello@clearstudio.app?subject=Context-first%20Computing">Join the conversation <span aria-hidden="true">↗</span></a></div></section>
+      <section className="cfc-closing"><p className="cfc-kicker">The idea continues beyond the book.</p><h2>A starting point<br /><em>for what comes next.</em></h2><p>The notebook is an exploratory proposal, not a validated product. Its purpose is to make the questions concrete—and invite others to develop their own answers.</p><div className="cfc-actions"><Link className="cfc-text-link" to="/projects/notebook">Explore the notebook concept <span aria-hidden="true">↗</span></Link><a className="cfc-text-link" href="#discussion">Discuss the idea <span aria-hidden="true">↓</span></a></div></section>
+      <ContextDiscussion />
     </article>
   );
 }
