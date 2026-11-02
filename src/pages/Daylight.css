@@ -261,11 +261,11 @@
 .daylight-page .dl-gallery-app{padding:0;min-height:0;overflow:hidden;background:#f8f6f0}
 .daylight-page .dl-screenshot-panel img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain}
 .daylight-page .dl-screenshot-panel a{display:block;cursor:zoom-in}
-.daylight-page .dl-gallery-month{aspect-ratio:4/3;padding:25px 32px}
+
 .daylight-page .caption{font-size:11px;line-height:1.6}
 @media(max-width:600px){
 .daylight-page .dl-gallery-tabs .app-tabs button{font-size:10px;padding:9px 10px}
-.daylight-page .dl-gallery-month{padding:12px;min-height:400px}
+
 .daylight-page .caption{font-size:9px;flex-direction:column;gap:4px}
 .daylight-page .caption span:last-child{max-width:none;text-align:left}
 }
