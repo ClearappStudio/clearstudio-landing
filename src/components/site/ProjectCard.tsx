@@ -13,6 +13,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <span>{project.type}</span>
         <span>{project.status}</span>
       </div>
+      {project.tone === "daylight" && (
+        <div className="project-visual project-daylight-visual" aria-hidden="true">
+          <img src="/assets/daylight/app-icon.png" alt="" width="1024" height="1024" loading="lazy" />
+        </div>
+      )}
       {project.tone === "notebook" && (
         <div className="project-visual project-notebook-visual" aria-hidden="true">
           <div className="project-notebook-lines"><i /><i /><i /></div>

@@ -1,0 +1,251 @@
+.daylight-page{--paper:#f5f2eb;--ink:#233e50;--muted:#647078;--line:#233e5027;--yellow:#f5cf78;--blue:#dce5e9}
+.daylight-page *{box-sizing:border-box}
+.daylight-page{scroll-behavior:smooth;scroll-padding-top:30px}
+.daylight-page{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.daylight-page a{color:inherit;text-decoration:none}
+.daylight-page button{font:inherit;color:inherit;cursor:pointer}
+.daylight-page button:focus-visible,.daylight-page a:focus-visible,.daylight-page summary:focus-visible{outline:2px solid #bb7732;outline-offset:5px}
+.daylight-page button:disabled{cursor:default}
+.daylight-page h1,.daylight-page h2,.daylight-page h3,.daylight-page p{margin:0}
+.daylight-page h1,.daylight-page h2,.daylight-page h3,.daylight-page .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.daylight-page p{line-height:1.7}
+.daylight-page img{max-width:100%;display:block}
+.daylight-page .wrap{max-width:1320px;margin:auto;padding:0 5.2%}
+.daylight-page .top{height:86px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.daylight-page .brand{font:26px Georgia,serif;letter-spacing:-1px}
+.daylight-page .top nav{display:flex;gap:30px;font-size:11px;text-transform:uppercase;letter-spacing:1.3px}
+.daylight-page .top nav a:hover,.daylight-page .under:hover{opacity:.6}
+.daylight-page .eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.daylight-page .hero{padding:76px 0 42px;display:grid;grid-template-columns:1.4fr 1fr;gap:70px;align-items:center}
+.daylight-page .product{display:flex;gap:12px;align-items:center;margin-bottom:31px;font-size:14px}
+.daylight-page .product img{width:42px;height:42px;border-radius:10px}
+.daylight-page .badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:8px 12px;margin-left:10px}
+.daylight-page .dot{height:5px;width:5px;background:#997742;border-radius:50%}
+.daylight-page h1{font-size:clamp(58px,6.8vw,96px);line-height:1.02;letter-spacing:-4.8px}
+.daylight-page h1 em{color:#8c6c3e;font-weight:400}
+.daylight-page .hero-copy{font-size:17px;max-width:455px;margin-top:27px;color:#52636c}
+.daylight-page .actions{display:flex;gap:25px;align-items:center;margin-top:30px;font-size:12px}
+.daylight-page .button{display:inline-flex;justify-content:space-between;align-items:center;gap:35px;background:var(--ink);color:var(--paper);padding:17px 20px;border:1px solid var(--ink);transition:background .2s}
+.daylight-page .button:hover{background:#3c5869}
+.daylight-page .under{border-bottom:1px solid var(--ink);padding:7px 0}
+.daylight-page .hero-art{position:relative;display:grid;place-items:center;min-height:370px}
+.daylight-page .hero-art img{width:265px;border-radius:57px;transform:rotate(-7deg);box-shadow:0 25px 45px #263c5020}
+.daylight-page .art-note{position:absolute;font-family:Georgia,serif;font-style:italic;color:#89784e;font-size:16px;bottom:14px;right:20px;transform:rotate(-7deg)}
+.daylight-page .intro-line{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:11px;gap:20px}
+.daylight-page .device-stage{background:#e3e7e4;padding:45px 5.2% 24px;overflow:hidden}
+.daylight-page .device{max-width:1050px;margin:auto;background:#242927;padding:12px;border-radius:25px;box-shadow:0 30px 45px #26352324;position:relative}
+.daylight-page .device:before{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#5b605d;left:4px;top:50%}
+.daylight-page .app{background:#faf8f1;border-radius:15px;min-height:490px;padding:25px 32px;color:#434941}
+.daylight-page .app-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #c7ccbb;padding-bottom:16px;gap:15px}
+.daylight-page .app-name{font:24px Georgia,serif;letter-spacing:-.8px}
+.daylight-page .app-tabs{display:flex;gap:6px}
+.daylight-page .app-tabs button{background:transparent;border:0;padding:8px 12px;font-size:11px;border-radius:6px}
+.daylight-page .app-tabs button[aria-selected=true]{background:#e5e8dc}
+.daylight-page .app-mode{font-size:10px;border:1px solid #d3d7c8;border-radius:30px;padding:6px 10px}
+.daylight-page .app-heading{display:flex;justify-content:space-between;align-items:end;margin:23px 0}
+.daylight-page .app-heading h3{font-size:26px}
+.daylight-page .app-heading small{font-size:10px;color:#909587}
+.daylight-page .app-content{display:grid;grid-template-columns:1fr 1.05fr;gap:36px}
+.daylight-page .caption{display:flex;justify-content:space-between;gap:15px;margin:22px auto 0;max-width:1050px;font-size:10px;color:#6d7776}
+.daylight-page .mini-title{font-size:9px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:12px;color:#858e7e}
+.daylight-page .schedule{position:relative}
+.daylight-page .hour{height:50px;border-top:1px solid #e3e5d9;font-size:9px;color:#9da593;padding-top:5px}
+.daylight-page .event{position:absolute;left:42px;right:0;border-left:3px solid #a1ad8c;background:#e8ecdf;padding:10px 13px;font-size:11px;border-radius:3px}
+.daylight-page .event small{display:block;font-size:9px;opacity:.65;margin-top:5px}
+.daylight-page .event.first{top:9px;height:66px}
+.daylight-page .event.second{top:112px;height:62px;background:#efe4cc;border-color:#cdaf75}
+.daylight-page .task{display:flex;align-items:center;gap:11px;border-bottom:1px solid #e1e4d7;min-height:38px;font-size:12px}
+.daylight-page .check{height:11px;width:11px;border:1px solid #aab19b;border-radius:50%;flex-shrink:0}
+.daylight-page .task.done{color:#9b9e91;text-decoration:line-through}
+.daylight-page .task.done .check{background:#b5bda3}
+.daylight-page .hand{font-family:"Segoe Print","Bradley Hand",cursive;font-size:19px;color:#7c6646;font-style:italic}
+.daylight-page .margin-note{margin-top:23px;border-top:1px solid #bac2ac;padding-top:13px}
+.daylight-page .margin-note .hand{line-height:1.8;transform:rotate(-2deg);padding:5px 0}
+.daylight-page .ink-line{width:115px;height:8px;border-bottom:2px solid #bfa15d;border-radius:50%;transform:rotate(-5deg);margin:3px 0 0 34px}
+.daylight-page .app-panel[hidden]{display:none}
+.daylight-page .weekgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.daylight-page .weekday{border-top:2px solid #b4bba4;padding-top:11px;min-height:260px;font-size:11px}
+.daylight-page .weekday strong{display:block;font-size:20px;font-weight:400;margin:4px 0 22px}
+.daylight-page .weekday p{margin-bottom:18px;font-size:10px}
+.daylight-page .weekday.active{background:#eff0e5;padding-inline:9px}
+.daylight-page .notebook{display:grid;grid-template-columns:170px 1fr;gap:28px}
+.daylight-page .note-index{font-size:11px;border-right:1px solid #dbe0d0;padding-right:15px}
+.daylight-page .note-index div{padding:13px 8px}
+.daylight-page .note-index .selected{background:#e8ebdf}
+.daylight-page .note-paper{background:repeating-linear-gradient(#faf8f1 0 29px,#e7e9de 29px 30px);padding:0 15px;min-height:260px}
+.daylight-page .note-paper h3{font-size:25px;line-height:60px}
+.daylight-page .note-paper p{font-size:12px;line-height:30px}
+.daylight-page .note-paper .hand{font-size:22px;line-height:60px}
+.daylight-page .habits{display:grid;grid-template-columns:180px repeat(7,1fr);gap:16px;font-size:12px;align-items:center}
+.daylight-page .habit-dot{width:22px;height:22px;border-radius:50%;border:1px solid #bbc2ad;margin:auto}
+.daylight-page .habit-dot.on{background:#b4c09d;border-color:#b4c09d}
+.daylight-page .section{padding:110px 0}
+.daylight-page .section h2{font-size:clamp(40px,4.6vw,64px);line-height:1.08;letter-spacing:-2px}
+.daylight-page .section .eyebrow{margin-bottom:25px}
+.daylight-page .split{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.daylight-page .split-copy{max-width:440px;align-self:center;color:#5b6b71;font-size:16px}
+.daylight-page .split-copy p+p{margin-top:18px}
+.daylight-page .feature-list{margin-top:65px}
+.daylight-page .feature-row{display:grid;grid-template-columns:65px 1fr 1.1fr;gap:30px;border-top:1px solid var(--line);padding:30px 0}
+.daylight-page .feature-row .num{font-size:11px;color:#8d928e;padding-top:8px}
+.daylight-page .feature-row h3{font-size:29px;letter-spacing:-.7px}
+.daylight-page .feature-row p{font-size:14px;color:#617078;max-width:450px}
+.daylight-page .dark{background:var(--ink);color:var(--paper)}
+.daylight-page .dark .eyebrow{color:#b4c5ca}
+.daylight-page .flow-head{display:flex;justify-content:space-between;align-items:end;gap:50px}
+.daylight-page .flow-head p{max-width:305px;color:#c2ced0;font-size:14px}
+.daylight-page .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;margin-top:70px}
+.daylight-page .flow article{border-top:1px solid #ffffff35;padding-top:22px}
+.daylight-page .flow .num{color:var(--yellow);font-size:11px}
+.daylight-page .flow h3{font-size:29px;margin:27px 0 15px}
+.daylight-page .flow p{font-size:14px;color:#c2ced0}
+.daylight-page .quiet-note{background:#e5e9e4;padding:70px 0}
+.daylight-page .quiet-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.daylight-page .quiet-grid h2{font-size:40px;letter-spacing:-1px;line-height:1.15}
+.daylight-page .quiet-grid p{font-size:14px;color:#5f6d70}
+.daylight-page .quiet-grid .eyebrow{margin-bottom:20px}
+.daylight-page .pricing{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.daylight-page .pricing-copy p{font-size:15px;color:#617078;max-width:380px;margin-top:25px}
+.daylight-page .price-card{border:1px solid var(--line);padding:38px;background:#ece8de}
+.daylight-page .price-card .price{font:70px Georgia,serif;letter-spacing:-4px;margin:18px 0 8px}
+.daylight-page .price-card .price span{font:16px -apple-system,sans-serif;letter-spacing:0;color:#697579}
+.daylight-page .price-card p{font-size:13px;color:#5c696d}
+.daylight-page .price-list{display:grid;gap:13px;margin:28px 0;padding-top:25px;border-top:1px solid var(--line);font-size:12px}
+.daylight-page .price-list span:before{content:"✓";margin-right:12px;color:#647d62}
+.daylight-page .store-soon{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:15px 18px;font-size:13px;display:flex;align-items:center;gap:12px}
+.daylight-page .store-soon svg{width:23px;height:26px;fill:currentColor}
+.daylight-page .store-soon small{font-size:9px;display:block;opacity:.7;margin-bottom:3px}
+.daylight-page .price-note{font-size:10px!important;margin-top:17px!important;line-height:1.6}
+.daylight-page .faq{padding-top:0}
+.daylight-page .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}
+.daylight-page .faq h2{font-size:45px}
+.daylight-page .faq details{border-top:1px solid var(--line);padding:22px 0}
+.daylight-page .faq details:last-child{border-bottom:1px solid var(--line)}
+.daylight-page summary{cursor:pointer;font-size:14px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.daylight-page summary:after{content:"+";font-size:19px}
+.daylight-page details[open] summary:after{content:"−"}
+.daylight-page .faq details p{font-size:13px;color:#617078;margin-top:17px;max-width:460px}
+.daylight-page .final{border-top:1px solid var(--line);text-align:center;padding:75px 0}
+.daylight-page .final img{width:64px;margin:0 auto 23px;border-radius:14px}
+.daylight-page .final h2{font-size:48px;letter-spacing:-1.5px}
+.daylight-page .final p{font-size:13px;color:#65737b;margin-top:20px}
+.daylight-page .footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;padding:30px 0 45px;gap:20px;font-size:10px;color:#65737b}
+.daylight-page .footer .brand{font-size:23px;color:var(--ink)}
+.daylight-page .preview-tag{position:fixed;z-index:5;bottom:14px;right:14px;background:#f5f2ebee;border:1px solid var(--line);padding:8px 12px;font-size:9px;letter-spacing:.7px;box-shadow:0 3px 15px #0000000b}
+.daylight-page .skip{position:absolute;top:-70px;background:white;padding:10px}
+.daylight-page .skip:focus{top:0}
+@media (min-width:1400px){.daylight-page .hero-art img{width:290px}}
+@media (max-width:850px){.daylight-page .hero{gap:25px;padding-top:55px}
+.daylight-page .hero-art img{width:210px}
+.daylight-page .hero-art{min-height:300px}
+.daylight-page h1{font-size:66px;letter-spacing:-3px}
+.daylight-page .split,.daylight-page .pricing,.daylight-page .quiet-grid,.daylight-page .faq-layout{gap:45px}
+.daylight-page .app{padding:20px;min-height:470px}
+.daylight-page .app-content{gap:20px}
+.daylight-page .app-mode{display:none}
+.daylight-page .flow{gap:25px}
+.daylight-page .section{padding:80px 0}
+.daylight-page .feature-row{grid-template-columns:35px 1fr 1fr;gap:20px}}
+@media (max-width:600px){.daylight-page .top{height:72px}
+.daylight-page .top nav{gap:17px;font-size:9px}
+.daylight-page .top nav .external{display:none}
+.daylight-page .hero{grid-template-columns:1fr;padding-top:40px;gap:0}
+.daylight-page .hero h1{font-size:62px}
+.daylight-page .hero-copy{font-size:16px;max-width:90%}
+.daylight-page .hero-art{min-height:270px}
+.daylight-page .hero-art img{width:195px;border-radius:43px}
+.daylight-page .art-note{right:10%;bottom:18px;font-size:14px}
+.daylight-page .intro-line{font-size:9px;line-height:1.5}
+.daylight-page .intro-line span:last-child{max-width:135px}
+.daylight-page .device-stage{padding:25px 12px 20px}
+.daylight-page .device{padding:7px;border-radius:17px}
+.daylight-page .app{padding:16px 12px;min-height:480px;border-radius:11px}
+.daylight-page .app-name{font-size:19px}
+.daylight-page .app-tabs{gap:0}
+.daylight-page .app-tabs button{padding:7px;font-size:9px}
+.daylight-page .app-heading h3{font-size:23px}
+.daylight-page .app-content{grid-template-columns:.9fr 1fr;gap:17px}
+.daylight-page .event{left:24px;font-size:9px;padding:8px}
+.daylight-page .task{font-size:10px;gap:7px}
+.daylight-page .hand{font-size:15px}
+.daylight-page .mini-title{font-size:8px}
+.daylight-page .caption{font-size:8px;line-height:1.5}
+.daylight-page .caption span:last-child{text-align:right;max-width:130px}
+.daylight-page .split,.daylight-page .pricing,.daylight-page .quiet-grid,.daylight-page .faq-layout{grid-template-columns:1fr;gap:30px}
+.daylight-page .section h2{font-size:43px;letter-spacing:-1.5px}
+.daylight-page .section{padding:65px 0}
+.daylight-page .split-copy{font-size:15px}
+.daylight-page .feature-list{margin-top:40px}
+.daylight-page .feature-row{grid-template-columns:26px 1fr;gap:10px;padding:23px 0}
+.daylight-page .feature-row p{grid-column:2;font-size:13px}
+.daylight-page .feature-row h3{font-size:26px}
+.daylight-page .flow-head{display:block}
+.daylight-page .flow-head p{margin-top:25px}
+.daylight-page .flow{grid-template-columns:1fr;gap:30px;margin-top:40px}
+.daylight-page .flow h3{margin-top:15px}
+.daylight-page .quiet-note{padding:50px 0}
+.daylight-page .quiet-grid h2{font-size:35px}
+.daylight-page .price-card{padding:28px}
+.daylight-page .faq{padding-top:0}
+.daylight-page .faq-layout{gap:30px}
+.daylight-page .final h2{font-size:38px}
+.daylight-page .footer{align-items:start}
+.daylight-page .footer>span{max-width:130px;text-align:right;line-height:1.6}
+.daylight-page .weekgrid{gap:6px}
+.daylight-page .weekday{font-size:9px}
+.daylight-page .weekday p{font-size:9px}
+.daylight-page .weekday.active{padding-inline:3px}
+.daylight-page .notebook{grid-template-columns:90px 1fr;gap:10px}
+.daylight-page .note-index{font-size:9px}
+.daylight-page .note-paper{padding:0 5px}
+.daylight-page .note-paper h3{font-size:20px}
+.daylight-page .note-paper p{font-size:10px}
+.daylight-page .habits{grid-template-columns:95px repeat(7,1fr);gap:6px;font-size:9px}
+.daylight-page .habit-dot{width:14px;height:14px}
+.daylight-page .preview-tag{font-size:8px;bottom:8px;right:8px}}
+@media (prefers-reduced-motion:reduce){.daylight-page{scroll-behavior:auto}
+.daylight-page *{transition:none!important}}
+.daylight-page .dl-local-nav{max-width:1182px;margin:0 auto;padding:20px 0;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:11px}
+.daylight-page .dl-local-nav div{display:flex;gap:25px}
+.daylight-page .dl-week-demo{display:grid;grid-template-columns:22px repeat(7,minmax(0,1fr));gap:6px;height:300px}
+.daylight-page .dl-week-hours{display:flex;flex-direction:column;justify-content:space-around;font-size:9px;color:#8d9486;padding-top:45px}
+.daylight-page .dl-week-day{border-left:1px solid #e1e5d5;background:repeating-linear-gradient(transparent 0 47px,#e7e9df 47px 48px)}
+.daylight-page .dl-week-day header{text-align:center;font-size:9px;letter-spacing:.5px;background:#faf8f1;padding:0 0 12px}
+.daylight-page .dl-week-day strong{display:block;font:21px Georgia,serif;margin-top:5px}
+.daylight-page .dl-week-slot{background:#e2e8d6;border-left:2px solid #a4b18d;padding:8px 5px;font-size:10px;min-height:60px;position:relative}
+.daylight-page .dl-week-slot small{display:block;font-size:8px;margin-top:5px}
+.daylight-page .dl-week-slot i{position:absolute;bottom:3px;left:40%;width:16px;height:2px;background:#9caa85}
+.daylight-page .dl-week-slot.dl-warm{background:#efe3c9;border-color:#c4a36a}
+.daylight-page .dl-week-day .hand{font-size:14px;margin-top:25px}
+.daylight-page .dl-month-demo{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.daylight-page .dl-month-label{text-align:center;font-size:8px;letter-spacing:1px;padding:0 0 12px}
+.daylight-page .dl-month-cell{height:53px;border:1px solid #e4e6db;padding:4px;font-size:10px}
+.daylight-page .dl-month-cell b{display:block;font-size:8px;font-weight:500;background:#e4e8d9;overflow:hidden;white-space:nowrap;margin-top:4px;padding:2px}
+.daylight-page .dl-month-cell em{font:italic 12px Georgia,serif;color:#8b6f43;display:block;margin-top:5px}
+.daylight-page .dl-outside{color:#afb5a7;background:#f1f1e8}
+.daylight-page .dl-tracker-demo{display:grid;grid-template-columns:130px repeat(14,minmax(0,1fr));gap:13px 10px;align-items:center;padding:12px 0;font-size:11px}
+.daylight-page .dl-tracker-demo small{font-size:9px;text-align:center}
+.daylight-page .dl-tracker-demo i{height:13px;width:13px;border:1px solid #cbd0bd;border-radius:50%;margin:auto}
+.daylight-page .dl-tracker-demo i.on{background:#bd997d;border-color:#bd997d}
+.daylight-page .dl-tracker-label{font-size:9px;letter-spacing:1px}
+@media (max-width:850px){.daylight-page .dl-local-nav{margin:0 5.2%}
+.daylight-page .dl-week-slot{font-size:9px}
+.daylight-page .dl-tracker-demo{gap:12px 6px;grid-template-columns:110px repeat(14,minmax(0,1fr))}}
+@media (max-width:600px){.daylight-page .app-tabs button{padding:7px 5px;font-size:8px}
+.daylight-page .app-name{font-size:17px}
+.daylight-page .dl-local-nav{font-size:9px}
+.daylight-page .dl-local-nav>span{display:none}
+.daylight-page .dl-local-nav div{justify-content:space-between;width:100%}
+.daylight-page .dl-week-slot{font-size:8px;padding:5px 3px}
+.daylight-page .dl-week-slot small{font-size:6px}
+.daylight-page .dl-week-day header{font-size:7px}
+.daylight-page .dl-week-day .hand{font-size:11px}
+.daylight-page .dl-month-cell{height:57px;padding:3px}
+.daylight-page .dl-month-cell b{font-size:6px}
+.daylight-page .dl-tracker-demo{gap:14px 4px;grid-template-columns:86px repeat(14,minmax(0,1fr));font-size:9px}
+.daylight-page .dl-tracker-demo i{width:8px;height:8px}
+.daylight-page .dl-tracker-demo small{font-size:7px}
+.daylight-page .app-heading small{font-size:8px}}
+.daylight-page{margin-inline:calc(var(--page-padding) * -1);text-align:left;overflow:hidden}.daylight-page .wrap{width:100%}.daylight-page .eyebrow{color:inherit}.daylight-page .product{margin-top:0}.daylight-page .dl-local-nav{padding-inline:0}.daylight-page .hero{min-height:0}.daylight-page .section{margin:0}.daylight-page .price{color:var(--ink)}
+
+.project-card--daylight{background:#e2e8e8;color:#233e50}.project-daylight-visual{display:grid;place-items:center;min-height:260px}.project-daylight-visual img{width:160px;height:160px;border-radius:34px;transform:rotate(-7deg);box-shadow:0 18px 30px #233e5020}

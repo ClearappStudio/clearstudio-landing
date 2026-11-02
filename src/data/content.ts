@@ -4,11 +4,20 @@ export type Project = {
   type: string;
   status: string;
   description: string;
-  tone: "context" | "notebook" | "mail" | "gallery";
+  tone: "context" | "notebook" | "mail" | "gallery" | "daylight";
   size: "wide" | "narrow";
 };
 
 export const projects: Project[] = [
+  {
+    slug: "daylight",
+    title: "Daylight",
+    type: "Software / iPad",
+    status: "Coming soon",
+    description: "A thoughtful planner for iPad. Your calendar, tasks and handwritten notes, with a little more room to think.",
+    tone: "daylight",
+    size: "wide",
+  },
   {
     slug: "context-first-computing",
     title: "Context-first Computing",
