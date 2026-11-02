@@ -29,16 +29,6 @@ export const projects: Project[] = [
     size: "wide",
   },
   {
-    slug: "notebook",
-    title: "Notebook",
-    type: "Software",
-    status: "In development",
-    description:
-      "A personal notebook designed to help you recover context and continue meaningful work.",
-    tone: "notebook",
-    size: "narrow",
-  },
-  {
     slug: "clear-mail",
     title: "Clear Mail",
     type: "System",

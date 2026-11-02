@@ -14,7 +14,13 @@ export default function Daylight() {
         item.setAttribute("aria-selected", String(selected));
         item.tabIndex = selected ? 0 : -1;
         const panel = root.current?.querySelector<HTMLElement>(`#${item.dataset.tab}`);
-        if (panel) panel.hidden = !selected;
+        if (panel) {
+          panel.hidden = !selected;
+          if (selected) {
+            const caption = root.current?.querySelector<HTMLElement>("[data-gallery-caption]");
+            if (caption) caption.textContent = panel.dataset.caption ?? "";
+          }
+        }
       });
     };
     const cleanups = tabs.map((tab, index) => {
