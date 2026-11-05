@@ -269,3 +269,5 @@
 .daylight-page .caption{font-size:9px;flex-direction:column;gap:4px}
 .daylight-page .caption span:last-child{max-width:none;text-align:left}
 }
+
+.daylight-page .dl-help-links{display:flex;justify-content:center;gap:28px;font-size:13px;margin-top:28px}
