@@ -44,8 +44,8 @@ const articles = {
     title: "The balance is only the beginning",
     deck: "A number tells you how much is there. Understanding what it means takes a wider view. That question shaped PRISMA.",
     slug: "prisma-the-balance-is-only-the-beginning",
-    related: "/prisma/",
-    icon: "/prisma/assets/prisma-icon.webp",
+    related: "/projects/prisma/",
+    icon: "/projects/prisma/assets/prisma-icon.webp",
     intro: [
       "You check your bank account and see a balance. The number is exact. The decision you came to make is still waiting: how much of that money can you use?",
       "Some of it belongs to bills that have not arrived. Some is being kept for a trip. An annual payment may be several months away, but it is already part of the picture. The account shows where the money is. The meaning of that money lives across several different times and intentions.",

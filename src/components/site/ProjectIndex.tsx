@@ -2,21 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/content";
 
-const filters = ["All", "Software", "Systems", "Designs", "Ideas"] as const;
+const filters = ["All", "Apps", "Methods & Ideas", "Digital Art"] as const;
 type Filter = (typeof filters)[number];
 
 const filterForType: Record<string, Filter> = {
-  Software: "Software",
-  System: "Systems",
-  Design: "Designs",
-  Idea: "Ideas",
+  Software: "Apps",
+  System: "Methods & Ideas",
+  Design: "Digital Art",
+  Idea: "Methods & Ideas",
 };
 
 export function ProjectIndex() {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const visibleProjects = projects.filter(
     (project) =>
-      activeFilter === "All" || filterForType[project.type] === activeFilter,
+      activeFilter === "All" || filterForType[project.type.split(" / ")[0]] === activeFilter,
   );
 
   return (
@@ -29,7 +29,7 @@ export function ProjectIndex() {
         <div className="project-filters" aria-label="Filter projects">
           {filters.map((filter) => (
             <button
-              className={`project-filter project-filter--${filter.toLowerCase()}${activeFilter === filter ? " active" : ""}`}
+              className={`project-filter project-filter--${filter.toLowerCase().replace(/[^a-z]+/g,"-")}${activeFilter === filter ? " active" : ""}`}
               key={filter}
               type="button"
               aria-pressed={activeFilter === filter}
@@ -51,9 +51,9 @@ export function ProjectIndex() {
         </div>
         {visibleProjects.map((project) => (
           <Link
-            className={`project-index-row project-index-row--${project.type.toLowerCase()}`}
+            className={`project-index-row project-index-row--${project.type.split(" / ")[0].toLowerCase()}`}
             key={project.slug}
-            to={project.slug === "prisma" ? "/prisma/" : `/projects/${project.slug}`}
+            to={project.slug === "prisma" ? "/projects/prisma/" : `/projects/${project.slug}`}
             reloadDocument={project.slug === "prisma"}
           >
             <span className="project-index-title">{project.title}</span>

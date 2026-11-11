@@ -1,12 +1,7 @@
 import { projects } from "@/data/content";
 import { ProjectCard } from "./ProjectCard";
+import { AppsCollection } from "./AppsCollection";
 
 export function ProjectGrid() {
-  return (
-    <div className="project-grid">
-      {projects.filter((project) => ["prisma", "daylight", "context-first-computing", "digital-art-gallery"].includes(project.slug)).map((project) => (
-        <ProjectCard key={project.slug} project={project} />
-      ))}
-    </div>
-  );
+  return <div className="studio-featured"><AppsCollection/><div className="studio-secondary">{["digital-art-gallery","context-first-computing"].map(slug=><ProjectCard key={slug} project={projects.find(p=>p.slug===slug)!}/>)}</div></div>;
 }

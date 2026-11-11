@@ -17,6 +17,8 @@ import BlueHourRoom from "@/pages/BlueHourRoom";
 import StillWaterRoom from "@/pages/StillWaterRoom";
 import NorthRoom from "@/pages/NorthRoom";
 import Home from "@/pages/Home";
+import Apps from "@/pages/Apps";
+import ClearProjects from "@/pages/ClearProjects";
 import Journal from "@/pages/Journal";
 import JournalEntry from "@/pages/JournalEntry";
 import LegacyEmailLanding from "@/pages/LegacyEmailLanding";
@@ -34,6 +36,8 @@ const App = () => (
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/apps" element={<Apps />} />
+        <Route path="/projects/clear-projects" element={<ClearProjects />} />
         <Route path="/projects/context-first-computing" element={<ContextFirstComputing />} />
         <Route path="/projects/daylight" element={<Daylight />} />
         <Route path="/projects/daylight/support" element={<DaylightHelp page="support" />} />

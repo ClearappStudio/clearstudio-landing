@@ -6,11 +6,11 @@ import { GalleryArtwork } from "@/components/site/GalleryArtwork";
 export function ProjectCard({ project }: { project: Project }) {
   if (project.tone === "prisma") {
     return (
-      <Link className="project-card project-card--prisma project-card--wide" to="/prisma/" reloadDocument aria-label="Explore PRISMA — personal finance for iPad, coming soon">
+      <Link className="project-card project-card--prisma project-card--wide" to="/projects/prisma/" reloadDocument aria-label="Explore PRISMA — personal finance for iPad, coming soon">
         <div className="prisma-gateway-light" aria-hidden="true"><i/><i/><i/></div>
         <span className="prisma-gateway-status"><i/> Coming soon for iPad</span>
         <div className="prisma-gateway-center">
-          <img src="/prisma/assets/prisma-icon.webp" width="52" height="52" alt="" loading="lazy"/>
+          <img src="/projects/prisma/assets/prisma-icon.webp" width="52" height="52" alt="" loading="lazy"/>
           <h3>PRISMA</h3>
           <p>See your money in a new light.</p>
         </div>
@@ -24,7 +24,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       className={`project-card project-card--${project.tone} project-card--${project.size}`}
-      to={project.slug === "prisma" ? "/prisma/" : `/projects/${project.slug}`}
+      to={project.slug === "prisma" ? "/projects/prisma/" : `/projects/${project.slug}`}
       reloadDocument={project.slug === "prisma"}
     >
       <div className="project-meta">
