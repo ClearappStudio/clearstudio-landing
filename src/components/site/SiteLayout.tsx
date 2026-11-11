@@ -12,6 +12,7 @@ const navigation = [
 export function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+  const isPrismaPage = pathname === "/prisma";
   const isQuietBlueStudy = pathname === "/studies/quiet-blue";
   const isRoomsOfLightExhibition = pathname === "/projects/digital-art-gallery/rooms-of-light";
   const isRoomsOfLightDigitalEdition = pathname === "/projects/digital-art-gallery/rooms-of-light/digital-edition";
@@ -37,8 +38,8 @@ export function SiteLayout() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <div className={`page-shell${isQuietBlueStudy ? " page-shell--quiet-blue" : ""}`}>
-        {!usesMuseumLayout && (
+      <div className={`page-shell${isQuietBlueStudy ? " page-shell--quiet-blue" : ""}${isPrismaPage ? " page-shell--prisma" : ""}`}>
+        {!usesMuseumLayout && !isPrismaPage && (
           <header className="site-header">
           <NavLink className="brand" to="/" aria-label="Clear Studio home">
             Clear Studio
@@ -69,7 +70,7 @@ export function SiteLayout() {
         <main id="main">
           <Outlet />
         </main>
-        {!hidesSiteFooter && <footer className="site-footer">
+        {!hidesSiteFooter && !isPrismaPage && <footer className="site-footer">
           <p className="footer-wordmark">Clear Studio</p>
           <div className="footer-address">
             <span>Madrid / Working everywhere</span>
