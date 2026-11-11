@@ -13,6 +13,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <span>{project.type}</span>
         <span>{project.status}</span>
       </div>
+      {project.tone === "prisma" && (
+        <div className="project-visual project-prisma-visual" aria-hidden="true">
+          <img src="/assets/prisma/app-icon.webp" alt="" width="512" height="512" loading="lazy" />
+        </div>
+      )}
       {project.tone === "daylight" && (
         <div className="project-visual project-daylight-visual" aria-hidden="true">
           <img src="/assets/daylight/app-icon.png" alt="" width="1024" height="1024" loading="lazy" />

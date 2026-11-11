@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import About from "@/pages/About";
 import ContextFirstComputing from "@/pages/ContextFirstComputing";
 import Daylight from "@/pages/Daylight";
+import Prisma from "@/pages/Prisma";
 import DaylightHelp from "@/pages/DaylightHelp";
 import ClearMail from "@/pages/ClearMail";
 import DigitalArtGallery from "@/pages/DigitalArtGallery";
@@ -34,6 +35,8 @@ const App = () => (
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/prisma" element={<Prisma />} />
+        <Route path="/projects/prisma" element={<Navigate to="/prisma" replace />} />
         <Route path="/projects/context-first-computing" element={<ContextFirstComputing />} />
         <Route path="/projects/daylight" element={<Daylight />} />
         <Route path="/projects/daylight/support" element={<DaylightHelp page="support" />} />
