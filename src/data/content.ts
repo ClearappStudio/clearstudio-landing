@@ -71,6 +71,22 @@ export type JournalEntry = {
 
 export const journalEntries: JournalEntry[] = [
   {
+    slug: "prisma-the-balance-is-only-the-beginning",
+    type: "Process",
+    title: "PRISMA: the balance is only the beginning",
+    date: "11 Nov 2026",
+    sortDate: "2026-11-11",
+    excerpt: "A number tells you how much is there. Understanding what it means takes a wider view. That question shaped PRISMA.",
+  },
+  {
+    slug: "daylight-making-room-for-the-unfinished",
+    type: "Process",
+    title: "Daylight: making room for the unfinished",
+    date: "11 Nov 2026",
+    sortDate: "2026-11-11",
+    excerpt: "A day contains appointments, tasks and thoughts that have not found their shape yet. Designing Daylight meant giving all three somewhere to belong.",
+  },
+  {
     slug: "finding-bloom",
     type: "Process",
     title: "Finding Bloom",

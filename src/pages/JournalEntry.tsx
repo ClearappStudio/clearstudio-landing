@@ -1,4 +1,5 @@
 import DesigningExhibition from "./DesigningExhibition";
+import ProductJournal from "./ProductJournal";
 import { Link, Navigate, useParams } from "react-router-dom";
 import "./FindingBloom.css";
 
@@ -129,6 +130,9 @@ function FindingBloom() {
 
 export default function JournalEntry() {
   const { entrySlug } = useParams();
+
+  if (entrySlug === "daylight-making-room-for-the-unfinished") return <ProductJournal key="daylight" product="daylight" />;
+  if (entrySlug === "prisma-the-balance-is-only-the-beginning") return <ProductJournal key="prisma" product="prisma" />;
 
   if (entrySlug === "designing-the-first-digital-exhibition") {
     return <DesigningExhibition />;
