@@ -53,7 +53,8 @@ export function ProjectIndex() {
           <Link
             className={`project-index-row project-index-row--${project.type.toLowerCase()}`}
             key={project.slug}
-            to={`/projects/${project.slug}`}
+            to={project.slug === "prisma" ? "/prisma/" : `/projects/${project.slug}`}
+            reloadDocument={project.slug === "prisma"}
           >
             <span className="project-index-title">{project.title}</span>
             <span className="project-index-type">

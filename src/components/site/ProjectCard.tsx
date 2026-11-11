@@ -4,10 +4,28 @@ import { MailMark } from "@/components/site/MailMark";
 import { GalleryArtwork } from "@/components/site/GalleryArtwork";
 
 export function ProjectCard({ project }: { project: Project }) {
+  if (project.tone === "prisma") {
+    return (
+      <Link className="project-card project-card--prisma project-card--wide" to="/prisma/" reloadDocument aria-label="Explore PRISMA — personal finance for iPad, coming soon">
+        <div className="prisma-gateway-light" aria-hidden="true"><i/><i/><i/></div>
+        <span className="prisma-gateway-status"><i/> Coming soon for iPad</span>
+        <div className="prisma-gateway-center">
+          <img src="/prisma/assets/prisma-icon.webp" width="52" height="52" alt="" loading="lazy"/>
+          <h3>PRISMA</h3>
+          <p>See your money in a new light.</p>
+        </div>
+        <div className="prisma-gateway-footer">
+          <span>Plan <i/> Understand <i/> Save</span>
+          <span className="prisma-gateway-enter">Explore<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
+        </div>
+      </Link>
+    );
+  }
   return (
     <Link
       className={`project-card project-card--${project.tone} project-card--${project.size}`}
-      to={`/projects/${project.slug}`}
+      to={project.slug === "prisma" ? "/prisma/" : `/projects/${project.slug}`}
+      reloadDocument={project.slug === "prisma"}
     >
       <div className="project-meta">
         <span>{project.type}</span>
