@@ -4,11 +4,20 @@ export type Project = {
   type: string;
   status: string;
   description: string;
-  tone: "context" | "notebook" | "mail" | "gallery" | "daylight";
+  tone: "context" | "notebook" | "mail" | "gallery" | "daylight" | "prisma";
   size: "wide" | "narrow";
 };
 
 export const projects: Project[] = [
+  {
+    slug: "prisma",
+    title: "PRISMA",
+    type: "Software / iPad",
+    status: "Coming soon",
+    description: "A clearer way to plan, understand and make decisions about your money.",
+    tone: "prisma",
+    size: "wide",
+  },
   {
     slug: "daylight",
     title: "Daylight",
