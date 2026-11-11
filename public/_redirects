@@ -1,1 +1,4 @@
+/prisma /projects/prisma/ 301
+/prisma/ /projects/prisma/ 301
+/prisma/* /projects/prisma/:splat 301
 /* /index.html 200

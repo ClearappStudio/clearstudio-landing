@@ -1,0 +1,8 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { AppMark, studioApps } from "@/components/site/AppsCollection";
+
+export default function Apps() {
+  useEffect(()=>{const old=document.title;document.title="Apps — Clear Studio";return()=>{document.title=old}},[]);
+  return <article className="sc-apps-page"><header className="sc-collection-hero"><Link className="sc-back" to="/projects">← Projects</Link><p className="sc-label">A collection of Clear Studio projects</p><h1>Tools for<br/><em>the everyday.</em></h1><p>Independent apps with a shared intention: give the things you do every day a little more clarity.</p></header><div className="sc-app-directory">{studioApps.map((app,i)=><section className={`sc-directory-row sc-directory-row--${app.slug}`} key={app.slug}><div className="sc-directory-heading"><span className="sc-label">0{i+1} / {app.status}</span><AppMark app={app}/><h2>{app.name}</h2></div><div><h3>{app.purpose}</h3><p>{app.detail}</p><Link className="sc-text-link" to={`/projects/${app.slug}${app.slug==="prisma"?"/":""}`} reloadDocument={app.slug==="prisma"}>Discover {app.name}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 19 19 5M5 5h14v14"/></svg></Link></div></section>)}</div><aside className="sc-collection-note"><h2>Software is one form.</h2><p>Clear Studio also explores methods, books and digital art. They belong to the same collection of work.</p><Link className="sc-text-link" to="/projects">All projects<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 19 19 5M5 5h14v14"/></svg></Link></aside></article>;
+}
