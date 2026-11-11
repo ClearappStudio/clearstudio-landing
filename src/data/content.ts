@@ -71,6 +71,22 @@ export type JournalEntry = {
 
 export const journalEntries: JournalEntry[] = [
   {
+    slug: "prisma-the-balance-is-only-the-beginning",
+    type: "Process",
+    title: "PRISMA: the balance is only the beginning",
+    date: "11 Nov 2026",
+    sortDate: "2026-11-11",
+    excerpt: "A number tells you how much is there. Understanding what it means takes a wider view. That question shaped PRISMA.",
+  },
+  {
+    slug: "daylight-making-room-for-the-unfinished",
+    type: "Process",
+    title: "Daylight: making room for the unfinished",
+    date: "11 Nov 2026",
+    sortDate: "2026-11-11",
+    excerpt: "A day contains appointments, tasks and thoughts that have not found their shape yet. Designing Daylight meant giving all three somewhere to belong.",
+  },
+  {
     slug: "finding-bloom",
     type: "Process",
     title: "Finding Bloom",
@@ -89,11 +105,12 @@ export const journalEntries: JournalEntry[] = [
       "Digital life has become extraordinarily capable. It has also become more fragmented, demanding and complicated than it needs to be.",
   },
   {
+    slug: "introducing-context-first-computing",
     type: "Idea",
     title: "Introducing Context-first Computing",
-    date: "Coming soon",
-    sortDate: "0000-00-00",
-    upcomingOrder: 2,
+    date: "11 Nov 2026",
+    sortDate: "2026-11-11",
+    excerpt: "We have become very good at saving the work. Finding our way back into it still asks a great deal of us. This is where the book begins.",
   },
   {
     slug: "designing-the-first-digital-exhibition",
@@ -103,7 +120,7 @@ export const journalEntries: JournalEntry[] = [
     sortDate: "2026-10-12",
     excerpt: "Rooms of Light began with eight images. The harder question was how to make them feel like an exhibition rather than a gallery page.",
   },
-].sort((a, b) => {
+].sort((a: JournalEntry, b: JournalEntry) => {
   const upcomingDifference = (b.upcomingOrder ?? 0) - (a.upcomingOrder ?? 0);
 
   return upcomingDifference || b.sortDate.localeCompare(a.sortDate);
