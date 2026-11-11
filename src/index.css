@@ -1662,3 +1662,12 @@ body { background: var(--background); }
   .palette-swatch:nth-child(3), .palette-swatch:nth-child(4) { border-bottom: 0; }
   .site-footer { align-items: flex-start; }
 }
+
+/* PRISMA featured card — Clear Studio preview */
+.project-card--prisma { background: radial-gradient(circle at 84% 32%, #435dec 0%, transparent 48%), linear-gradient(135deg, #5635b7 0%, #121d67 68%, #080f35 100%); color: #faf9ff; }
+.project-card--prisma .project-copy { max-width: 54%; }
+.project-card--prisma .project-meta { color: #d9dcff; }
+.project-prisma-visual { top: 22%; right: 8%; width: 33%; height: 55%; display: grid; place-items: center; }
+.project-prisma-halo { position: absolute; inset: 4%; border: 1px solid rgba(210,208,255,.3); border-radius: 50%; box-shadow: 0 0 52px rgba(166,138,255,.25), inset 0 0 34px rgba(144,116,252,.19); }
+.project-prisma-diamond { position: relative; width: 39%; aspect-ratio: 1; border-radius: 26%; background: #f9f8ff; transform: rotate(45deg); box-shadow: 0 5px 45px rgba(230,220,255,.4); }
+@media (max-width: 650px) { .project-card--prisma .project-copy { max-width: 65%; } .project-prisma-visual { right: 5%; width: 30%; } }
