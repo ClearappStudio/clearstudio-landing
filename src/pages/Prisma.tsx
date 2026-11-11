@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDownRight, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, CircleCheck, LockKeyhole, Sparkles, Wallet, Layers3 } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, LockKeyhole, Sparkles, Layers3 } from "lucide-react";
 import "./Prisma.css";
 
 type Language = "en" | "es";
