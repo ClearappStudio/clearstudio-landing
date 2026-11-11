@@ -7,12 +7,19 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       className={`project-card project-card--${project.tone} project-card--${project.size}`}
-      to={`/projects/${project.slug}`}
+      to={project.slug === "prisma" ? "/prisma/" : `/projects/${project.slug}`}
+      reloadDocument={project.slug === "prisma"}
     >
       <div className="project-meta">
         <span>{project.type}</span>
         <span>{project.status}</span>
       </div>
+      {project.tone === "prisma" && (
+        <div className="project-visual project-prisma-visual" aria-hidden="true">
+          <span className="project-prisma-halo" />
+          <span className="project-prisma-diamond" />
+        </div>
+      )}
       {project.tone === "daylight" && (
         <div className="project-visual project-daylight-visual" aria-hidden="true">
           <img src="/assets/daylight/app-icon.png" alt="" width="1024" height="1024" loading="lazy" />
