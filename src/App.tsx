@@ -24,6 +24,7 @@ import JournalEntry from "@/pages/JournalEntry";
 import LegacyEmailLanding from "@/pages/LegacyEmailLanding";
 import ProjectDetail from "@/pages/ProjectDetail";
 import Projects from "@/pages/Projects";
+import RoomToThink from "@/pages/RoomToThink";
 import Studies from "@/pages/Studies";
 import StudyDetail from "@/pages/StudyDetail";
 import NotFound from "@/pages/NotFound";
@@ -58,6 +59,7 @@ const App = () => (
         <Route path="/projects/wallpapers" element={<DigitalArtGallery />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
         <Route path="/studies" element={<Studies />} />
+        <Route path="/studies/room-to-think" element={<RoomToThink />} />
         <Route path="/studies/:studySlug" element={<StudyDetail />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/journal/:entrySlug" element={<JournalEntry />} />
