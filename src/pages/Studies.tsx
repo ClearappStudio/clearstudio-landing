@@ -70,10 +70,14 @@ export default function Studies() {
           </div>
         </div>
 
+        <div className="studies-category">
+          <div className="studies-category-label"><small>Category 02</small><strong>Interfaces</strong></div>
+          <div className="studies-list"><Link className="studies-row" to="/studies/room-to-think" style={{ "--study-colour": "#8aa37a", "--study-ink": "#263b37" } as CSSProperties}><span className="studies-number">004</span><h2>Room to think</h2><p>A study of space, density and the room an interface gives to thought.</p><span className="studies-arrow" aria-hidden="true">↗</span></Link></div>
+        </div>
         <div className="studies-coming">
           <div className="studies-coming-title">Next categories</div>
           <div className="studies-coming-body">
-            <div><span>Interfaces</span><span>In development</span></div>
+            
             <div><span>Materials</span><span>Coming later</span></div>
             <div><span>Context</span><span>Coming later</span></div>
           </div>
