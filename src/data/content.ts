@@ -31,7 +31,7 @@ export const projects: Project[] = [
     slug: "daylight",
     title: "Daylight",
     type: "Software / iPad",
-    status: "Coming soon",
+    status: "Available now",
     description: "A thoughtful planner for iPad. Your calendar, tasks and handwritten notes, with a little more room to think.",
     tone: "daylight",
     size: "wide",

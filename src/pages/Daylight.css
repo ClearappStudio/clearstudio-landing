@@ -112,9 +112,9 @@
 .daylight-page .price-card p{font-size:13px;color:#5c696d}
 .daylight-page .price-list{display:grid;gap:13px;margin:28px 0;padding-top:25px;border-top:1px solid var(--line);font-size:12px}
 .daylight-page .price-list span:before{content:"✓";margin-right:12px;color:#647d62}
-.daylight-page .store-soon{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:15px 18px;font-size:13px;display:flex;align-items:center;gap:12px}
-.daylight-page .store-soon svg{width:23px;height:26px;fill:currentColor}
-.daylight-page .store-soon small{font-size:9px;display:block;opacity:.7;margin-bottom:3px}
+.daylight-page .store-link{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:15px 18px;font-size:13px;display:flex;align-items:center;gap:12px}
+.daylight-page .store-link svg{width:23px;height:26px;fill:currentColor}
+.daylight-page .store-link small{font-size:9px;display:block;opacity:.7;margin-bottom:3px}
 .daylight-page .price-note{font-size:10px!important;margin-top:17px!important;line-height:1.6}
 .daylight-page .faq{padding-top:0}
 .daylight-page .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}
@@ -271,3 +271,6 @@
 }
 
 .daylight-page .dl-help-links{display:flex;justify-content:center;gap:28px;font-size:13px;margin-top:28px}
+
+.daylight-page .store-link{transition:background .2s}
+.daylight-page .store-link:hover{background:#3c5869}

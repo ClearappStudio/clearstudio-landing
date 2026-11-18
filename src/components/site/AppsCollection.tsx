@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./StudioCollections.css";
 
 export const studioApps = [
-  {slug:"daylight",name:"Daylight",purpose:"A little room for your day.",detail:"Calendar, tasks and handwritten notes, together on iPad.",status:"Coming soon",icon:"/assets/daylight/app-icon.png"},
+  {slug:"daylight",name:"Daylight",purpose:"A little room for your day.",detail:"Calendar, tasks and handwritten notes, together on iPad.",status:"Available now",icon:"/assets/daylight/app-icon.png"},
   {slug:"prisma",name:"PRISMA",purpose:"Your money, in perspective.",detail:"Plan your year, understand your spending and make room for what matters.",status:"Coming soon",icon:"/projects/prisma/assets/prisma-icon.webp"},
   {slug:"clear-projects",name:"Clear Projects",purpose:"Keep the whole project in view.",detail:"Tasks, milestones and a shared sense of what comes next. In development for iPad and Mac.",status:"In development",icon:null},
 ];
