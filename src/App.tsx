@@ -4,6 +4,7 @@ import About from "@/pages/About";
 import ContextFirstComputing from "@/pages/ContextFirstComputing";
 import Daylight from "@/pages/Daylight";
 import DaylightHelp from "@/pages/DaylightHelp";
+import PrismaPrivacy from "@/pages/PrismaPrivacy";
 import ClearMail from "@/pages/ClearMail";
 import DigitalArtGallery from "@/pages/DigitalArtGallery";
 import RoomsOfLight from "@/pages/RoomsOfLight";
@@ -43,6 +44,7 @@ const App = () => (
         <Route path="/projects/daylight" element={<Daylight />} />
         <Route path="/projects/daylight/support" element={<DaylightHelp page="support" />} />
         <Route path="/projects/daylight/privacy" element={<DaylightHelp page="privacy" />} />
+        <Route path="/projects/prisma/privacy" element={<PrismaPrivacy />} />
         <Route path="/projects/clear-mail" element={<ClearMail />} />
         <Route path="/projects/digital-art-gallery" element={<DigitalArtGallery />} />
         <Route path="/projects/digital-art-gallery/rooms-of-light" element={<RoomsOfLight />} />
